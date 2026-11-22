@@ -1,3 +1,5 @@
+![VendorScout — Find the nearest vendor](media/cover.png)
+
 # VendorScout for WoW Forever
 
 Search items and find the nearest known vendor, in a standalone window or the world map. Includes a complete vendor extract from a pinned NorgannonDB snapshot: 3,940 items, 1,151 vendors, 17,991 relationships. No runtime dependencies. Interface 16001; version 0.1.7-beta.
