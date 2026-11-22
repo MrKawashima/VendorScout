@@ -1,0 +1,14 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+    <Frame name="VendorScoutPinTemplate" mixin="VendorScoutPinMixin" virtual="true" enableMouse="true">
+        <Size x="20" y="20"/>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture parentKey="Ring" file="Interface\Minimap\UI-Minimap-Ping">
+                    <Size x="28" y="28"/>
+                    <Anchors><Anchor point="CENTER"/></Anchors>
+                    <Color r="0.38" g="0.85" b="0.69" a="1"/>
+                </Texture>
+            </Layer>
+        </Layers>
+    </Frame>
+</Ui>

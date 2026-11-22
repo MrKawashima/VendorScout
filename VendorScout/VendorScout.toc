@@ -1,0 +1,17 @@
+## Interface: 16001
+## Title: VendorScout
+## Notes: Find the nearest vendor selling an item. Standalone search and world-map pins.
+## Author: Markus
+## Version: 0.1.7-beta
+## SavedVariablesPerCharacter: VendorScoutDB
+## X-License: GPL-3.0
+## IconTexture: Interface\Icons\INV_Misc_Coin_01
+
+Data.lua
+Locales.lua
+Search.lua
+UI.lua
+Map.lua
+Pins.xml
+Merchant.lua
+Core.lua

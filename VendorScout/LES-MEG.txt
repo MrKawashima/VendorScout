@@ -1,0 +1,142 @@
+VendorScout 0.1.7 beta – WoW Forever 1.60.1
+
+NYTT I 0.1.7
+Ved innlogging eller /reload starter addonet uten valgt vendor og uten
+vendormarkører på kartet. De vises først når du søker eller velger en vendor.
+Åpning av kartet, filtre og automatiske oppdateringer aktiverer dem ikke.
+
+FRA 0.1.6
+Av/på-knappen ligger nå øverst til høyre på innsiden av kartflaten, over
+de øvrige knappene langs høyrekanten. Myntikonet og størrelsen er beholdt.
+
+FRA 0.1.5
+Det opprinnelige myntikonet er tilbake, i mindre størrelse: 16 piksler på
+kartet, 20 for valgt vendor og 18 på kartknappen. Den lille pulseringen og
+kartknappens nye plassering på utsiden av høyre kartramme beholdes.
+
+FRA 0.1.3
+Kartsøket er nå et eget flyttbart vindu. Dra i tittellinjen; plasseringen huskes.
+Kartets størrelse og oppsett endres ikke. /vs reset nullstiller plasseringen.
+Vinduet åpnes utenfor kartet der det er plass. Ved fullskjerm ligger det som
+et flyttbart vindu over skjermen. Lukk kartsøket med × uten å lukke kartet.
+Nærmeste vendor velges automatisk ved nytt søk. Vis i kartet virker derfor
+uten at du først må oppdage at du skal klikke på en rad.
+Søkevinduet åpnes automatisk sammen med verdenskartet.
+Begge visningene har aktive søkefelt og knapper med felles søk, filtre og valg.
+× ved søkefeltet tømmer begge felt og fjerner kartmarkører.
+Clear pin / Fjern markør fjerner det felles valget og alle VendorScout-markører,
+men beholder søket. Markørene kommer ikke tilbake ved automatisk oppdatering;
+velg en vendor eller gjør et nytt søk for å vise dem igjen.
+
+VIKTIG VED OPPDATERING
+Pakk ut arkivet til Interface/AddOns, ikke inni en eksisterende VendorScout-mappe.
+Riktig: Interface/AddOns/VendorScout/VendorScout.toc
+Feil: Interface/AddOns/VendorScout/VendorScout/VendorScout.toc
+Kontroller at /vs debug viser 0.1.7-beta etter omstart eller /reload.
+
+RETTET I 0.1.1
+Den tidligere sidekolonnen er erstattet av et fritt vindu i 0.1.3.
+UI-lag, klikkfangst og tastaturfokus er rettet for søkefelt og knapper.
+Automatisk oppdatering flytter ikke lenger tekstmarkøren i et aktivt søkefelt.
+Oppdatering: erstatt den gamle VendorScout-mappen med den nye mens WoW er lukket.
+Lagrede innstillinger og vendorobservasjoner beholdes.
+
+INSTALLASJON
+1. Avslutt WoW.
+2. Pakk ut VendorScout-mappen fra installasjonsarkivet til:
+   World of Warcraft/_forever_/Interface/AddOns/
+3. Kontroller at filen ligger slik:
+   _forever_/Interface/AddOns/VendorScout/VendorScout.toc
+   Unngå en ekstra VendorScout-mappe inni VendorScout.
+4. Start spillet og aktiver VendorScout i AddOns-listen.
+5. Skriv /vs eller klikk myntknappen ved minimapet.
+
+SØK
+Søk etter varenavn, vendor-navn, item-ID eller en item-lenke.
+Eksempler: Refreshing Spring Water, Coarse Thread, 159.
+Shift-klikk en vare med søkefeltet aktivt for å bruke item-lenken.
+Søket bruker navn fra databasen; varen behøver ikke være i klientens cache.
+Engelske navn fungerer alltid. Tilgjengelige oversatte varenavn følger
+klientspråket. EN/NO bytter språket i selve grensesnittet.
+
+NÆRMEST FØRST
+Vendors med beregnbar avstand sorteres fra nærmest til lengst unna karakteren.
+Avstand beregnes i spillets verdenskoordinater, også mellom soner i samme verden.
+Har en vendor flere kjente plasseringer, brukes den nærmeste.
+Listen oppdateres hvert andre sekund mens søkevinduet eller kartsøket er åpent.
+Ukjent avstand og andre kontinenter kommer etter treff med beregnbar avstand.
+Ukjente plasseringer kommer sist. De får aldri en oppdiktet kartmarkør.
+Avstand er luftlinje i yards, ikke gangrute, flytid eller garanti for tilgang.
+
+Min fraksjon er standard. Alle fraksjoner viser også motsatt/ukjent eller fiendtlig
+tilgang. Omdømme, PvP-rang, nivå, sesong og lager kan påvirke om du faktisk kan kjøpe.
+Velg mellom Alle, Forbruksvarer, Forsyninger, Oppskrifter og Utstyr.
+
+KART
+Åpne verdenskartet: kartsøket vises automatisk. /vs map åpner det også.
+Vendors-knappen viser/skjuler panelet for den gjeldende kartøkten.
+Søkefeltet og filtrene er felles for kartet og det separate vinduet.
+Dette kartet begrenser resultatene til det viste kartet. Overalt søker globalt.
+Kategori-knappen i kartet blar gjennom kategoriene.
+Klikk et kartresultat for å åpne vendorens sone og markere stedet.
+I det separate vinduet: velg en vendor og trykk Vis i kartet, eller dobbeltklikk.
+Valgt sted har en pulserende grønn markør. Søkevinduet kan flyttes fritt og
+husker plasseringen du velger. Andre treff vises med myntikoner.
+Maksimalt 150 markører tegnes samtidig; antall vises, og valgt sted prioriteres.
+Alle resultater kan fortsatt finnes ved å bla. Zoom eller avgrens søket.
+Fjern markør fjerner valget i begge vinduer og alle VendorScout-markører.
+Lukk kartpanelet med × for å få tilbake hele kartbredden.
+Markørene tilhører VendorScout og erstatter ikke spillets eget waypoint.
+Åpning og navigering av kartet sperres under kamp; prøv igjen etter kampen.
+
+DATABASEN SOM FØLGER MED
+3 940 varer, 1 151 vendors og 17 991 vare–vendor-koblinger.
+1 210 registrerte plasseringer i grunnprofilen, 1 186 med brukbare kartkoordinater.
+39 vendors mangler brukbare koordinater. Horde-spesifikke plasseringer er inkludert.
+Hele vendoruttrekket fra NorgannonDB-snapshotet datert 19.11.2026 følger med.
+Ingen Questie, NorgannonDB-installasjon eller internettilkobling trengs i spillet.
+
+Dette er hele vendoruttrekket i den valgte åpne datakilden, ikke en garanti for
+at hver vendor og hver ny Forever-vare i det levende spillet er dokumentert.
+Databasen kombinerer eldre data og Forever-korreksjoner. Nye, flyttede og
+sesongavhengige vendors kan mangle eller være utdaterte. Se DATA-SOURCES.txt.
+
+Når du åpner en vendor, lagrer addonet varer og lagerstatus du faktisk ser.
+Nye varer/vendors blir søkbare på denne karakteren. En observert posisjon er
+karakterens posisjon nær vendoren, ikke en nøyaktig måling av NPC-posisjonen.
+Sist sett er historikk, ikke en live lagerstatus. Filtrert eller ufullstendig
+vendorinnhold sletter aldri varer fra den innebygde databasen.
+Ingen data sendes ut eller lastes opp. Maksimalt 2 000 observerte vendors lagres
+per karakter; opptil 500 oppføringer leses per vendoråpning/oppdatering.
+
+UTSEENDE
+Mørke paneler, grønne aksenter og samme knapperamme som Whats Next?.
+Dra vinduet for å flytte det. +/− justerer størrelsen. Escape lukker vinduet.
+Plassering, skala, språk og fraksjonsfilter lagres per karakter.
+Venstreklikk minimapknappen åpner vinduet; høyreklikk åpner kartsøket.
+Dra minimapknappen for å flytte den.
+
+KOMMANDOER
+/vs                    Åpne/lukke søkevinduet
+/vs Coarse Thread      Søk direkte
+/vs map                Åpne kartsøket
+/vs clear              Fjern valgt markør
+/vs minimap            Vis/skjul minimapknappen
+/vs reset              Tilbakestill vinduets plassering og skala
+/vs debug              Vis versjon, klient og databasestatus
+/vs help               Vis kommandoene
+/vendorscout           Alternativ til /vs
+
+TESTSTATUS
+Beta for Forever, Interface 16001. Lua 5.1-kode og Forever-API-er er kontrollert.
+57 automatiserte tester bestått med simulerte WoW-API-er, inkludert full kontroll
+av kilder, vendorrelasjoner og koordinater for Alliance og Horde.
+Testene dekker også klikkfangst mellom UI-lag, fokus, skriving, tekstmarkør,
+flyttbart søkevindu, lagret plassering og uendret kartstørrelse.
+Layouten er kontrollert i en skjematisk rendering av den faktiske Lua-layouten.
+Dette er ikke testing i en kjørende WoW-klient. In-game-verifisering gjenstår.
+Ved feil: ta vare på Lua-feilmeldingen og utdata fra /vs debug.
+
+LISENS
+GPL-3.0. Full kildekode, tester, databasebygger og kilde-snapshot følger i det
+separate source-arkivet. Se LICENSE, DATA-SOURCES.txt og UPSTREAM-NOTICE.txt.

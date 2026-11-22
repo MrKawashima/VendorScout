@@ -1,0 +1,58 @@
+VendorScout data provenance – compiled 2026-11-22
+
+Source: NorgannonDB by Maro
+https://github.com/zmarotrix/NorgannonDB
+Pinned commit: cae6d644952b9b12fbd1e3a500211893336cc219
+https://github.com/zmarotrix/NorgannonDB/tree/cae6d644952b9b12fbd1e3a500211893336cc219
+Source generation date: 2026-11-19; schema 1.9; target Forever 1.60.1.
+
+The bundled database contains the COMPLETE union of npc.sells and item.vendors
+in this source snapshot, including vendor names, item names, stock limits,
+faction reactions, item restrictions, spawn locations and nine available name
+translations. The source's Horde variant is reconciled against both indexes.
+It is a vendor-focused extract, not a copy of unrelated quests, drops or recipes.
+
+All 17,991 source relationships are retained. Items: 3,940; vendors: 1,151.
+Base profile locations: 1,210; mapped positions: 1,186; vendors with no mapped
+position: 39. One vendor has faction-specific spawn overrides.
+
+Coordinates are percentages of the target Forever maps in the source; they are
+normalized to 0..1 and mapped from AreaTable IDs to UiMapIDs. Invalid/sentinel
+coordinates stay unknown. They are never replaced with a zone centre.
+
+Names and relations can be incomplete, outdated, conditional or inherited from
+Classic. NPC and item indexes can disagree; their union preserves available
+evidence, not proof that a purchase is available now. Class ID zero is omitted
+by the source and treated as Consumable. A zero stock limit means unlimited OR
+unknown, so the UI labels it as unknown unless locally observed.
+
+The full downloaded input files needed to reproduce this extract, their SHA-256
+hashes, the pinned source identifier, the compiler and tests are provided in
+VendorScout-0.1.7-beta-source.zip. The addon itself requires no external addon.
+
+Licenses and credits: GNU GPL v3.0 (LICENSE); Questie/QuestieDB (GPL-3.0),
+pfQuest by Eric Mauser/Shagu (MIT), cmangos classic-db (GPL-3.0), and the
+NorgannonDB contributors. See the unchanged UPSTREAM-NOTICE.txt for the source's
+full attribution, including DungeonJournal by Exehn. No game artwork is bundled;
+the addon references textures installed with WoW.
+
+pfQuest MIT notice:
+Copyright (c) 2017-2021 Eric Mauser (Shagu)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
