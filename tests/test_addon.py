@@ -76,7 +76,7 @@ class DatabaseTests(unittest.TestCase):
           for iid,stock in pairs(v.offers)do nr=nr+1;assert(V.items[iid]);assert(stock>=0)end
           for _,l in ipairs(v.locations)do nl=nl+1;if l.x then assert(l.x>=0 and l.x<=1 and l.y>=0 and l.y<=1);if l.map then nm=nm+1 end end end
         end
-        assert(ni==3940 and nv==1151 and nr==17991 and nl==1210 and nm==1186)''')
+        assert(ni==3940 and nv==1151 and nr==18010 and nl==1210 and nm==1186)''')
     def test_all_items_resolve_without_cache_download(self):
         self.rt.execute('''V.db.friendlyOnly=false;local n=0
         for id,it in pairs(V.items)do

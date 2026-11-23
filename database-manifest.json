@@ -1,7 +1,7 @@
 {
   "source": "https://github.com/zmarotrix/NorgannonDB",
-  "commit": "cae6d644952b9b12fbd1e3a500211893336cc219",
-  "generated": "2026-11-19",
+  "commit": "c4c4f81267f8ab91237cb167bb6bc821826a8550",
+  "generated": "2026-11-22",
   "build": "1.60.1",
   "schema": {
     "major": 1,
@@ -10,7 +10,7 @@
   "stats": {
     "items": 3940,
     "vendors": 1151,
-    "relationships": 17991,
+    "relationships": 18010,
     "locations": 1210,
     "mappedLocations": 1186,
     "vendorsWithoutCoordinates": 39,
@@ -59,20 +59,20 @@
   ],
   "sha256": {
     "core/api.lua": "97810af4826dc08d16226f83fffc6642831d464aad3dafc5962f15eda3abf83e",
-    "data/info.lua": "c30c8b96fee8a203029029c74af9c5d803793ab67100b0d3c09f166f81870167",
-    "data/world.lua": "27b0975cc5872788510c0b42d3ac2f92243781b98c023dbabbaa2d581a165654",
-    "data/npcs.lua": "e7b845a40bd54fa943f5d7fd4f329c239c4cecf56693e738ccaa59eae27a58fd",
-    "data/items.lua": "b6b77a0adb84ef3b84aaacdd003c9d6ff0adfab6dfaf8531068cdbb0930da8cc",
-    "data/variants.lua": "4735f5b59338c0f23dceab6c7904a42d4c8e32106ece399de5762f69cdae4bd0",
-    "locales/deDE.lua": "04b5797091f097e0b6d9b5fac4c76480bfd0ef3ddaeaaf426c0233fd1bfafd90",
-    "locales/esES.lua": "1b4579e52e6647a0d684e48b2ecef0a74437a5cf0bd2c5053a4b0b5ea3b6455f",
-    "locales/esMX.lua": "903c0928b9726b6fc4025eed9edeb8626561fe3e85692ef5fe74c433dd1ff34f",
-    "locales/frFR.lua": "8db91581921878fb248c5b30d2d4f54ed195fc6d3c3cd9ab951ab921bd1eadea",
-    "locales/koKR.lua": "138a51ae8bc74e176d631d73e9bcdc67ea203b2079466004fa2df5686c8e1cb6",
-    "locales/ptBR.lua": "721f7996d2c4e2e530de1a3bff71714f875ac7832b7448d63595867cce1362c9",
-    "locales/ruRU.lua": "e4c5bd0840c69d8bcc66484492ed309896751761be991355f203dbe6de707322",
-    "locales/zhCN.lua": "58cdc7cf0ebe9e46a24c12bd8a7524a4b268b71fa338c45e6a50f94fa8ac435a",
-    "locales/zhTW.lua": "5b87a1222289c12b947f5c1fb7d879db2aa4e4710136addfe91639df5bed093f"
+    "data/info.lua": "429560ace0f0123af9622d5d19cae29e489cee9cb9a46bb8d0b20210c28b66f7",
+    "data/world.lua": "c895625812436220de4731f0cb2865182a469ec8a70ebb5b5f4c1184851ce9a9",
+    "data/npcs.lua": "6c0ced179cae119cddb2f65fef61348019f28d8e09b5a5d46c58aed59afd389a",
+    "data/items.lua": "f061942f9029d1cde34b301c44a79247ccbfc9a55f4d264a879d5303ec60ee22",
+    "data/variants.lua": "4627366cf00fe65220cc8f7bcade9ace515bdd777c9bb04c1be32af3f1b933fe",
+    "locales/deDE.lua": "6f98d44241eec7045cc8baaad75d2882b4806cafa5de1ec66efe72a22ac578fe",
+    "locales/esES.lua": "f43328a6c073e74cf44abeeee74445a55b3a1814a688d3a89f139ffa17e6e62e",
+    "locales/esMX.lua": "9e52b4d41df7bb51ac36543821292a55e8de7790043a491a340f7c6eb02c938d",
+    "locales/frFR.lua": "cd3dbefb7e2f2982a12929ed072aeedea1ee7b9ff9ef185db1d9c7a8c5f3f668",
+    "locales/koKR.lua": "133640d1718a8137e593897928dd75007855966d96f82f1fd2ded951039aa16b",
+    "locales/ptBR.lua": "65bd3857190ee14afb5cf72b98e82480216738fd8be993bee9748a0e6bd32dd3",
+    "locales/ruRU.lua": "def11043689da4ecb445c0ed72efb8511657deaee03622369751ef39369eb424",
+    "locales/zhCN.lua": "d1e78dc931a055c920ad4388b170f28eeb3dc12bfd0eceaaa4a59d83a0c817d1",
+    "locales/zhTW.lua": "b605ccd911d37c8f697ec6a650c2bb28155829e89a08183531375375cd4f033c"
   },
   "coverage": "Complete vendor relationship extract of this snapshot; not a guarantee of all live Forever vendors or stock."
 }

@@ -1,45 +1,17 @@
-VendorScout 0.1.7 beta – WoW Forever 1.60.1
+VendorScout 1.0.0 – WoW Forever 1.60.1
 
-NYTT I 0.1.7
-Ved innlogging eller /reload starter addonet uten valgt vendor og uten
-vendormarkører på kartet. De vises først når du søker eller velger en vendor.
-Åpning av kartet, filtre og automatiske oppdateringer aktiverer dem ikke.
-
-FRA 0.1.6
-Av/på-knappen ligger nå øverst til høyre på innsiden av kartflaten, over
-de øvrige knappene langs høyrekanten. Myntikonet og størrelsen er beholdt.
-
-FRA 0.1.5
-Det opprinnelige myntikonet er tilbake, i mindre størrelse: 16 piksler på
-kartet, 20 for valgt vendor og 18 på kartknappen. Den lille pulseringen og
-kartknappens nye plassering på utsiden av høyre kartramme beholdes.
-
-FRA 0.1.3
-Kartsøket er nå et eget flyttbart vindu. Dra i tittellinjen; plasseringen huskes.
-Kartets størrelse og oppsett endres ikke. /vs reset nullstiller plasseringen.
-Vinduet åpnes utenfor kartet der det er plass. Ved fullskjerm ligger det som
-et flyttbart vindu over skjermen. Lukk kartsøket med × uten å lukke kartet.
-Nærmeste vendor velges automatisk ved nytt søk. Vis i kartet virker derfor
-uten at du først må oppdage at du skal klikke på en rad.
-Søkevinduet åpnes automatisk sammen med verdenskartet.
-Begge visningene har aktive søkefelt og knapper med felles søk, filtre og valg.
-× ved søkefeltet tømmer begge felt og fjerner kartmarkører.
-Clear pin / Fjern markør fjerner det felles valget og alle VendorScout-markører,
-men beholder søket. Markørene kommer ikke tilbake ved automatisk oppdatering;
-velg en vendor eller gjør et nytt søk for å vise dem igjen.
+NYTT I 1.0.0
+Første stabile utgivelse for WoW Forever 1.60.1.
+Databasen er oppdatert til NorgannonDB-snapshotet fra 22.11.2026:
+19 nye vare–vendor-koblinger og oppdaterte vendoropplysninger.
+Det flyttbare kartsøket, de små myntikonene og felles søk/clear er beholdt.
+Ved innlogging og /reload starter kartet uten vendormarkører.
 
 VIKTIG VED OPPDATERING
 Pakk ut arkivet til Interface/AddOns, ikke inni en eksisterende VendorScout-mappe.
 Riktig: Interface/AddOns/VendorScout/VendorScout.toc
 Feil: Interface/AddOns/VendorScout/VendorScout/VendorScout.toc
-Kontroller at /vs debug viser 0.1.7-beta etter omstart eller /reload.
-
-RETTET I 0.1.1
-Den tidligere sidekolonnen er erstattet av et fritt vindu i 0.1.3.
-UI-lag, klikkfangst og tastaturfokus er rettet for søkefelt og knapper.
-Automatisk oppdatering flytter ikke lenger tekstmarkøren i et aktivt søkefelt.
-Oppdatering: erstatt den gamle VendorScout-mappen med den nye mens WoW er lukket.
-Lagrede innstillinger og vendorobservasjoner beholdes.
+Kontroller at /vs debug viser 1.0.0 etter omstart eller /reload.
 
 INSTALLASJON
 1. Avslutt WoW.
@@ -85,15 +57,15 @@ husker plasseringen du velger. Andre treff vises med myntikoner.
 Maksimalt 150 markører tegnes samtidig; antall vises, og valgt sted prioriteres.
 Alle resultater kan fortsatt finnes ved å bla. Zoom eller avgrens søket.
 Fjern markør fjerner valget i begge vinduer og alle VendorScout-markører.
-Lukk kartpanelet med × for å få tilbake hele kartbredden.
+Lukk kartsøket med × uten å endre kartets størrelse.
 Markørene tilhører VendorScout og erstatter ikke spillets eget waypoint.
 Åpning og navigering av kartet sperres under kamp; prøv igjen etter kampen.
 
 DATABASEN SOM FØLGER MED
-3 940 varer, 1 151 vendors og 17 991 vare–vendor-koblinger.
+3 940 varer, 1 151 vendors og 18 010 vare–vendor-koblinger.
 1 210 registrerte plasseringer i grunnprofilen, 1 186 med brukbare kartkoordinater.
 39 vendors mangler brukbare koordinater. Horde-spesifikke plasseringer er inkludert.
-Hele vendoruttrekket fra NorgannonDB-snapshotet datert 19.11.2026 følger med.
+Hele vendoruttrekket fra NorgannonDB-snapshotet datert 22.11.2026 følger med.
 Ingen Questie, NorgannonDB-installasjon eller internettilkobling trengs i spillet.
 
 Dette er hele vendoruttrekket i den valgte åpne datakilden, ikke en garanti for
@@ -128,13 +100,14 @@ KOMMANDOER
 /vendorscout           Alternativ til /vs
 
 TESTSTATUS
-Beta for Forever, Interface 16001. Lua 5.1-kode og Forever-API-er er kontrollert.
+Stabil utgivelse for Forever, Interface 16001. Lua 5.1-kode og Forever-API-er er kontrollert.
 57 automatiserte tester bestått med simulerte WoW-API-er, inkludert full kontroll
 av kilder, vendorrelasjoner og koordinater for Alliance og Horde.
 Testene dekker også klikkfangst mellom UI-lag, fokus, skriving, tekstmarkør,
 flyttbart søkevindu, lagret plassering og uendret kartstørrelse.
 Layouten er kontrollert i en skjematisk rendering av den faktiske Lua-layouten.
-Dette er ikke testing i en kjørende WoW-klient. In-game-verifisering gjenstår.
+Automatiske tester bruker simulerte WoW-API-er. Prosjekteieren har i tillegg
+prøvd betaversjonens grensesnitt i spillet og meldt at det fungerer bra.
 Ved feil: ta vare på Lua-feilmeldingen og utdata fra /vs debug.
 
 LISENS

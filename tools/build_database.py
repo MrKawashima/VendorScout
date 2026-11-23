@@ -12,7 +12,7 @@ import sys
 from lupa.lua51 import LuaRuntime
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_COMMIT = "cae6d644952b9b12fbd1e3a500211893336cc219"
+SOURCE_COMMIT = "c4c4f81267f8ab91237cb167bb6bc821826a8550"
 
 def lua(value):
     if value is None: return "nil"

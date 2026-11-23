@@ -2,15 +2,11 @@
 
 # VendorScout for WoW Forever
 
-Search items and find the nearest known vendor, in a standalone window or the world map. Includes a complete vendor extract from a pinned NorgannonDB snapshot: 3,940 items, 1,151 vendors, 17,991 relationships. No runtime dependencies. Interface 16001; version 0.1.7-beta.
+Search items and find the nearest known vendor, in a standalone window or the world map. Includes a complete vendor extract from a pinned NorgannonDB snapshot: 3,940 items, 1,151 vendors, 18,010 relationships. No runtime dependencies. Interface 16001; version 1.0.0.
 
-0.1.7 starts each login/reload without a selected vendor or any vendor pins. Opening the map, changing filters or automatic refreshes keep it clear until an explicit search or vendor selection.
+Version 1.0.0 is the first stable release for WoW Forever 1.60.1. The database is rebuilt from NorgannonDB's 2026-11-22 snapshot, adding 19 vendor-item relationships and incorporating corrected vendor data.
 
-0.1.6 places the search toggle inside the map canvas at the upper right, above the other right-side controls. Its coin icon and compact size are unchanged.
-
-0.1.5 restores the original coin icon for vendor pins and the map-edge toggle. Normal pins remain 16 UI pixels, the selected pin is 20, and the selected halo is 28. The toggle icon is 18 pixels. Click targets remain slightly larger than the icons. The compact toggle keeps its map-edge position, open/closed styling and tooltip.
-
-0.1.3 replaces the embedded map column with a movable UIParent window. The map canvas and native map anchors are never changed. Search opens outside the map where screen space permits (right, left, below or above); fullscreen maps use a reachable floating window. Drag the title bar to save a position across map openings and reloads; /vs reset resets it. Closing the search leaves the map open. Both search surfaces share query, filters and selection, including Clear and Clear pin. The nearest match is selected automatically after searching.
+The map search is a separate movable window with saved placement. Both search windows share their query, filters, selection and Clear actions. The nearest match is selected after a search. Small original coin icons mark results; the toggle sits inside the upper-right map edge. Each login/reload starts without selected vendors or vendor pins.
 
 The installable addon is in `VendorScout/`. See `VendorScout/LES-MEG.txt` for Norwegian installation instructions and commands. Start with `/vs`, `/vs 159`, or `/vs map`. The separate install ZIP contains only the addon folder.
 
@@ -36,7 +32,9 @@ The source audit tests use the bundled snapshot, or `../NorgannonDB` when workin
 
 The current build passed 57 tests. Lua syntax, missing item-cache behavior, exact IDs/links, faction-specific spawns, pagination, map scope, pin limits, combat restrictions, vendor observations, movement-based reordering, and absent/secret coordinates are covered. The UI simulation models multiple anchors, strata, frame levels, pointer targeting, focus, typing and the caret. A regression test reproduces the old input interception by the HIGH map border. Floating-window tests check placement outside the map, unchanged canvas anchors, dragging, saved positions, scale, screen clamping and close/reopen behavior. Additional tests exercise both search fields and both Clear actions, shared selection, automatic native map search and minimap navigation. A local inspection also checked the relevant APIs against Blizzard UI source from Gethe/wow-ui-source's `forever` branch at `734f065329cff4992835b01a84f210a297db91b6`. When that checkout is present at `../wow-ui-source`, integration tests exercise its MapCanvas data-provider base; otherwise they use the included explicit API simulation.
 
-## In-game acceptance still required
+## In-game verification checklist
+
+The beta UI was tested in game by the project owner. Automated checks below use simulated APIs; repeat this checklist when client or map behavior changes.
 
 1. Install in Forever, enable Lua errors, log in as Alliance and Horde.
 2. Search `159` from two different positions; verify the first vendor changes appropriately and distances change while moving.

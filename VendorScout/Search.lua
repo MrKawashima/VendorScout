@@ -1,5 +1,5 @@
 local _, V = ...
-V.version = "0.1.7-beta"
+V.version = "1.0.0"
 V.query, V.category, V.page, V.mapPage = "", "all", 1, 1
 V.results, V.worldCache = {}, {}
 
