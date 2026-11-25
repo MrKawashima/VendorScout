@@ -64,6 +64,7 @@
     "data/npcs.lua": "6c0ced179cae119cddb2f65fef61348019f28d8e09b5a5d46c58aed59afd389a",
     "data/items.lua": "f061942f9029d1cde34b301c44a79247ccbfc9a55f4d264a879d5303ec60ee22",
     "data/variants.lua": "4627366cf00fe65220cc8f7bcade9ace515bdd777c9bb04c1be32af3f1b933fe",
+    "data/recipes.lua": "4c647c3cc4734dd45b8b064e53b84d085c822eff1e8fb9abc27adc3cb9c69869",
     "locales/deDE.lua": "6f98d44241eec7045cc8baaad75d2882b4806cafa5de1ec66efe72a22ac578fe",
     "locales/esES.lua": "f43328a6c073e74cf44abeeee74445a55b3a1814a688d3a89f139ffa17e6e62e",
     "locales/esMX.lua": "9e52b4d41df7bb51ac36543821292a55e8de7790043a491a340f7c6eb02c938d",

@@ -33,7 +33,7 @@ def item_record(db,iid):
     it=db.Get(db,"items",iid)
     result={"name":it.name if it else f"Item #{iid}"}
     if it:
-        for key in ("class","subClass","requiredLevel","side","repFaction","repStanding","pvpRank"):
+        for key in ("class","subClass","foodType","requiredLevel","side","repFaction","repStanding","pvpRank"):
             if it[key] is not None: result[key]=it[key]
     return result
 
@@ -75,9 +75,10 @@ def main():
                     raise SystemExit('Source hash mismatch: '+name)
     rt = LuaRuntime(unpack_returned_tuples=True)
     rt.execute("os=nil;io=nil;package=nil;debug=nil;dofile=nil;loadfile=nil; GetLocale=function() return 'enUS' end")
-    files = ["core/api.lua", "data/info.lua", "data/world.lua", "data/npcs.lua", "data/items.lua", "data/variants.lua"]
+    files = ["core/api.lua", "data/info.lua", "data/world.lua", "data/npcs.lua", "data/items.lua", "data/variants.lua", "data/recipes.lua"]
     hashes = {}
     for name in files:
+        if name=="data/recipes.lua": rt.execute("NorgannonDB.index={}")
         raw=(src/name).read_bytes(); hashes[name]=hashlib.sha256(raw).hexdigest()
         rt.execute(raw.decode('utf-8-sig'))
     db=rt.globals().NorgannonDB
@@ -117,6 +118,27 @@ def main():
                 links[nid,iid]=stock
                 if iid not in items: items[iid]=item_record(db,iid)
             if v!=vendors.get(nid): horde[int(nid)]=v
+    # Use Forever's recipe graph, not Classic assumptions (e.g. healing potions).
+    # A profession filter includes recipes, their reagents, and known tools/bags.
+    professions={}
+    def tag(iid,skill):
+        if iid in items: professions.setdefault(int(iid),set()).add(int(skill))
+    for recipe in db.recipes.values():
+        for iid in recipe['items'].values() if recipe['items'] else []: tag(iid,recipe.skill)
+        for reagent in recipe.reagents.values() if recipe.reagents else []:
+            tag(reagent[1],recipe.skill)
+            if reagent[1] in items: items[reagent[1]]['craftMaterial']=True
+    recipe_skills={1:165,2:197,3:202,4:164,5:185,6:171,7:129,8:333,9:356}
+    tools={'Mining Pick':186,'Skinning Knife':393,'Blacksmith Hammer':164,
+           'Arclight Spanner':202,'Gyromatic Micro-Adjustor':202}
+    for iid,it in items.items():
+        cls,sub=it.get('class',0),it.get('subClass',0)
+        if cls==9 and iid not in professions and sub in recipe_skills: tag(iid,recipe_skills[sub])
+        if it['name'] in tools: tag(iid,tools[it['name']])
+        if cls==2 and (sub==20 or 'Fishing Pole' in it['name']): tag(iid,356)
+        if cls==1 and sub in {2:182,6:186,7:393}: tag(iid,{2:182,6:186,7:393}[sub])
+        if cls==7 and sub in {6:393,7:186,9:182}: tag(iid,{6:393,7:186,9:182}[sub])
+    for iid,skills in professions.items(): items[iid]['professions']=sorted(skills)
     usedareas={loc['area'] for v in list(vendors.values())+list(horde.values()) for loc in v['locations']}
     zones={int(a):db.zones[a].name if db.zones[a] else f"Area #{a}" for a in usedareas}
     # Include all available vendor/item translations; only the active locale loads.

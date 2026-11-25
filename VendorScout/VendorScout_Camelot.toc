@@ -2,13 +2,14 @@
 ## Title: VendorScout
 ## Notes: Find the nearest vendor selling an item. Standalone search and world-map pins.
 ## Author: Markus
-## Version: 1.0.0
+## Version: 1.1.0
 ## SavedVariablesPerCharacter: VendorScoutDB
 ## X-License: GPL-3.0
 ## IconTexture: Interface\Icons\INV_Misc_Coin_01
 
 Data.lua
 Locales.lua
+Filters.lua
 Search.lua
 UI.lua
 Map.lua

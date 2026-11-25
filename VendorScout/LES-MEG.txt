@@ -1,17 +1,20 @@
-VendorScout 1.0.0 – WoW Forever 1.60.1
+VendorScout 1.1.0 – WoW Forever 1.60.1
 
-NYTT I 1.0.0
-Første stabile utgivelse for WoW Forever 1.60.1.
-Databasen er oppdatert til NorgannonDB-snapshotet fra 22.11.2026:
-19 nye vare–vendor-koblinger og oppdaterte vendoropplysninger.
-Det flyttbare kartsøket, de små myntikonene og felles søk/clear er beholdt.
-Ved innlogging og /reload starter kartet uten vendormarkører.
+NYTT I 1.1.0
+12 varekategorier pluss Alle, og filtre for 12 profesjoner.
+Norske og engelske søkeord: vann/water, skredder tråd/tailoring thread,
+veske/bag og oppskrift/recipe. Dette er søkeord, ikke full vareoversettelse.
+Hover over varer viser item-tooltip. I kartsøket: velg vendor og trykk Varer.
+Hvis varen ikke er lastet i klienten, vises databasenavn og vendornotater først.
+Kategorier og profesjoner velges fra menyer i begge vinduene.
+Nærmeste vendor kommer fortsatt øverst. Ved innlogging og /reload starter
+kartet uten valgt vendor eller vendormarkører.
 
 VIKTIG VED OPPDATERING
 Pakk ut arkivet til Interface/AddOns, ikke inni en eksisterende VendorScout-mappe.
 Riktig: Interface/AddOns/VendorScout/VendorScout.toc
 Feil: Interface/AddOns/VendorScout/VendorScout/VendorScout.toc
-Kontroller at /vs debug viser 1.0.0 etter omstart eller /reload.
+Kontroller at /vs debug viser 1.1.0 etter omstart eller /reload.
 
 INSTALLASJON
 1. Avslutt WoW.
@@ -42,14 +45,21 @@ Avstand er luftlinje i yards, ikke gangrute, flytid eller garanti for tilgang.
 
 Min fraksjon er standard. Alle fraksjoner viser også motsatt/ukjent eller fiendtlig
 tilgang. Omdømme, PvP-rang, nivå, sesong og lager kan påvirke om du faktisk kan kjøpe.
-Velg mellom Alle, Forbruksvarer, Forsyninger, Oppskrifter og Utstyr.
+Velg kategori og profesjon fra menyene; begge filtre brukes samtidig.
+Kategorier: Alle, Forbruksvarer, Mat og drikke, Eliksirer, Bandasjer, Vesker,
+Materialer og verktøy, Reagenser, Ammunisjon, Oppskrifter, Utstyr, Våpen, Rustning.
+Profesjoner følger oppskrifter og ingredienser i Forever-kilden, i tillegg til
+kjente verktøy og samlematerialer. Ukjente koblinger gjettes ikke.
+Nullstill filtre setter kategori og profesjon til Alle, men beholder søket,
+fraksjonsvalget og kartsøkeområdet. × ved søkefeltet tømmer søket i begge vinduer.
 
 KART
 Åpne verdenskartet: kartsøket vises automatisk. /vs map åpner det også.
 Vendors-knappen viser/skjuler panelet for den gjeldende kartøkten.
 Søkefeltet og filtrene er felles for kartet og det separate vinduet.
 Dette kartet begrenser resultatene til det viste kartet. Overalt søker globalt.
-Kategori-knappen i kartet blar gjennom kategoriene.
+Kategori- og profesjonsmenyene virker likt i begge vinduer.
+Varer-knappen viser valgt vendors treff. Hold musen over en vare for detaljer.
 Klikk et kartresultat for å åpne vendorens sone og markere stedet.
 I det separate vinduet: velg en vendor og trykk Vis i kartet, eller dobbeltklikk.
 Valgt sted har en pulserende grønn markør. Søkevinduet kan flyttes fritt og
@@ -101,7 +111,7 @@ KOMMANDOER
 
 TESTSTATUS
 Stabil utgivelse for Forever, Interface 16001. Lua 5.1-kode og Forever-API-er er kontrollert.
-57 automatiserte tester bestått med simulerte WoW-API-er, inkludert full kontroll
+73 automatiserte tester bestått med simulerte WoW-API-er, inkludert full kontroll
 av kilder, vendorrelasjoner og koordinater for Alliance og Horde.
 Testene dekker også klikkfangst mellom UI-lag, fokus, skriving, tekstmarkør,
 flyttbart søkevindu, lagret plassering og uendret kartstørrelse.

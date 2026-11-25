@@ -6,7 +6,7 @@ import sys
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
-VERSION='1.0.0'
+VERSION='1.1.0'
 
 def main():
     dest=(Path(sys.argv[1]) if len(sys.argv)>1 else ROOT/'dist').resolve()

@@ -3,7 +3,7 @@ local _, V = ...
 V.Data = {items={},vendors={},horde={[15898]={["locations"]={{["area"]=493,["map"]=1450,["x"]=0.3658,["y"]=0.581},{["area"]=493,["map"]=1450,["x"]=0.363,["y"]=0.5853},{["area"]=1497,["map"]=1458,["x"]=0.6645,["y"]=0.3602},{["area"]=1637,["map"]=1454,["x"]=0.4127,["y"]=0.3236},{["area"]=1638,["map"]=1456,["x"]=0.7056,["y"]=0.2783}},["name"]="Lunar Festival Vendor",["offers"]={[21557]=0,[21558]=0,[21559]=0,[21571]=0,[21574]=0,[21576]=0,[21721]=0,[21747]=0},["reaction"]="AH",["zone"]=493}},zones={[1]="Dun Morogh",[3]="Badlands",[4]="Blasted Lands",[8]="Swamp of Sorrows",[10]="Duskwood",[11]="Wetlands",[12]="Elwynn Forest",[14]="Durotar",[15]="Dustwallow Marsh",[16]="Azshara",[17]="The Barrens",[28]="Western Plaguelands",[33]="Stranglethorn Vale",[36]="Alterac Mountains",[38]="Loch Modan",[40]="Westfall",[44]="Redridge Mountains",[45]="Arathi Highlands",[46]="Burning Steppes",[47]="The Hinterlands",[51]="Searing Gorge",[85]="Tirisfal Glades",[130]="Silverpine Forest",[139]="Eastern Plaguelands",[141]="Teldrassil",[148]="Darkshore",[215]="Mulgore",[267]="Hillsbrad Foothills",[331]="Ashenvale",[357]="Feralas",[361]="Felwood",[400]="Thousand Needles",[405]="Desolace",[406]="Stonetalon Mountains",[440]="Tanaris",[490]="Un'Goro Crater",[493]="Moonglade",[616]="Mount Hyjal",[618]="Winterspring",[721]="Gnomeregan",[1377]="Silithus",[1497]="Undercity",[1519]="Stormwind City",[1537]="Ironforge",[1585]="Blackrock Depths",[1637]="Orgrimmar",[1638]="Thunder Bluff",[1657]="Darnassus",[2257]="Deeprun Tram",[2557]="Dire Maul",[2597]="Alterac Valley",[2917]="Hall of Legends",[2918]="Champions' Hall",[3429]="Ruins of Ahn'Qiraj",[10022]="Dire Maul",[16591]="Riverglades",[16593]="Zephras Isle",[16651]="Shen'dralas"},meta={["commit"]="c4c4f81267f8ab91237cb167bb6bc821826a8550",["generated"]="2026-11-22",["hordeOverrides"]=1,["items"]=3940,["locations"]=1210,["mappedLocations"]=1186,["relationships"]=18010,["vendors"]=1151,["vendorsWithoutCoordinates"]=39}}
 V.Data.items[85]={["class"]=4,["name"]="Dirty Leather Vest",["requiredLevel"]=1,["subClass"]=2}
 V.Data.items[117]={["name"]="Tough Jerky",["requiredLevel"]=1}
-V.Data.items[159]={["name"]="Refreshing Spring Water",["requiredLevel"]=1}
+V.Data.items[159]={["craftMaterial"]=true,["name"]="Refreshing Spring Water",["professions"]={129,185,202},["requiredLevel"]=1}
 V.Data.items[193]={["class"]=4,["name"]="Tattered Cloth Vest",["requiredLevel"]=1,["subClass"]=1}
 V.Data.items[194]={["class"]=4,["name"]="Tattered Cloth Pants",["requiredLevel"]=1,["subClass"]=1}
 V.Data.items[195]={["class"]=4,["name"]="Tattered Cloth Boots",["requiredLevel"]=1,["subClass"]=1}
@@ -25,9 +25,9 @@ V.Data.items[422]={["name"]="Dwarven Mild",["requiredLevel"]=15}
 V.Data.items[711]={["class"]=4,["name"]="Tattered Cloth Gloves",["requiredLevel"]=1,["subClass"]=1}
 V.Data.items[714]={["class"]=4,["name"]="Dirty Leather Gloves",["requiredLevel"]=1,["subClass"]=2}
 V.Data.items[718]={["class"]=4,["name"]="Scalemail Gloves",["requiredLevel"]=17,["subClass"]=3}
-V.Data.items[728]={["class"]=9,["name"]="Recipe: Westfall Stew",["subClass"]=5}
-V.Data.items[765]={["class"]=7,["name"]="Silverleaf",["subClass"]=9}
-V.Data.items[785]={["class"]=7,["name"]="Mageroyal",["subClass"]=9}
+V.Data.items[728]={["class"]=9,["name"]="Recipe: Westfall Stew",["professions"]={185},["subClass"]=5}
+V.Data.items[765]={["class"]=7,["craftMaterial"]=true,["name"]="Silverleaf",["professions"]={171,182},["subClass"]=9}
+V.Data.items[785]={["class"]=7,["craftMaterial"]=true,["name"]="Mageroyal",["professions"]={171,182,185},["subClass"]=9}
 V.Data.items[787]={["name"]="Slitherskin Mackerel",["requiredLevel"]=1}
 V.Data.items[792]={["class"]=4,["name"]="Knitted Sandals",["requiredLevel"]=5,["subClass"]=1}
 V.Data.items[793]={["class"]=4,["name"]="Knitted Gloves",["requiredLevel"]=5,["subClass"]=1}
@@ -61,14 +61,14 @@ V.Data.items[925]={["class"]=2,["name"]="Flail",["requiredLevel"]=20,["subClass"
 V.Data.items[926]={["class"]=2,["name"]="Battle Axe",["requiredLevel"]=20,["subClass"]=1}
 V.Data.items[927]={["class"]=2,["name"]="Double Axe",["requiredLevel"]=19}
 V.Data.items[928]={["class"]=2,["name"]="Long Staff",["requiredLevel"]=20,["subClass"]=10}
-V.Data.items[929]={["name"]="Healing Potion",["requiredLevel"]=12,["subClass"]=3}
+V.Data.items[929]={["craftMaterial"]=true,["name"]="Healing Potion",["professions"]={197},["requiredLevel"]=12,["subClass"]=3}
 V.Data.items[954]={["name"]="Scroll of Strength",["requiredLevel"]=10,["subClass"]=4}
 V.Data.items[955]={["name"]="Scroll of Intellect",["requiredLevel"]=5,["subClass"]=4}
 V.Data.items[1041]={["name"]="Horn of the Black Wolf"}
 V.Data.items[1132]={["class"]=15,["name"]="Horn of the Timber Wolf",["requiredLevel"]=40}
 V.Data.items[1133]={["name"]="Horn of the Winter Wolf"}
 V.Data.items[1134]={["name"]="Horn of the Gray Wolf"}
-V.Data.items[1179]={["name"]="Ice Cold Milk",["requiredLevel"]=5}
+V.Data.items[1179]={["craftMaterial"]=true,["name"]="Ice Cold Milk",["professions"]={185},["requiredLevel"]=5}
 V.Data.items[1180]={["name"]="Scroll of Stamina",["requiredLevel"]=5,["subClass"]=4}
 V.Data.items[1181]={["name"]="Scroll of Spirit",["requiredLevel"]=1,["subClass"]=4}
 V.Data.items[1194]={["class"]=2,["name"]="Bastard Sword",["requiredLevel"]=1,["subClass"]=8}
@@ -78,13 +78,13 @@ V.Data.items[1198]={["class"]=2,["name"]="Claymore",["requiredLevel"]=10,["subCl
 V.Data.items[1200]={["class"]=4,["name"]="Large Wooden Shield",["requiredLevel"]=1,["subClass"]=6}
 V.Data.items[1201]={["class"]=4,["name"]="Dull Heater Shield",["requiredLevel"]=5,["subClass"]=6}
 V.Data.items[1202]={["class"]=4,["name"]="Wall Shield",["requiredLevel"]=12,["subClass"]=6}
-V.Data.items[1205]={["name"]="Melon Juice",["requiredLevel"]=15}
+V.Data.items[1205]={["craftMaterial"]=true,["name"]="Melon Juice",["professions"]={185},["requiredLevel"]=15}
 V.Data.items[1262]={["class"]=12,["name"]="Keg of Thunderbrew",["subClass"]=8}
 V.Data.items[1477]={["name"]="Scroll of Agility II",["requiredLevel"]=25,["subClass"]=4}
 V.Data.items[1478]={["name"]="Scroll of Protection II",["requiredLevel"]=15,["subClass"]=4}
-V.Data.items[1645]={["name"]="Moonberry Juice",["requiredLevel"]=35}
+V.Data.items[1645]={["craftMaterial"]=true,["name"]="Moonberry Juice",["professions"]={185},["requiredLevel"]=35}
 V.Data.items[1707]={["name"]="Stormwind Brie",["requiredLevel"]=25}
-V.Data.items[1708]={["name"]="Sweet Nectar",["requiredLevel"]=25}
+V.Data.items[1708]={["craftMaterial"]=true,["name"]="Sweet Nectar",["professions"]={185},["requiredLevel"]=25}
 V.Data.items[1710]={["name"]="Greater Healing Potion",["requiredLevel"]=21,["subClass"]=3}
 V.Data.items[1711]={["name"]="Scroll of Stamina II",["requiredLevel"]=20,["subClass"]=4}
 V.Data.items[1712]={["name"]="Scroll of Spirit II",["requiredLevel"]=15,["subClass"]=4}
@@ -149,13 +149,13 @@ V.Data.items[2207]={["class"]=2,["name"]="Jambiya",["requiredLevel"]=11,["subCla
 V.Data.items[2208]={["class"]=2,["name"]="Poniard",["requiredLevel"]=14,["subClass"]=15}
 V.Data.items[2209]={["class"]=2,["name"]="Kris",["requiredLevel"]=19,["subClass"]=15}
 V.Data.items[2287]={["name"]="Haunch of Meat",["requiredLevel"]=5}
-V.Data.items[2289]={["name"]="Scroll of Strength II",["requiredLevel"]=25,["subClass"]=4}
+V.Data.items[2289]={["craftMaterial"]=true,["name"]="Scroll of Strength II",["professions"]={333},["requiredLevel"]=25,["subClass"]=4}
 V.Data.items[2290]={["name"]="Scroll of Intellect II",["requiredLevel"]=20,["subClass"]=4}
-V.Data.items[2319]={["class"]=7,["name"]="Medium Leather"}
-V.Data.items[2320]={["class"]=7,["name"]="Coarse Thread"}
-V.Data.items[2321]={["class"]=7,["name"]="Fine Thread"}
-V.Data.items[2324]={["class"]=7,["name"]="Bleach"}
-V.Data.items[2325]={["class"]=7,["name"]="Black Dye"}
+V.Data.items[2319]={["class"]=7,["craftMaterial"]=true,["name"]="Medium Leather",["professions"]={164,165,197,202}}
+V.Data.items[2320]={["class"]=7,["craftMaterial"]=true,["name"]="Coarse Thread",["professions"]={164,165,197}}
+V.Data.items[2321]={["class"]=7,["craftMaterial"]=true,["name"]="Fine Thread",["professions"]={129,165,197}}
+V.Data.items[2324]={["class"]=7,["craftMaterial"]=true,["name"]="Bleach",["professions"]={165,197}}
+V.Data.items[2325]={["class"]=7,["craftMaterial"]=true,["name"]="Black Dye",["professions"]={165,197}}
 V.Data.items[2364]={["class"]=4,["name"]="Woven Vest",["requiredLevel"]=5,["subClass"]=1}
 V.Data.items[2366]={["class"]=4,["name"]="Woven Pants",["requiredLevel"]=5,["subClass"]=1}
 V.Data.items[2367]={["class"]=4,["name"]="Woven Boots",["requiredLevel"]=5,["subClass"]=1}
@@ -217,12 +217,12 @@ V.Data.items[2438]={["class"]=4,["name"]="Embroidered Boots",["requiredLevel"]=4
 V.Data.items[2440]={["class"]=4,["name"]="Embroidered Gloves",["requiredLevel"]=45,["subClass"]=1}
 V.Data.items[2445]={["class"]=4,["name"]="Large Metal Shield",["requiredLevel"]=17,["subClass"]=6}
 V.Data.items[2446]={["class"]=4,["name"]="Kite Shield",["requiredLevel"]=22,["subClass"]=6}
-V.Data.items[2447]={["class"]=7,["name"]="Peacebloom",["subClass"]=9}
+V.Data.items[2447]={["class"]=7,["craftMaterial"]=true,["name"]="Peacebloom",["professions"]={129,171,182,185},["subClass"]=9}
 V.Data.items[2448]={["class"]=4,["name"]="Heavy Pavise",["requiredLevel"]=32,["subClass"]=6}
-V.Data.items[2449]={["class"]=7,["name"]="Earthroot",["subClass"]=9}
+V.Data.items[2449]={["class"]=7,["craftMaterial"]=true,["name"]="Earthroot",["professions"]={171,182},["subClass"]=9}
 V.Data.items[2451]={["class"]=4,["name"]="Crested Heater Shield",["requiredLevel"]=45,["subClass"]=6}
-V.Data.items[2453]={["class"]=7,["name"]="Bruiseweed",["subClass"]=9}
-V.Data.items[2455]={["name"]="Minor Mana Potion",["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[2453]={["class"]=7,["craftMaterial"]=true,["name"]="Bruiseweed",["professions"]={129,171,182},["subClass"]=9}
+V.Data.items[2455]={["craftMaterial"]=true,["name"]="Minor Mana Potion",["professions"]={165,197},["requiredLevel"]=5,["subClass"]=3}
 V.Data.items[2463]={["class"]=4,["name"]="Studded Doublet",["requiredLevel"]=32,["subClass"]=2}
 V.Data.items[2464]={["class"]=4,["name"]="Studded Belt",["requiredLevel"]=32,["subClass"]=2}
 V.Data.items[2465]={["class"]=4,["name"]="Studded Pants",["requiredLevel"]=32,["subClass"]=2}
@@ -274,11 +274,11 @@ V.Data.items[2533]={["class"]=2,["name"]="War Maul",["requiredLevel"]=40,["subCl
 V.Data.items[2534]={["class"]=2,["name"]="Rondel",["requiredLevel"]=39,["subClass"]=15}
 V.Data.items[2535]={["class"]=2,["name"]="War Staff",["requiredLevel"]=40,["subClass"]=10}
 V.Data.items[2593]={["name"]="Flask of Port",["subClass"]=3}
-V.Data.items[2594]={["name"]="Flagon of Mead"}
+V.Data.items[2594]={["craftMaterial"]=true,["name"]="Flagon of Mead",["professions"]={129}}
 V.Data.items[2595]={["name"]="Jug of Bourbon"}
-V.Data.items[2596]={["name"]="Skin of Dwarven Stout"}
-V.Data.items[2604]={["class"]=7,["name"]="Red Dye"}
-V.Data.items[2605]={["class"]=7,["name"]="Green Dye"}
+V.Data.items[2596]={["craftMaterial"]=true,["name"]="Skin of Dwarven Stout",["professions"]={129,185}}
+V.Data.items[2604]={["class"]=7,["craftMaterial"]=true,["name"]="Red Dye",["professions"]={197}}
+V.Data.items[2605]={["class"]=7,["craftMaterial"]=true,["name"]="Green Dye",["professions"]={164,165,197}}
 V.Data.items[2612]={["class"]=4,["name"]="Plain Robe",["requiredLevel"]=3,["subClass"]=1}
 V.Data.items[2613]={["class"]=4,["name"]="Double-stitched Robes",["requiredLevel"]=8,["subClass"]=1}
 V.Data.items[2614]={["class"]=4,["name"]="Robe of Apprenticeship",["requiredLevel"]=12,["subClass"]=1}
@@ -287,33 +287,33 @@ V.Data.items[2616]={["class"]=4,["name"]="Shimmering Silk Robes",["requiredLevel
 V.Data.items[2617]={["class"]=4,["name"]="Burning Robes",["requiredLevel"]=32,["subClass"]=1}
 V.Data.items[2618]={["class"]=4,["name"]="Silver Dress Robes",["requiredLevel"]=45,["subClass"]=1}
 V.Data.items[2665]={["class"]=5,["name"]="Stormwind Seasoning Herbs"}
-V.Data.items[2678]={["class"]=7,["name"]="Mild Spices"}
-V.Data.items[2686]={["name"]="Thunder Ale",["requiredLevel"]=1,["subClass"]=3}
-V.Data.items[2692]={["class"]=7,["name"]="Hot Spices",["subClass"]=11}
-V.Data.items[2697]={["class"]=9,["name"]="Recipe: Goretusk Liver Pie",["subClass"]=5}
-V.Data.items[2698]={["class"]=9,["name"]="Recipe: Cooked Crab Claw",["subClass"]=5}
-V.Data.items[2699]={["class"]=9,["name"]="Recipe: Redridge Goulash",["subClass"]=5}
-V.Data.items[2700]={["class"]=9,["name"]="Recipe: Succulent Pork Ribs",["subClass"]=5}
-V.Data.items[2701]={["class"]=9,["name"]="Recipe: Seasoned Wolf Kabob",["subClass"]=5}
-V.Data.items[2723]={["name"]="Bottle of Pinot Noir",["requiredLevel"]=1}
-V.Data.items[2880]={["class"]=7,["name"]="Weak Flux"}
-V.Data.items[2889]={["class"]=9,["name"]="Recipe: Beer Basted Boar Ribs",["subClass"]=5}
+V.Data.items[2678]={["class"]=7,["craftMaterial"]=true,["name"]="Mild Spices",["professions"]={129,185}}
+V.Data.items[2686]={["craftMaterial"]=true,["name"]="Thunder Ale",["professions"]={129},["requiredLevel"]=1,["subClass"]=3}
+V.Data.items[2692]={["class"]=7,["craftMaterial"]=true,["name"]="Hot Spices",["professions"]={129,185},["subClass"]=11}
+V.Data.items[2697]={["class"]=9,["name"]="Recipe: Goretusk Liver Pie",["professions"]={185},["subClass"]=5}
+V.Data.items[2698]={["class"]=9,["name"]="Recipe: Cooked Crab Claw",["professions"]={185},["subClass"]=5}
+V.Data.items[2699]={["class"]=9,["name"]="Recipe: Redridge Goulash",["professions"]={185},["subClass"]=5}
+V.Data.items[2700]={["class"]=9,["name"]="Recipe: Succulent Pork Ribs",["professions"]={185},["subClass"]=5}
+V.Data.items[2701]={["class"]=9,["name"]="Recipe: Seasoned Wolf Kabob",["professions"]={185},["subClass"]=5}
+V.Data.items[2723]={["craftMaterial"]=true,["name"]="Bottle of Pinot Noir",["professions"]={129},["requiredLevel"]=1}
+V.Data.items[2880]={["class"]=7,["craftMaterial"]=true,["name"]="Weak Flux",["professions"]={164,202}}
+V.Data.items[2889]={["class"]=9,["name"]="Recipe: Beer Basted Boar Ribs",["professions"]={185},["subClass"]=5}
 V.Data.items[2892]={["name"]="Deadly Poison",["requiredLevel"]=30}
 V.Data.items[2893]={["name"]="Deadly Poison II",["requiredLevel"]=38}
-V.Data.items[2894]={["name"]="Rhapsody Malt",["requiredLevel"]=1}
-V.Data.items[2901]={["class"]=2,["name"]="Mining Pick",["requiredLevel"]=1,["subClass"]=14}
+V.Data.items[2894]={["craftMaterial"]=true,["name"]="Rhapsody Malt",["professions"]={185},["requiredLevel"]=1}
+V.Data.items[2901]={["class"]=2,["name"]="Mining Pick",["professions"]={186},["requiredLevel"]=1,["subClass"]=14}
 V.Data.items[2928]={["class"]=15,["name"]="Dust of Decay",["subClass"]=1}
 V.Data.items[2930]={["class"]=15,["name"]="Essence of Pain",["subClass"]=1}
 V.Data.items[2946]={["class"]=2,["name"]="Balanced Throwing Dagger",["requiredLevel"]=3,["subClass"]=16}
 V.Data.items[2947]={["class"]=2,["name"]="Small Throwing Knife",["requiredLevel"]=1,["subClass"]=16}
 V.Data.items[3012]={["name"]="Scroll of Agility",["requiredLevel"]=10,["subClass"]=4}
-V.Data.items[3013]={["name"]="Scroll of Protection",["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[3013]={["craftMaterial"]=true,["name"]="Scroll of Protection",["professions"]={333},["requiredLevel"]=1,["subClass"]=4}
 V.Data.items[3023]={["class"]=2,["name"]="Large Bore Blunderbuss",["requiredLevel"]=16,["subClass"]=3}
 V.Data.items[3024]={["class"]=2,["name"]="BKP 2700 \"Enforcer\"",["requiredLevel"]=21,["subClass"]=3}
 V.Data.items[3025]={["class"]=2,["name"]="BKP 42 \"Ultra\"",["requiredLevel"]=31,["subClass"]=3}
 V.Data.items[3026]={["class"]=2,["name"]="Reinforced Bow",["requiredLevel"]=16,["subClass"]=2}
 V.Data.items[3027]={["class"]=2,["name"]="Heavy Recurve Bow",["requiredLevel"]=20,["subClass"]=2}
-V.Data.items[3030]={["class"]=6,["name"]="Razor Arrow",["requiredLevel"]=25,["subClass"]=2}
+V.Data.items[3030]={["class"]=6,["craftMaterial"]=true,["name"]="Razor Arrow",["professions"]={202},["requiredLevel"]=25,["subClass"]=2}
 V.Data.items[3033]={["class"]=6,["name"]="Solid Shot",["requiredLevel"]=25,["subClass"]=3}
 V.Data.items[3107]={["class"]=2,["name"]="Keen Throwing Knife",["requiredLevel"]=11,["subClass"]=16}
 V.Data.items[3108]={["class"]=2,["name"]="Heavy Throwing Dagger",["requiredLevel"]=22,["subClass"]=16}
@@ -322,13 +322,13 @@ V.Data.items[3131]={["class"]=2,["name"]="Weighted Throwing Axe",["requiredLevel
 V.Data.items[3135]={["class"]=2,["name"]="Sharp Throwing Axe",["requiredLevel"]=11,["subClass"]=16}
 V.Data.items[3137]={["class"]=2,["name"]="Deadly Throwing Axe",["requiredLevel"]=22,["subClass"]=16}
 V.Data.items[3277]={["class"]=2,["name"]="Executor Staff",["subClass"]=10}
-V.Data.items[3355]={["class"]=7,["name"]="Wild Steelbloom",["subClass"]=9}
-V.Data.items[3356]={["class"]=7,["name"]="Kingsblood",["subClass"]=9}
-V.Data.items[3357]={["class"]=7,["name"]="Liferoot",["subClass"]=9}
-V.Data.items[3358]={["class"]=7,["name"]="Khadgar's Whisker",["subClass"]=9}
-V.Data.items[3371]={["class"]=7,["name"]="Empty Vial"}
-V.Data.items[3372]={["class"]=7,["name"]="Leaded Vial"}
-V.Data.items[3385]={["name"]="Lesser Mana Potion",["requiredLevel"]=14,["subClass"]=3}
+V.Data.items[3355]={["class"]=7,["craftMaterial"]=true,["name"]="Wild Steelbloom",["professions"]={171,182},["subClass"]=9}
+V.Data.items[3356]={["class"]=7,["craftMaterial"]=true,["name"]="Kingsblood",["professions"]={165,171,182,333},["subClass"]=9}
+V.Data.items[3357]={["class"]=7,["craftMaterial"]=true,["name"]="Liferoot",["professions"]={129,171,182,185},["subClass"]=9}
+V.Data.items[3358]={["class"]=7,["craftMaterial"]=true,["name"]="Khadgar's Whisker",["professions"]={171,182},["subClass"]=9}
+V.Data.items[3371]={["class"]=7,["craftMaterial"]=true,["name"]="Empty Vial",["professions"]={129,171,333,356}}
+V.Data.items[3372]={["class"]=7,["craftMaterial"]=true,["name"]="Leaded Vial",["professions"]={129,171,333}}
+V.Data.items[3385]={["craftMaterial"]=true,["name"]="Lesser Mana Potion",["professions"]={165},["requiredLevel"]=14,["subClass"]=3}
 V.Data.items[3419]={["class"]=4,["name"]="Red Rose"}
 V.Data.items[3420]={["class"]=4,["name"]="Black Rose"}
 V.Data.items[3421]={["class"]=4,["name"]="Simple Wildflowers"}
@@ -338,7 +338,7 @@ V.Data.items[3424]={["class"]=4,["name"]="Bouquet of Black Roses"}
 V.Data.items[3426]={["class"]=4,["name"]="Bold Yellow Shirt"}
 V.Data.items[3427]={["class"]=4,["name"]="Stylish Black Shirt"}
 V.Data.items[3428]={["class"]=4,["name"]="Common Gray Shirt"}
-V.Data.items[3466]={["class"]=7,["name"]="Strong Flux"}
+V.Data.items[3466]={["class"]=7,["craftMaterial"]=true,["name"]="Strong Flux",["professions"]={164}}
 V.Data.items[3587]={["class"]=4,["name"]="Embroidered Belt",["requiredLevel"]=45,["subClass"]=1}
 V.Data.items[3588]={["class"]=4,["name"]="Embroidered Bracers",["requiredLevel"]=45,["subClass"]=1}
 V.Data.items[3589]={["class"]=4,["name"]="Heavy Weave Belt",["requiredLevel"]=12,["subClass"]=1}
@@ -357,23 +357,23 @@ V.Data.items[3602]={["class"]=4,["name"]="Knitted Belt",["requiredLevel"]=5,["su
 V.Data.items[3603]={["class"]=4,["name"]="Knitted Bracers",["requiredLevel"]=5,["subClass"]=1}
 V.Data.items[3606]={["class"]=4,["name"]="Woven Belt",["requiredLevel"]=5,["subClass"]=1}
 V.Data.items[3607]={["class"]=4,["name"]="Woven Bracers",["requiredLevel"]=5,["subClass"]=1}
-V.Data.items[3678]={["class"]=9,["name"]="Recipe: Crocolisk Steak",["subClass"]=5}
-V.Data.items[3679]={["class"]=9,["name"]="Recipe: Blood Sausage",["subClass"]=5}
-V.Data.items[3680]={["class"]=9,["name"]="Recipe: Murloc Fin Soup",["subClass"]=5}
-V.Data.items[3681]={["class"]=9,["name"]="Recipe: Crocolisk Gumbo",["subClass"]=5}
-V.Data.items[3682]={["class"]=9,["name"]="Recipe: Curiously Tasty Omelet",["subClass"]=5}
-V.Data.items[3683]={["class"]=9,["name"]="Recipe: Gooey Spider Cake",["subClass"]=5}
+V.Data.items[3678]={["class"]=9,["name"]="Recipe: Crocolisk Steak",["professions"]={185},["subClass"]=5}
+V.Data.items[3679]={["class"]=9,["name"]="Recipe: Blood Sausage",["professions"]={185},["subClass"]=5}
+V.Data.items[3680]={["class"]=9,["name"]="Recipe: Murloc Fin Soup",["professions"]={185},["subClass"]=5}
+V.Data.items[3681]={["class"]=9,["name"]="Recipe: Crocolisk Gumbo",["professions"]={185},["subClass"]=5}
+V.Data.items[3682]={["class"]=9,["name"]="Recipe: Curiously Tasty Omelet",["professions"]={185},["subClass"]=5}
+V.Data.items[3683]={["class"]=9,["name"]="Recipe: Gooey Spider Cake",["professions"]={185},["subClass"]=5}
 V.Data.items[3703]={["name"]="Southshore Stout"}
-V.Data.items[3713]={["class"]=7,["name"]="Soothing Spices",["subClass"]=11}
-V.Data.items[3734]={["class"]=9,["name"]="Recipe: Big Bear Steak",["subClass"]=5}
-V.Data.items[3735]={["class"]=9,["name"]="Recipe: Hot Lion Chops",["subClass"]=5}
+V.Data.items[3713]={["class"]=7,["craftMaterial"]=true,["name"]="Soothing Spices",["professions"]={129,185},["subClass"]=11}
+V.Data.items[3734]={["class"]=9,["name"]="Recipe: Big Bear Steak",["professions"]={185},["subClass"]=5}
+V.Data.items[3735]={["class"]=9,["name"]="Recipe: Hot Lion Chops",["professions"]={185},["subClass"]=5}
 V.Data.items[3770]={["name"]="Mutton Chop",["requiredLevel"]=15}
 V.Data.items[3771]={["name"]="Wild Hog Shank",["requiredLevel"]=25}
 V.Data.items[3775]={["name"]="Crippling Poison",["requiredLevel"]=20}
 V.Data.items[3776]={["name"]="Crippling Poison II",["requiredLevel"]=50}
 V.Data.items[3777]={["class"]=15,["name"]="Lethargy Root",["subClass"]=1}
-V.Data.items[3827]={["name"]="Mana Potion",["requiredLevel"]=22,["subClass"]=3}
-V.Data.items[3857]={["class"]=7,["name"]="Coal"}
+V.Data.items[3827]={["craftMaterial"]=true,["name"]="Mana Potion",["professions"]={165,197},["requiredLevel"]=22,["subClass"]=3}
+V.Data.items[3857]={["class"]=7,["craftMaterial"]=true,["name"]="Coal",["professions"]={186}}
 V.Data.items[3889]={["class"]=4,["name"]="Russet Hat",["requiredLevel"]=32,["subClass"]=1}
 V.Data.items[3890]={["class"]=4,["name"]="Studded Hat",["requiredLevel"]=32,["subClass"]=2}
 V.Data.items[3891]={["class"]=4,["name"]="Augmented Chain Helm",["requiredLevel"]=32,["subClass"]=3}
@@ -382,39 +382,39 @@ V.Data.items[3893]={["class"]=4,["name"]="Reinforced Leather Cap",["requiredLeve
 V.Data.items[3894]={["class"]=4,["name"]="Brigandine Helm",["requiredLevel"]=45,["subClass"]=3}
 V.Data.items[3927]={["name"]="Fine Aged Cheddar",["requiredLevel"]=35}
 V.Data.items[3928]={["name"]="Superior Healing Potion",["requiredLevel"]=35,["subClass"]=3}
-V.Data.items[4234]={["class"]=7,["name"]="Heavy Leather"}
-V.Data.items[4289]={["class"]=7,["name"]="Salt"}
-V.Data.items[4291]={["class"]=7,["name"]="Silken Thread"}
-V.Data.items[4304]={["class"]=7,["name"]="Thick Leather"}
-V.Data.items[4340]={["class"]=7,["name"]="Gray Dye"}
-V.Data.items[4341]={["class"]=7,["name"]="Yellow Dye"}
-V.Data.items[4342]={["class"]=7,["name"]="Purple Dye"}
-V.Data.items[4355]={["class"]=9,["name"]="Pattern: Icy Cloak",["subClass"]=2}
-V.Data.items[4357]={["class"]=7,["name"]="Rough Blasting Powder",["subClass"]=1}
-V.Data.items[4361]={["class"]=7,["name"]="Copper Tube",["subClass"]=1}
-V.Data.items[4363]={["class"]=7,["name"]="Copper Modulator",["subClass"]=1}
-V.Data.items[4364]={["class"]=7,["name"]="Coarse Blasting Powder",["subClass"]=1}
-V.Data.items[4371]={["class"]=7,["name"]="Bronze Tube",["subClass"]=1}
+V.Data.items[4234]={["class"]=7,["craftMaterial"]=true,["name"]="Heavy Leather",["professions"]={164,165,197,202}}
+V.Data.items[4289]={["class"]=7,["craftMaterial"]=true,["name"]="Salt",["professions"]={165}}
+V.Data.items[4291]={["class"]=7,["craftMaterial"]=true,["name"]="Silken Thread",["professions"]={129,165,197}}
+V.Data.items[4304]={["class"]=7,["craftMaterial"]=true,["name"]="Thick Leather",["professions"]={129,164,165,197,202}}
+V.Data.items[4340]={["class"]=7,["craftMaterial"]=true,["name"]="Gray Dye",["professions"]={165,197}}
+V.Data.items[4341]={["class"]=7,["craftMaterial"]=true,["name"]="Yellow Dye",["professions"]={197}}
+V.Data.items[4342]={["class"]=7,["craftMaterial"]=true,["name"]="Purple Dye",["professions"]={171,197}}
+V.Data.items[4355]={["class"]=9,["name"]="Pattern: Icy Cloak",["professions"]={197},["subClass"]=2}
+V.Data.items[4357]={["class"]=7,["craftMaterial"]=true,["name"]="Rough Blasting Powder",["professions"]={202},["subClass"]=1}
+V.Data.items[4361]={["class"]=7,["craftMaterial"]=true,["name"]="Copper Tube",["professions"]={202},["subClass"]=1}
+V.Data.items[4363]={["class"]=7,["craftMaterial"]=true,["name"]="Copper Modulator",["professions"]={202},["subClass"]=1}
+V.Data.items[4364]={["class"]=7,["craftMaterial"]=true,["name"]="Coarse Blasting Powder",["professions"]={202},["subClass"]=1}
+V.Data.items[4371]={["class"]=7,["craftMaterial"]=true,["name"]="Bronze Tube",["professions"]={202},["subClass"]=1}
 V.Data.items[4378]={["name"]="Heavy Dynamite"}
-V.Data.items[4382]={["class"]=7,["name"]="Bronze Framework",["subClass"]=1}
+V.Data.items[4382]={["class"]=7,["craftMaterial"]=true,["name"]="Bronze Framework",["professions"]={202},["subClass"]=1}
 V.Data.items[4384]={["name"]="Explosive Sheep"}
-V.Data.items[4389]={["class"]=7,["name"]="Gyrochronatom",["subClass"]=1}
-V.Data.items[4399]={["class"]=7,["name"]="Wooden Stock",["subClass"]=1}
-V.Data.items[4400]={["class"]=7,["name"]="Heavy Stock",["subClass"]=1}
-V.Data.items[4404]={["class"]=7,["name"]="Silver Contact",["subClass"]=1}
+V.Data.items[4389]={["class"]=7,["craftMaterial"]=true,["name"]="Gyrochronatom",["professions"]={202},["subClass"]=1}
+V.Data.items[4399]={["class"]=7,["craftMaterial"]=true,["name"]="Wooden Stock",["professions"]={202},["subClass"]=1}
+V.Data.items[4400]={["class"]=7,["craftMaterial"]=true,["name"]="Heavy Stock",["professions"]={202},["subClass"]=1}
+V.Data.items[4404]={["class"]=7,["craftMaterial"]=true,["name"]="Silver Contact",["professions"]={202},["subClass"]=1}
 V.Data.items[4419]={["name"]="Scroll of Intellect III",["requiredLevel"]=35,["subClass"]=4}
 V.Data.items[4421]={["name"]="Scroll of Protection III",["requiredLevel"]=30,["subClass"]=4}
 V.Data.items[4422]={["name"]="Scroll of Stamina III",["requiredLevel"]=35,["subClass"]=4}
 V.Data.items[4424]={["name"]="Scroll of Spirit III",["requiredLevel"]=30,["subClass"]=4}
 V.Data.items[4425]={["name"]="Scroll of Agility III",["requiredLevel"]=40,["subClass"]=4}
 V.Data.items[4426]={["name"]="Scroll of Strength III",["requiredLevel"]=40,["subClass"]=4}
-V.Data.items[4470]={["class"]=5,["name"]="Simple Wood"}
+V.Data.items[4470]={["class"]=5,["craftMaterial"]=true,["name"]="Simple Wood",["professions"]={129,165,185,197,333,356}}
 V.Data.items[4471]={["class"]=5,["name"]="Flint and Tinder"}
 V.Data.items[4496]={["class"]=1,["name"]="Small Brown Pouch"}
 V.Data.items[4497]={["class"]=1,["name"]="Heavy Brown Bag"}
 V.Data.items[4498]={["class"]=1,["name"]="Brown Leather Satchel"}
 V.Data.items[4499]={["class"]=1,["name"]="Huge Brown Sack"}
-V.Data.items[4536]={["name"]="Shiny Red Apple",["requiredLevel"]=1}
+V.Data.items[4536]={["craftMaterial"]=true,["name"]="Shiny Red Apple",["professions"]={185},["requiredLevel"]=1}
 V.Data.items[4537]={["name"]="Tel'Abim Banana",["requiredLevel"]=5}
 V.Data.items[4538]={["name"]="Snapvine Watermelon",["requiredLevel"]=15}
 V.Data.items[4539]={["name"]="Goldenbark Apple",["requiredLevel"]=25}
@@ -431,13 +431,13 @@ V.Data.items[4599]={["name"]="Cured Ham Steak",["requiredLevel"]=35}
 V.Data.items[4600]={["name"]="Cherry Grog",["requiredLevel"]=25}
 V.Data.items[4601]={["name"]="Soft Banana Bread",["requiredLevel"]=35}
 V.Data.items[4602]={["name"]="Moon Harvest Pumpkin",["requiredLevel"]=35}
-V.Data.items[4603]={["name"]="Raw Spotted Yellowtail",["requiredLevel"]=35}
+V.Data.items[4603]={["craftMaterial"]=true,["name"]="Raw Spotted Yellowtail",["professions"]={185},["requiredLevel"]=35}
 V.Data.items[4604]={["name"]="Forest Mushroom Cap",["requiredLevel"]=1}
-V.Data.items[4605]={["name"]="Red-speckled Mushroom",["requiredLevel"]=5}
+V.Data.items[4605]={["craftMaterial"]=true,["name"]="Red-speckled Mushroom",["professions"]={333},["requiredLevel"]=5}
 V.Data.items[4606]={["name"]="Spongy Morel",["requiredLevel"]=15}
 V.Data.items[4607]={["name"]="Delicious Cave Mold",["requiredLevel"]=25}
 V.Data.items[4608]={["name"]="Raw Black Truffle",["requiredLevel"]=35}
-V.Data.items[4609]={["class"]=9,["name"]="Recipe: Barbecued Buzzard Wing",["subClass"]=5}
+V.Data.items[4609]={["class"]=9,["name"]="Recipe: Barbecued Buzzard Wing",["professions"]={185},["subClass"]=5}
 V.Data.items[4765]={["class"]=2,["name"]="Enamelled Broadsword",["requiredLevel"]=9,["subClass"]=7}
 V.Data.items[4766]={["class"]=2,["name"]="Feral Blade",["requiredLevel"]=8,["subClass"]=7}
 V.Data.items[4777]={["class"]=2,["name"]="Ironwood Maul",["requiredLevel"]=13,["subClass"]=5}
@@ -497,116 +497,116 @@ V.Data.items[5239]={["class"]=2,["name"]="Blackbone Wand",["requiredLevel"]=41,[
 V.Data.items[5347]={["class"]=2,["name"]="Pestilent Wand",["requiredLevel"]=30,["subClass"]=19}
 V.Data.items[5439]={["class"]=11,["name"]="Small Quiver",["requiredLevel"]=1,["subClass"]=2}
 V.Data.items[5441]={["class"]=11,["name"]="Small Shot Pouch",["requiredLevel"]=1,["subClass"]=3}
-V.Data.items[5483]={["class"]=9,["name"]="Recipe: Scorpid Surprise",["subClass"]=5}
-V.Data.items[5484]={["class"]=9,["name"]="Recipe: Roasted Kodo Meat",["subClass"]=5}
-V.Data.items[5485]={["class"]=9,["name"]="Recipe: Fillet of Frenzy",["subClass"]=5}
-V.Data.items[5486]={["class"]=9,["name"]="Recipe: Strider Stew",["subClass"]=5}
-V.Data.items[5488]={["class"]=9,["name"]="Recipe: Crispy Lizard Tail",["subClass"]=5}
-V.Data.items[5489]={["class"]=9,["name"]="Recipe: Lean Venison",["subClass"]=5}
-V.Data.items[5528]={["class"]=9,["name"]="Recipe: Clam Chowder",["subClass"]=5}
+V.Data.items[5483]={["class"]=9,["name"]="Recipe: Scorpid Surprise",["professions"]={185},["subClass"]=5}
+V.Data.items[5484]={["class"]=9,["name"]="Recipe: Roasted Kodo Meat",["professions"]={185},["subClass"]=5}
+V.Data.items[5485]={["class"]=9,["name"]="Recipe: Fillet of Frenzy",["professions"]={185},["subClass"]=5}
+V.Data.items[5486]={["class"]=9,["name"]="Recipe: Strider Stew",["professions"]={185},["subClass"]=5}
+V.Data.items[5488]={["class"]=9,["name"]="Recipe: Crispy Lizard Tail",["professions"]={185},["subClass"]=5}
+V.Data.items[5489]={["class"]=9,["name"]="Recipe: Lean Venison",["professions"]={185},["subClass"]=5}
+V.Data.items[5528]={["class"]=9,["name"]="Recipe: Clam Chowder",["professions"]={185},["subClass"]=5}
 V.Data.items[5565]={["class"]=5,["name"]="Infernal Stone"}
-V.Data.items[5640]={["class"]=9,["name"]="Recipe: Rage Potion",["subClass"]=6}
-V.Data.items[5642]={["class"]=9,["name"]="Recipe: Free Action Potion",["subClass"]=6}
-V.Data.items[5643]={["class"]=9,["name"]="Recipe: Great Rage Potion",["subClass"]=6}
+V.Data.items[5640]={["class"]=9,["name"]="Recipe: Rage Potion",["professions"]={171},["subClass"]=6}
+V.Data.items[5642]={["class"]=9,["name"]="Recipe: Free Action Potion",["professions"]={171},["subClass"]=6}
+V.Data.items[5643]={["class"]=9,["name"]="Recipe: Great Rage Potion",["professions"]={171},["subClass"]=6}
 V.Data.items[5655]={["class"]=15,["name"]="Chestnut Mare Bridle",["requiredLevel"]=40}
 V.Data.items[5656]={["class"]=15,["name"]="Brown Horse Bridle",["requiredLevel"]=40}
 V.Data.items[5663]={["name"]="Horn of the Red Wolf"}
 V.Data.items[5665]={["class"]=15,["name"]="Horn of the Dire Wolf",["requiredLevel"]=40}
 V.Data.items[5668]={["class"]=15,["name"]="Horn of the Brown Wolf",["requiredLevel"]=40}
 V.Data.items[5740]={["name"]="Red Fireworks Rocket",["subClass"]=8}
-V.Data.items[5771]={["class"]=9,["name"]="Pattern: Red Linen Bag",["subClass"]=2}
-V.Data.items[5772]={["class"]=9,["name"]="Pattern: Red Woolen Bag",["subClass"]=2}
-V.Data.items[5786]={["class"]=9,["name"]="Pattern: Murloc Scale Belt",["subClass"]=1}
-V.Data.items[5787]={["class"]=9,["name"]="Pattern: Murloc Scale Breastplate",["subClass"]=1}
-V.Data.items[5788]={["class"]=9,["name"]="Pattern: Thick Murloc Armor",["subClass"]=1}
-V.Data.items[5789]={["class"]=9,["name"]="Pattern: Murloc Scale Bracers",["subClass"]=1}
+V.Data.items[5771]={["class"]=9,["name"]="Pattern: Red Linen Bag",["professions"]={197},["subClass"]=2}
+V.Data.items[5772]={["class"]=9,["name"]="Pattern: Red Woolen Bag",["professions"]={197},["subClass"]=2}
+V.Data.items[5786]={["class"]=9,["name"]="Pattern: Murloc Scale Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[5787]={["class"]=9,["name"]="Pattern: Murloc Scale Breastplate",["professions"]={165},["subClass"]=1}
+V.Data.items[5788]={["class"]=9,["name"]="Pattern: Thick Murloc Armor",["professions"]={165},["subClass"]=1}
+V.Data.items[5789]={["class"]=9,["name"]="Pattern: Murloc Scale Bracers",["professions"]={165},["subClass"]=1}
 V.Data.items[5828]={["name"]="Ring of Uber Resists (TEST)"}
 V.Data.items[5864]={["class"]=15,["name"]="Gray Ram",["requiredLevel"]=40}
 V.Data.items[5872]={["class"]=15,["name"]="Brown Ram",["requiredLevel"]=40}
 V.Data.items[5873]={["class"]=15,["name"]="White Ram",["requiredLevel"]=40}
 V.Data.items[5874]={["name"]="Harness: Black Ram"}
 V.Data.items[5875]={["name"]="Harness: Blue Ram"}
-V.Data.items[5956]={["class"]=2,["name"]="Blacksmith Hammer",["requiredLevel"]=1,["subClass"]=14}
-V.Data.items[5973]={["class"]=9,["name"]="Pattern: Barbaric Leggings",["subClass"]=1}
+V.Data.items[5956]={["class"]=2,["name"]="Blacksmith Hammer",["professions"]={164},["requiredLevel"]=1,["subClass"]=14}
+V.Data.items[5973]={["class"]=9,["name"]="Pattern: Barbaric Leggings",["professions"]={165},["subClass"]=1}
 V.Data.items[5976]={["class"]=4,["name"]="Guild Tabard"}
-V.Data.items[6039]={["class"]=9,["name"]="Recipe: Giant Clam Scorcho",["subClass"]=5}
-V.Data.items[6047]={["class"]=9,["name"]="Plans: Golden Scale Coif",["subClass"]=4}
-V.Data.items[6053]={["class"]=9,["name"]="Recipe: Holy Protection Potion",["subClass"]=6}
-V.Data.items[6054]={["class"]=9,["name"]="Recipe: Shadow Protection Potion",["subClass"]=6}
-V.Data.items[6055]={["class"]=9,["name"]="Recipe: Fire Protection Potion",["subClass"]=6}
-V.Data.items[6056]={["class"]=9,["name"]="Recipe: Frost Protection Potion",["subClass"]=6}
-V.Data.items[6057]={["class"]=9,["name"]="Recipe: Nature Protection Potion",["subClass"]=6}
-V.Data.items[6068]={["class"]=9,["name"]="Recipe: Shadow Oil",["subClass"]=6}
+V.Data.items[6039]={["class"]=9,["name"]="Recipe: Giant Clam Scorcho",["professions"]={185},["subClass"]=5}
+V.Data.items[6047]={["class"]=9,["name"]="Plans: Golden Scale Coif",["professions"]={164},["subClass"]=4}
+V.Data.items[6053]={["class"]=9,["name"]="Recipe: Holy Protection Potion",["professions"]={171},["subClass"]=6}
+V.Data.items[6054]={["class"]=9,["name"]="Recipe: Shadow Protection Potion",["professions"]={171},["subClass"]=6}
+V.Data.items[6055]={["class"]=9,["name"]="Recipe: Fire Protection Potion",["professions"]={171},["subClass"]=6}
+V.Data.items[6056]={["class"]=9,["name"]="Recipe: Frost Protection Potion",["professions"]={171},["subClass"]=6}
+V.Data.items[6057]={["class"]=9,["name"]="Recipe: Nature Protection Potion",["professions"]={171},["subClass"]=6}
+V.Data.items[6068]={["class"]=9,["name"]="Recipe: Shadow Oil",["professions"]={171},["subClass"]=6}
 V.Data.items[6149]={["name"]="Greater Mana Potion",["requiredLevel"]=31,["subClass"]=3}
-V.Data.items[6217]={["class"]=7,["name"]="Copper Rod"}
-V.Data.items[6256]={["class"]=2,["name"]="Fishing Pole",["subClass"]=20}
-V.Data.items[6260]={["class"]=7,["name"]="Blue Dye"}
-V.Data.items[6261]={["class"]=7,["name"]="Orange Dye"}
+V.Data.items[6217]={["class"]=7,["craftMaterial"]=true,["name"]="Copper Rod",["professions"]={333}}
+V.Data.items[6256]={["class"]=2,["name"]="Fishing Pole",["professions"]={356},["subClass"]=20}
+V.Data.items[6260]={["class"]=7,["craftMaterial"]=true,["name"]="Blue Dye",["professions"]={165,197}}
+V.Data.items[6261]={["class"]=7,["craftMaterial"]=true,["name"]="Orange Dye",["professions"]={165,197}}
 V.Data.items[6265]={["class"]=5,["name"]="Soul Shard"}
-V.Data.items[6270]={["class"]=9,["name"]="Pattern: Blue Linen Vest",["subClass"]=2}
-V.Data.items[6272]={["class"]=9,["name"]="Pattern: Blue Linen Robe",["subClass"]=2}
-V.Data.items[6274]={["class"]=9,["name"]="Pattern: Blue Overalls",["subClass"]=2}
-V.Data.items[6275]={["class"]=9,["name"]="Pattern: Greater Adept's Robe",["subClass"]=2}
-V.Data.items[6289]={["name"]="Raw Longjaw Mud Snapper",["requiredLevel"]=5}
-V.Data.items[6303]={["name"]="Raw Slitherskin Mackerel",["requiredLevel"]=1}
-V.Data.items[6308]={["name"]="Raw Bristle Whisker Catfish",["requiredLevel"]=15}
-V.Data.items[6325]={["class"]=9,["name"]="Recipe: Brilliant Smallfish",["subClass"]=5}
-V.Data.items[6326]={["class"]=9,["name"]="Recipe: Slitherskin Mackerel",["subClass"]=5}
-V.Data.items[6328]={["class"]=9,["name"]="Recipe: Longjaw Mud Snapper",["subClass"]=5}
-V.Data.items[6329]={["class"]=9,["name"]="Recipe: Loch Frenzy Delight",["subClass"]=5}
-V.Data.items[6330]={["class"]=9,["name"]="Recipe: Bristle Whisker Catfish",["subClass"]=5}
-V.Data.items[6342]={["class"]=9,["name"]="Formula: Enchant Chest - Minor Mana",["subClass"]=8}
-V.Data.items[6346]={["class"]=9,["name"]="Formula: Enchant Chest - Lesser Mana",["subClass"]=8}
-V.Data.items[6349]={["class"]=9,["name"]="Formula: Enchant 2H Weapon - Lesser Intellect",["subClass"]=8}
-V.Data.items[6362]={["name"]="Raw Rockscale Cod",["requiredLevel"]=25,["subClass"]=3}
-V.Data.items[6365]={["class"]=2,["name"]="Strong Fishing Pole",["requiredLevel"]=5,["subClass"]=20}
-V.Data.items[6368]={["class"]=9,["name"]="Recipe: Rainbow Fin Albacore",["subClass"]=5}
-V.Data.items[6369]={["class"]=9,["name"]="Recipe: Rockscale Cod",["subClass"]=5}
-V.Data.items[6377]={["class"]=9,["name"]="Formula: Enchant Boots - Minor Agility",["subClass"]=8}
-V.Data.items[6401]={["class"]=9,["name"]="Pattern: Dark Silk Shirt",["subClass"]=2}
-V.Data.items[6474]={["class"]=9,["name"]="Pattern: Deviate Scale Cloak",["subClass"]=1}
-V.Data.items[6475]={["class"]=9,["name"]="Pattern: Deviate Scale Gloves",["subClass"]=1}
+V.Data.items[6270]={["class"]=9,["name"]="Pattern: Blue Linen Vest",["professions"]={197},["subClass"]=2}
+V.Data.items[6272]={["class"]=9,["name"]="Pattern: Blue Linen Robe",["professions"]={197},["subClass"]=2}
+V.Data.items[6274]={["class"]=9,["name"]="Pattern: Blue Overalls",["professions"]={197},["subClass"]=2}
+V.Data.items[6275]={["class"]=9,["name"]="Pattern: Greater Adept's Robe",["professions"]={197},["subClass"]=2}
+V.Data.items[6289]={["craftMaterial"]=true,["name"]="Raw Longjaw Mud Snapper",["professions"]={185},["requiredLevel"]=5}
+V.Data.items[6303]={["craftMaterial"]=true,["name"]="Raw Slitherskin Mackerel",["professions"]={185},["requiredLevel"]=1}
+V.Data.items[6308]={["craftMaterial"]=true,["name"]="Raw Bristle Whisker Catfish",["professions"]={185},["requiredLevel"]=15}
+V.Data.items[6325]={["class"]=9,["name"]="Recipe: Brilliant Smallfish",["professions"]={185},["subClass"]=5}
+V.Data.items[6326]={["class"]=9,["name"]="Recipe: Slitherskin Mackerel",["professions"]={185},["subClass"]=5}
+V.Data.items[6328]={["class"]=9,["name"]="Recipe: Longjaw Mud Snapper",["professions"]={185},["subClass"]=5}
+V.Data.items[6329]={["class"]=9,["name"]="Recipe: Loch Frenzy Delight",["professions"]={185},["subClass"]=5}
+V.Data.items[6330]={["class"]=9,["name"]="Recipe: Bristle Whisker Catfish",["professions"]={185},["subClass"]=5}
+V.Data.items[6342]={["class"]=9,["name"]="Formula: Enchant Chest - Minor Mana",["professions"]={333},["subClass"]=8}
+V.Data.items[6346]={["class"]=9,["name"]="Formula: Enchant Chest - Lesser Mana",["professions"]={333},["subClass"]=8}
+V.Data.items[6349]={["class"]=9,["name"]="Formula: Enchant 2H Weapon - Lesser Intellect",["professions"]={333},["subClass"]=8}
+V.Data.items[6362]={["craftMaterial"]=true,["name"]="Raw Rockscale Cod",["professions"]={185},["requiredLevel"]=25,["subClass"]=3}
+V.Data.items[6365]={["class"]=2,["name"]="Strong Fishing Pole",["professions"]={356},["requiredLevel"]=5,["subClass"]=20}
+V.Data.items[6368]={["class"]=9,["name"]="Recipe: Rainbow Fin Albacore",["professions"]={185},["subClass"]=5}
+V.Data.items[6369]={["class"]=9,["name"]="Recipe: Rockscale Cod",["professions"]={185},["subClass"]=5}
+V.Data.items[6377]={["class"]=9,["name"]="Formula: Enchant Boots - Minor Agility",["professions"]={333},["subClass"]=8}
+V.Data.items[6401]={["class"]=9,["name"]="Pattern: Dark Silk Shirt",["professions"]={197},["subClass"]=2}
+V.Data.items[6474]={["class"]=9,["name"]="Pattern: Deviate Scale Cloak",["professions"]={165},["subClass"]=1}
+V.Data.items[6475]={["class"]=9,["name"]="Pattern: Deviate Scale Gloves",["professions"]={165},["subClass"]=1}
 V.Data.items[6523]={["class"]=4,["name"]="Buckled Harness",["requiredLevel"]=12,["subClass"]=2}
 V.Data.items[6524]={["class"]=4,["name"]="Studded Leather Harness",["requiredLevel"]=17,["subClass"]=2}
 V.Data.items[6525]={["class"]=4,["name"]="Grunt's Harness",["requiredLevel"]=22,["subClass"]=2}
 V.Data.items[6526]={["class"]=4,["name"]="Battle Harness",["requiredLevel"]=32,["subClass"]=2}
 V.Data.items[6529]={["name"]="Shiny Bauble"}
-V.Data.items[6530]={["name"]="Nightcrawlers"}
+V.Data.items[6530]={["craftMaterial"]=true,["name"]="Nightcrawlers",["professions"]={202}}
 V.Data.items[6532]={["name"]="Bright Baubles"}
 V.Data.items[6533]={["class"]=7,["name"]="Aquadynamic Fish Attractor",["subClass"]=3}
 V.Data.items[6635]={["class"]=12,["name"]="Earth Sapta",["subClass"]=8}
 V.Data.items[6636]={["class"]=12,["name"]="Fire Sapta",["subClass"]=8}
 V.Data.items[6637]={["class"]=12,["name"]="Water Sapta",["subClass"]=8}
 V.Data.items[6887]={["name"]="Spotted Yellowtail",["requiredLevel"]=35}
-V.Data.items[6892]={["class"]=9,["name"]="Recipe: Smoked Bear Meat",["subClass"]=5}
+V.Data.items[6892]={["class"]=9,["name"]="Recipe: Smoked Bear Meat",["professions"]={185},["subClass"]=5}
 V.Data.items[6947]={["name"]="Instant Poison",["requiredLevel"]=20}
 V.Data.items[6949]={["name"]="Instant Poison II",["requiredLevel"]=28}
 V.Data.items[6950]={["name"]="Instant Poison III",["requiredLevel"]=36}
-V.Data.items[7005]={["class"]=2,["name"]="Skinning Knife",["requiredLevel"]=1,["subClass"]=14}
-V.Data.items[7087]={["class"]=9,["name"]="Pattern: Crimson Silk Cloak",["subClass"]=2}
-V.Data.items[7088]={["class"]=9,["name"]="Pattern: Crimson Silk Robe",["subClass"]=2}
-V.Data.items[7089]={["class"]=9,["name"]="Pattern: Azure Silk Cloak",["subClass"]=2}
-V.Data.items[7114]={["class"]=9,["name"]="Pattern: Azure Silk Gloves",["subClass"]=2}
+V.Data.items[7005]={["class"]=2,["name"]="Skinning Knife",["professions"]={393},["requiredLevel"]=1,["subClass"]=14}
+V.Data.items[7087]={["class"]=9,["name"]="Pattern: Crimson Silk Cloak",["professions"]={197},["subClass"]=2}
+V.Data.items[7088]={["class"]=9,["name"]="Pattern: Crimson Silk Robe",["professions"]={197},["subClass"]=2}
+V.Data.items[7089]={["class"]=9,["name"]="Pattern: Azure Silk Cloak",["professions"]={197},["subClass"]=2}
+V.Data.items[7114]={["class"]=9,["name"]="Pattern: Azure Silk Gloves",["professions"]={197},["subClass"]=2}
 V.Data.items[7228]={["name"]="Tigule's Strawberry Ice Cream",["requiredLevel"]=15}
-V.Data.items[7289]={["class"]=9,["name"]="Pattern: Black Whelp Cloak",["subClass"]=1}
-V.Data.items[7290]={["class"]=9,["name"]="Pattern: Red Whelp Gloves",["subClass"]=1}
+V.Data.items[7289]={["class"]=9,["name"]="Pattern: Black Whelp Cloak",["professions"]={165},["subClass"]=1}
+V.Data.items[7290]={["class"]=9,["name"]="Pattern: Red Whelp Gloves",["professions"]={165},["subClass"]=1}
 V.Data.items[7337]={["class"]=4,["name"]="The Rock"}
 V.Data.items[7338]={["class"]=4,["name"]="Mood Ring"}
 V.Data.items[7339]={["class"]=4,["name"]="Miniscule Diamond Ring"}
 V.Data.items[7340]={["class"]=4,["name"]="Flawless Diamond Solitaire"}
 V.Data.items[7341]={["class"]=4,["name"]="Cubic Zirconia Ring"}
 V.Data.items[7342]={["class"]=4,["name"]="Silver Piffeny Band"}
-V.Data.items[7361]={["class"]=9,["name"]="Pattern: Herbalist's Gloves",["subClass"]=1}
-V.Data.items[7362]={["class"]=9,["name"]="Pattern: Earthen Leather Shoulders",["subClass"]=1}
+V.Data.items[7361]={["class"]=9,["name"]="Pattern: Herbalist's Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[7362]={["class"]=9,["name"]="Pattern: Earthen Leather Shoulders",["professions"]={165},["subClass"]=1}
 V.Data.items[7371]={["class"]=11,["name"]="Heavy Quiver",["requiredLevel"]=30,["subClass"]=2}
-V.Data.items[7451]={["class"]=9,["name"]="Pattern: Green Whelp Bracers",["subClass"]=1}
-V.Data.items[7560]={["class"]=9,["name"]="Schematic: Gnomish Universal Remote",["subClass"]=3}
-V.Data.items[7561]={["class"]=9,["name"]="Schematic: Goblin Jumper Cables",["subClass"]=3}
-V.Data.items[7613]={["class"]=9,["name"]="Pattern: Green Leather Armor",["subClass"]=1}
-V.Data.items[7742]={["class"]=9,["name"]="Schematic: Gnomish Cloaking Device",["subClass"]=3}
+V.Data.items[7451]={["class"]=9,["name"]="Pattern: Green Whelp Bracers",["professions"]={165},["subClass"]=1}
+V.Data.items[7560]={["class"]=9,["name"]="Schematic: Gnomish Universal Remote",["professions"]={202},["subClass"]=3}
+V.Data.items[7561]={["class"]=9,["name"]="Schematic: Goblin Jumper Cables",["professions"]={202},["subClass"]=3}
+V.Data.items[7613]={["class"]=9,["name"]="Pattern: Green Leather Armor",["professions"]={165},["subClass"]=1}
+V.Data.items[7742]={["class"]=9,["name"]="Schematic: Gnomish Cloaking Device",["professions"]={202},["subClass"]=3}
 V.Data.items[7970]={["class"]=12,["name"]="E.C.A.C.",["subClass"]=8}
-V.Data.items[7995]={["class"]=9,["name"]="Plans: Mithril Scale Bracers",["subClass"]=4}
-V.Data.items[8030]={["class"]=9,["name"]="Plans: Ebon Shiv",["subClass"]=4}
+V.Data.items[7995]={["class"]=9,["name"]="Plans: Mithril Scale Bracers",["professions"]={164},["subClass"]=4}
+V.Data.items[8030]={["class"]=9,["name"]="Plans: Ebon Shiv",["professions"]={164},["subClass"]=4}
 V.Data.items[8079]={["name"]="Conjured Crystal Water",["requiredLevel"]=55}
 V.Data.items[8088]={["class"]=4,["name"]="Platemail Belt",["requiredLevel"]=45,["subClass"]=4}
 V.Data.items[8089]={["class"]=4,["name"]="Platemail Boots",["requiredLevel"]=45,["subClass"]=4}
@@ -615,10 +615,10 @@ V.Data.items[8091]={["class"]=4,["name"]="Platemail Gloves",["requiredLevel"]=45
 V.Data.items[8092]={["class"]=4,["name"]="Platemail Helm",["requiredLevel"]=45,["subClass"]=4}
 V.Data.items[8093]={["class"]=4,["name"]="Platemail Leggings",["requiredLevel"]=45,["subClass"]=4}
 V.Data.items[8094]={["class"]=4,["name"]="Platemail Armor",["requiredLevel"]=45,["subClass"]=4}
-V.Data.items[8170]={["class"]=7,["name"]="Rugged Leather"}
-V.Data.items[8343]={["class"]=7,["name"]="Heavy Silken Thread"}
-V.Data.items[8385]={["class"]=9,["name"]="Pattern: Turtle Scale Gloves",["subClass"]=1}
-V.Data.items[8409]={["class"]=9,["name"]="Pattern: Nightscape Shoulders",["subClass"]=1}
+V.Data.items[8170]={["class"]=7,["craftMaterial"]=true,["name"]="Rugged Leather",["professions"]={129,164,165,197,202,333}}
+V.Data.items[8343]={["class"]=7,["craftMaterial"]=true,["name"]="Heavy Silken Thread",["professions"]={129,165,197}}
+V.Data.items[8385]={["class"]=9,["name"]="Pattern: Turtle Scale Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[8409]={["class"]=9,["name"]="Pattern: Nightscape Shoulders",["professions"]={165},["subClass"]=1}
 V.Data.items[8485]={["class"]=15,["name"]="Cat Carrier (Bombay)"}
 V.Data.items[8486]={["class"]=15,["name"]="Cat Carrier (Cornish Rex)"}
 V.Data.items[8487]={["class"]=15,["name"]="Cat Carrier (Orange Tabby)"}
@@ -649,12 +649,12 @@ V.Data.items[8630]={["name"]="Reins of the Bengal Tiger"}
 V.Data.items[8631]={["class"]=15,["name"]="Reins of the Striped Frostsaber",["requiredLevel"]=40}
 V.Data.items[8632]={["class"]=15,["name"]="Reins of the Spotted Frostsaber",["requiredLevel"]=40}
 V.Data.items[8633]={["name"]="Reins of the Leopard"}
-V.Data.items[8766]={["name"]="Morning Glory Dew",["requiredLevel"]=45}
-V.Data.items[8845]={["class"]=7,["name"]="Ghost Mushroom",["subClass"]=9}
-V.Data.items[8846]={["class"]=7,["name"]="Gromsblood",["subClass"]=9}
+V.Data.items[8766]={["craftMaterial"]=true,["name"]="Morning Glory Dew",["professions"]={185},["requiredLevel"]=45}
+V.Data.items[8845]={["class"]=7,["craftMaterial"]=true,["name"]="Ghost Mushroom",["professions"]={171,182},["subClass"]=9}
+V.Data.items[8846]={["class"]=7,["craftMaterial"]=true,["name"]="Gromsblood",["professions"]={171,182},["subClass"]=9}
 V.Data.items[8923]={["class"]=15,["name"]="Essence of Agony",["subClass"]=1}
 V.Data.items[8924]={["class"]=15,["name"]="Dust of Deterioration",["subClass"]=1}
-V.Data.items[8925]={["class"]=7,["name"]="Crystal Vial"}
+V.Data.items[8925]={["class"]=7,["craftMaterial"]=true,["name"]="Crystal Vial",["professions"]={129,171,333,356}}
 V.Data.items[8926]={["name"]="Instant Poison IV",["requiredLevel"]=44}
 V.Data.items[8927]={["name"]="Instant Poison V",["requiredLevel"]=52}
 V.Data.items[8928]={["name"]="Instant Poison VI",["requiredLevel"]=60}
@@ -664,73 +664,73 @@ V.Data.items[8950]={["name"]="Homemade Cherry Pie",["requiredLevel"]=45}
 V.Data.items[8952]={["name"]="Roasted Quail",["requiredLevel"]=45}
 V.Data.items[8953]={["name"]="Deep Fried Plantains",["requiredLevel"]=45}
 V.Data.items[8957]={["name"]="Spinefin Halibut",["requiredLevel"]=45}
-V.Data.items[8959]={["name"]="Raw Spinefin Halibut",["requiredLevel"]=45}
+V.Data.items[8959]={["craftMaterial"]=true,["name"]="Raw Spinefin Halibut",["professions"]={185},["requiredLevel"]=45}
 V.Data.items[8984]={["name"]="Deadly Poison III",["requiredLevel"]=46}
 V.Data.items[8985]={["name"]="Deadly Poison IV",["requiredLevel"]=54}
 V.Data.items[9186]={["name"]="Mind-numbing Poison III",["requiredLevel"]=52}
-V.Data.items[9260]={["name"]="Volatile Rum",["subClass"]=3}
-V.Data.items[9300]={["class"]=9,["name"]="Recipe: Elixir of Demonslaying",["subClass"]=6}
-V.Data.items[9301]={["class"]=9,["name"]="Recipe: Elixir of Shadow Power",["subClass"]=6}
-V.Data.items[9302]={["class"]=9,["name"]="Recipe: Ghost Dye",["subClass"]=6}
-V.Data.items[9303]={["class"]=9,["name"]="Recipe: Philosopher's Stone",["subClass"]=6}
-V.Data.items[9304]={["class"]=9,["name"]="Recipe: Transmute Iron to Gold",["subClass"]=6}
-V.Data.items[9305]={["class"]=9,["name"]="Recipe: Transmute Mithril to Truesilver",["subClass"]=6}
+V.Data.items[9260]={["craftMaterial"]=true,["name"]="Volatile Rum",["professions"]={171},["subClass"]=3}
+V.Data.items[9300]={["class"]=9,["name"]="Recipe: Elixir of Demonslaying",["professions"]={171},["subClass"]=6}
+V.Data.items[9301]={["class"]=9,["name"]="Recipe: Elixir of Shadow Power",["professions"]={171},["subClass"]=6}
+V.Data.items[9302]={["class"]=9,["name"]="Recipe: Ghost Dye",["professions"]={171},["subClass"]=6}
+V.Data.items[9303]={["class"]=9,["name"]="Recipe: Philosopher's Stone",["professions"]={171},["subClass"]=6}
+V.Data.items[9304]={["class"]=9,["name"]="Recipe: Transmute Iron to Gold",["professions"]={171},["subClass"]=6}
+V.Data.items[9305]={["class"]=9,["name"]="Recipe: Transmute Mithril to Truesilver",["professions"]={171},["subClass"]=6}
 V.Data.items[9312]={["name"]="Blue Firework",["subClass"]=8}
 V.Data.items[9313]={["name"]="Green Firework",["subClass"]=8}
 V.Data.items[9314]={["name"]="Red Streaks Firework",["subClass"]=8}
 V.Data.items[9315]={["name"]="Yellow Rose Firework",["subClass"]=8}
 V.Data.items[9317]={["name"]="Red, White and Blue Firework",["subClass"]=8}
 V.Data.items[9318]={["name"]="Red Firework",["subClass"]=8}
-V.Data.items[10284]={["class"]=7,["name"]="Simple Flour",["subClass"]=8}
-V.Data.items[10290]={["class"]=7,["name"]="Pink Dye"}
+V.Data.items[10284]={["class"]=7,["craftMaterial"]=true,["name"]="Simple Flour",["professions"]={185},["subClass"]=8}
+V.Data.items[10290]={["class"]=7,["craftMaterial"]=true,["name"]="Pink Dye",["professions"]={197}}
 V.Data.items[10305]={["name"]="Scroll of Protection IV",["requiredLevel"]=45,["subClass"]=4}
 V.Data.items[10306]={["name"]="Scroll of Spirit IV",["requiredLevel"]=45,["subClass"]=4}
 V.Data.items[10307]={["name"]="Scroll of Stamina IV",["requiredLevel"]=50,["subClass"]=4}
-V.Data.items[10308]={["name"]="Scroll of Intellect IV",["requiredLevel"]=50,["subClass"]=4}
+V.Data.items[10308]={["craftMaterial"]=true,["name"]="Scroll of Intellect IV",["professions"]={333},["requiredLevel"]=50,["subClass"]=4}
 V.Data.items[10309]={["name"]="Scroll of Agility IV",["requiredLevel"]=55,["subClass"]=4}
 V.Data.items[10310]={["name"]="Scroll of Strength IV",["requiredLevel"]=55,["subClass"]=4}
-V.Data.items[10311]={["class"]=9,["name"]="Pattern: Orange Martial Shirt",["subClass"]=2}
-V.Data.items[10314]={["class"]=9,["name"]="Pattern: Lavender Mageweave Shirt",["subClass"]=2}
-V.Data.items[10317]={["class"]=9,["name"]="Pattern: Pink Mageweave Shirt",["subClass"]=2}
-V.Data.items[10318]={["class"]=9,["name"]="Pattern: Admiral's Hat",["subClass"]=2}
-V.Data.items[10321]={["class"]=9,["name"]="Pattern: Tuxedo Shirt",["subClass"]=2}
-V.Data.items[10323]={["class"]=9,["name"]="Pattern: Tuxedo Pants",["subClass"]=2}
-V.Data.items[10325]={["class"]=9,["name"]="Pattern: White Wedding Dress",["subClass"]=2}
-V.Data.items[10326]={["class"]=9,["name"]="Pattern: Tuxedo Jacket",["subClass"]=2}
+V.Data.items[10311]={["class"]=9,["name"]="Pattern: Orange Martial Shirt",["professions"]={197},["subClass"]=2}
+V.Data.items[10314]={["class"]=9,["name"]="Pattern: Lavender Mageweave Shirt",["professions"]={197},["subClass"]=2}
+V.Data.items[10317]={["class"]=9,["name"]="Pattern: Pink Mageweave Shirt",["professions"]={197},["subClass"]=2}
+V.Data.items[10318]={["class"]=9,["name"]="Pattern: Admiral's Hat",["professions"]={197},["subClass"]=2}
+V.Data.items[10321]={["class"]=9,["name"]="Pattern: Tuxedo Shirt",["professions"]={197},["subClass"]=2}
+V.Data.items[10323]={["class"]=9,["name"]="Pattern: Tuxedo Pants",["professions"]={197},["subClass"]=2}
+V.Data.items[10325]={["class"]=9,["name"]="Pattern: White Wedding Dress",["professions"]={197},["subClass"]=2}
+V.Data.items[10326]={["class"]=9,["name"]="Pattern: Tuxedo Jacket",["professions"]={197},["subClass"]=2}
 V.Data.items[10360]={["class"]=15,["name"]="Black Kingsnake"}
 V.Data.items[10361]={["class"]=15,["name"]="Brown Snake"}
 V.Data.items[10392]={["class"]=15,["name"]="Crimson Snake"}
 V.Data.items[10393]={["class"]=15,["name"]="Cockroach"}
 V.Data.items[10394]={["class"]=15,["name"]="Prairie Dog Whistle"}
 V.Data.items[10555]={["name"]="Resist Test Item"}
-V.Data.items[10602]={["class"]=9,["name"]="Schematic: Deadly Scope",["subClass"]=3}
-V.Data.items[10607]={["class"]=9,["name"]="Schematic: Deepdive Helmet",["subClass"]=3}
-V.Data.items[10609]={["class"]=9,["name"]="Schematic: Mithril Mechanical Dragonling",["subClass"]=3}
-V.Data.items[10647]={["class"]=7,["name"]="Engineer's Ink",["subClass"]=1}
-V.Data.items[10648]={["class"]=7,["name"]="Blank Parchment"}
+V.Data.items[10602]={["class"]=9,["name"]="Schematic: Deadly Scope",["professions"]={202},["subClass"]=3}
+V.Data.items[10607]={["class"]=9,["name"]="Schematic: Deepdive Helmet",["professions"]={202},["subClass"]=3}
+V.Data.items[10609]={["class"]=9,["name"]="Schematic: Mithril Mechanical Dragonling",["professions"]={202},["subClass"]=3}
+V.Data.items[10647]={["class"]=7,["craftMaterial"]=true,["name"]="Engineer's Ink",["professions"]={202},["subClass"]=1}
+V.Data.items[10648]={["class"]=7,["craftMaterial"]=true,["name"]="Blank Parchment",["professions"]={202}}
 V.Data.items[10684]={["name"]="Colossal Parachute",["subClass"]=8}
-V.Data.items[10728]={["class"]=9,["name"]="Pattern: Black Swashbuckler's Shirt",["subClass"]=2}
-V.Data.items[10858]={["class"]=9,["name"]="Plans: Solid Iron Maul",["subClass"]=4}
+V.Data.items[10728]={["class"]=9,["name"]="Pattern: Black Swashbuckler's Shirt",["professions"]={197},["subClass"]=2}
+V.Data.items[10858]={["class"]=9,["name"]="Plans: Solid Iron Maul",["professions"]={164},["subClass"]=4}
 V.Data.items[10918]={["name"]="Wound Poison",["requiredLevel"]=32}
 V.Data.items[10920]={["name"]="Wound Poison II",["requiredLevel"]=40}
 V.Data.items[10921]={["name"]="Wound Poison III",["requiredLevel"]=48}
 V.Data.items[10922]={["name"]="Wound Poison IV",["requiredLevel"]=56}
-V.Data.items[10938]={["class"]=7,["name"]="Lesser Magic Essence"}
-V.Data.items[10940]={["class"]=7,["name"]="Strange Dust"}
+V.Data.items[10938]={["class"]=7,["craftMaterial"]=true,["name"]="Lesser Magic Essence",["professions"]={164,333}}
+V.Data.items[10940]={["class"]=7,["craftMaterial"]=true,["name"]="Strange Dust",["professions"]={164,165,333}}
 V.Data.items[11020]={["class"]=12,["name"]="Evergreen Pouch"}
 V.Data.items[11022]={["class"]=12,["name"]="Packet of Tharlendris Seeds"}
 V.Data.items[11023]={["class"]=15,["name"]="Ancona Chicken"}
 V.Data.items[11026]={["class"]=15,["name"]="Tree Frog Box"}
 V.Data.items[11027]={["class"]=15,["name"]="Wood Frog Box"}
-V.Data.items[11039]={["class"]=9,["name"]="Formula: Enchant Cloak - Minor Agility",["subClass"]=8}
-V.Data.items[11101]={["class"]=9,["name"]="Formula: Enchant Bracer - Lesser Strength",["subClass"]=8}
+V.Data.items[11039]={["class"]=9,["name"]="Formula: Enchant Cloak - Minor Agility",["professions"]={333},["subClass"]=8}
+V.Data.items[11101]={["class"]=9,["name"]="Formula: Enchant Bracer - Lesser Strength",["professions"]={333},["subClass"]=8}
 V.Data.items[11109]={["name"]="Special Chicken Feed",["requiredLevel"]=1}
 V.Data.items[11141]={["class"]=12,["name"]="Bait"}
-V.Data.items[11163]={["class"]=9,["name"]="Formula: Enchant Bracer - Lesser Deflection",["subClass"]=8}
-V.Data.items[11223]={["class"]=9,["name"]="Formula: Enchant Bracer - Deflection",["subClass"]=8}
+V.Data.items[11163]={["class"]=9,["name"]="Formula: Enchant Bracer - Lesser Deflection",["professions"]={333},["subClass"]=8}
+V.Data.items[11223]={["class"]=9,["name"]="Formula: Enchant Bracer - Deflection",["professions"]={333},["subClass"]=8}
 V.Data.items[11284]={["class"]=6,["name"]="Accurate Slugs",["requiredLevel"]=40,["subClass"]=3}
 V.Data.items[11285]={["class"]=6,["name"]="Jagged Arrow",["requiredLevel"]=40,["subClass"]=2}
-V.Data.items[11291]={["class"]=5,["name"]="Star Wood"}
+V.Data.items[11291]={["class"]=5,["craftMaterial"]=true,["name"]="Star Wood",["professions"]={185,333}}
 V.Data.items[11303]={["class"]=2,["name"]="Fine Shortbow",["requiredLevel"]=11,["subClass"]=2}
 V.Data.items[11304]={["class"]=2,["name"]="Fine Longbow",["requiredLevel"]=14,["subClass"]=2}
 V.Data.items[11305]={["class"]=2,["name"]="Dense Shortbow",["requiredLevel"]=30,["subClass"]=2}
@@ -740,18 +740,18 @@ V.Data.items[11308]={["class"]=2,["name"]="Sylvan Shortbow",["requiredLevel"]=44
 V.Data.items[11325]={["name"]="Dark Iron Ale Mug",["subClass"]=3}
 V.Data.items[11362]={["class"]=11,["name"]="Medium Quiver",["requiredLevel"]=10,["subClass"]=2}
 V.Data.items[11444]={["name"]="Grim Guzzler Boar",["requiredLevel"]=45}
-V.Data.items[12162]={["class"]=9,["name"]="Plans: Hardened Iron Shortsword",["subClass"]=4}
-V.Data.items[12163]={["class"]=9,["name"]="Plans: Moonsteel Broadsword",["subClass"]=4}
-V.Data.items[12164]={["class"]=9,["name"]="Plans: Massive Iron Axe",["subClass"]=4}
-V.Data.items[12226]={["class"]=9,["name"]="Recipe: Crispy Bat Wing",["subClass"]=5}
-V.Data.items[12227]={["class"]=9,["name"]="Recipe: Lean Wolf Steak",["subClass"]=5}
-V.Data.items[12228]={["class"]=9,["name"]="Recipe: Roast Raptor",["subClass"]=5}
-V.Data.items[12229]={["class"]=9,["name"]="Recipe: Hot Wolf Ribs",["subClass"]=5}
-V.Data.items[12231]={["class"]=9,["name"]="Recipe: Jungle Stew",["subClass"]=5}
-V.Data.items[12232]={["class"]=9,["name"]="Recipe: Carrion Surprise",["subClass"]=5}
-V.Data.items[12233]={["class"]=9,["name"]="Recipe: Mystery Stew",["subClass"]=5}
-V.Data.items[12239]={["class"]=9,["name"]="Recipe: Dragonbreath Chili",["subClass"]=5}
-V.Data.items[12240]={["class"]=9,["name"]="Recipe: Heavy Kodo Stew",["subClass"]=5}
+V.Data.items[12162]={["class"]=9,["name"]="Plans: Hardened Iron Shortsword",["professions"]={164},["subClass"]=4}
+V.Data.items[12163]={["class"]=9,["name"]="Plans: Moonsteel Broadsword",["professions"]={164},["subClass"]=4}
+V.Data.items[12164]={["class"]=9,["name"]="Plans: Massive Iron Axe",["professions"]={164},["subClass"]=4}
+V.Data.items[12226]={["class"]=9,["name"]="Recipe: Crispy Bat Wing",["professions"]={185},["subClass"]=5}
+V.Data.items[12227]={["class"]=9,["name"]="Recipe: Lean Wolf Steak",["professions"]={185},["subClass"]=5}
+V.Data.items[12228]={["class"]=9,["name"]="Recipe: Roast Raptor",["professions"]={185},["subClass"]=5}
+V.Data.items[12229]={["class"]=9,["name"]="Recipe: Hot Wolf Ribs",["professions"]={185},["subClass"]=5}
+V.Data.items[12231]={["class"]=9,["name"]="Recipe: Jungle Stew",["professions"]={185},["subClass"]=5}
+V.Data.items[12232]={["class"]=9,["name"]="Recipe: Carrion Surprise",["professions"]={185},["subClass"]=5}
+V.Data.items[12233]={["class"]=9,["name"]="Recipe: Mystery Stew",["professions"]={185},["subClass"]=5}
+V.Data.items[12239]={["class"]=9,["name"]="Recipe: Dragonbreath Chili",["professions"]={185},["subClass"]=5}
+V.Data.items[12240]={["class"]=9,["name"]="Recipe: Heavy Kodo Stew",["professions"]={185},["subClass"]=5}
 V.Data.items[12247]={["class"]=2,["name"]="Broad Bladed Knife",["requiredLevel"]=27,["subClass"]=15}
 V.Data.items[12248]={["class"]=2,["name"]="Daring Dirk",["requiredLevel"]=29,["subClass"]=15}
 V.Data.items[12249]={["class"]=2,["name"]="Merciless Axe",["requiredLevel"]=26,["subClass"]=1}
@@ -772,20 +772,20 @@ V.Data.items[12330]={["class"]=15,["name"]="Horn of the Red Wolf",["requiredLeve
 V.Data.items[12351]={["class"]=15,["name"]="Horn of the Arctic Wolf",["requiredLevel"]=60}
 V.Data.items[12353]={["class"]=15,["name"]="White Stallion Bridle",["requiredLevel"]=60}
 V.Data.items[12354]={["class"]=15,["name"]="Palomino Bridle",["requiredLevel"]=60}
-V.Data.items[12363]={["class"]=7,["name"]="Arcane Crystal",["subClass"]=11}
+V.Data.items[12363]={["class"]=7,["craftMaterial"]=true,["name"]="Arcane Crystal",["professions"]={171,333},["subClass"]=11}
 V.Data.items[12584]={["class"]=2,["name"]="Grand Marshal's Longsword",["pvpRank"]=14,["requiredLevel"]=60,["side"]="A",["subClass"]=7}
-V.Data.items[12703]={["class"]=9,["name"]="Plans: Storm Gauntlets",["subClass"]=1}
-V.Data.items[12810]={["class"]=7,["name"]="Enchanted Leather"}
-V.Data.items[12819]={["class"]=9,["name"]="Plans: Ornate Thorium Handaxe",["subClass"]=4}
-V.Data.items[12823]={["class"]=9,["name"]="Plans: Huge Thorium Battleaxe",["subClass"]=4}
-V.Data.items[12958]={["class"]=9,["name"]="Recipe: Transmute Arcanite",["subClass"]=6}
+V.Data.items[12703]={["class"]=9,["name"]="Plans: Storm Gauntlets",["professions"]={165},["subClass"]=1}
+V.Data.items[12810]={["class"]=7,["craftMaterial"]=true,["name"]="Enchanted Leather",["professions"]={164,165,197,202}}
+V.Data.items[12819]={["class"]=9,["name"]="Plans: Ornate Thorium Handaxe",["professions"]={164},["subClass"]=4}
+V.Data.items[12823]={["class"]=9,["name"]="Plans: Huge Thorium Battleaxe",["professions"]={164},["subClass"]=4}
+V.Data.items[12958]={["class"]=9,["name"]="Recipe: Transmute Arcanite",["professions"]={171},["subClass"]=6}
 V.Data.items[13086]={["class"]=15,["name"]="Reins of the Winterspring Frostsaber",["requiredLevel"]=60}
-V.Data.items[13287]={["class"]=9,["name"]="Pattern: Raptor Hide Harness",["subClass"]=1}
-V.Data.items[13288]={["class"]=9,["name"]="Pattern: Raptor Hide Belt",["subClass"]=1}
-V.Data.items[13308]={["class"]=9,["name"]="Schematic: Ice Deflector",["subClass"]=3}
-V.Data.items[13309]={["class"]=9,["name"]="Schematic: Lovingly Crafted Boomstick",["subClass"]=3}
-V.Data.items[13310]={["class"]=9,["name"]="Schematic: Accurate Scope",["subClass"]=3}
-V.Data.items[13311]={["class"]=9,["name"]="Schematic: Mechanical Dragonling",["subClass"]=3}
+V.Data.items[13287]={["class"]=9,["name"]="Pattern: Raptor Hide Harness",["professions"]={165},["subClass"]=1}
+V.Data.items[13288]={["class"]=9,["name"]="Pattern: Raptor Hide Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[13308]={["class"]=9,["name"]="Schematic: Ice Deflector",["professions"]={202},["subClass"]=3}
+V.Data.items[13309]={["class"]=9,["name"]="Schematic: Lovingly Crafted Boomstick",["professions"]={202},["subClass"]=3}
+V.Data.items[13310]={["class"]=9,["name"]="Schematic: Accurate Scope",["professions"]={202},["subClass"]=3}
+V.Data.items[13311]={["class"]=9,["name"]="Schematic: Mechanical Dragonling",["professions"]={202},["subClass"]=3}
 V.Data.items[13317]={["class"]=15,["name"]="Whistle of the Ivory Raptor",["requiredLevel"]=60}
 V.Data.items[13320]={["class"]=12,["name"]="Arcane Quickener"}
 V.Data.items[13321]={["class"]=15,["name"]="Green Mechanostrider",["requiredLevel"]=40}
@@ -803,19 +803,19 @@ V.Data.items[13333]={["class"]=15,["name"]="Brown Skeletal Horse",["requiredLeve
 V.Data.items[13334]={["class"]=15,["name"]="Green Skeletal Warhorse",["requiredLevel"]=60}
 V.Data.items[13335]={["class"]=15,["name"]="Deathcharger's Reins",["requiredLevel"]=60}
 V.Data.items[13443]={["name"]="Superior Mana Potion",["requiredLevel"]=41,["subClass"]=3}
-V.Data.items[13444]={["name"]="Major Mana Potion",["requiredLevel"]=49,["subClass"]=3}
+V.Data.items[13444]={["craftMaterial"]=true,["name"]="Major Mana Potion",["professions"]={165},["requiredLevel"]=49,["subClass"]=3}
 V.Data.items[13446]={["name"]="Major Healing Potion",["requiredLevel"]=45,["subClass"]=3}
-V.Data.items[13463]={["class"]=7,["name"]="Dreamfoil",["subClass"]=9}
-V.Data.items[13464]={["class"]=7,["name"]="Golden Sansam",["subClass"]=9}
-V.Data.items[13468]={["class"]=7,["name"]="Black Lotus",["subClass"]=9}
-V.Data.items[13477]={["class"]=9,["name"]="Recipe: Superior Mana Potion",["subClass"]=6}
-V.Data.items[13478]={["class"]=9,["name"]="Recipe: Elixir of Superior Defense",["subClass"]=6}
-V.Data.items[13480]={["class"]=9,["name"]="Recipe: Major Healing Potion",["subClass"]=6}
-V.Data.items[13482]={["class"]=9,["name"]="Recipe: Transmute Air to Fire",["repFaction"]=529,["repStanding"]=5,["subClass"]=6}
-V.Data.items[13483]={["class"]=9,["name"]="Recipe: Transmute Fire to Earth",["subClass"]=6}
-V.Data.items[13484]={["class"]=9,["name"]="Recipe: Transmute Earth to Water",["repFaction"]=576,["repStanding"]=4,["subClass"]=6}
-V.Data.items[13485]={["class"]=9,["name"]="Recipe: Transmute Water to Air",["subClass"]=6}
-V.Data.items[13501]={["class"]=9,["name"]="Recipe: Major Mana Potion",["subClass"]=6}
+V.Data.items[13463]={["class"]=7,["craftMaterial"]=true,["name"]="Dreamfoil",["professions"]={171,182},["subClass"]=9}
+V.Data.items[13464]={["class"]=7,["craftMaterial"]=true,["name"]="Golden Sansam",["professions"]={129,171,182},["subClass"]=9}
+V.Data.items[13468]={["class"]=7,["craftMaterial"]=true,["name"]="Black Lotus",["professions"]={171,182,197,333},["subClass"]=9}
+V.Data.items[13477]={["class"]=9,["name"]="Recipe: Superior Mana Potion",["professions"]={171},["subClass"]=6}
+V.Data.items[13478]={["class"]=9,["name"]="Recipe: Elixir of Superior Defense",["professions"]={171},["subClass"]=6}
+V.Data.items[13480]={["class"]=9,["name"]="Recipe: Major Healing Potion",["professions"]={171},["subClass"]=6}
+V.Data.items[13482]={["class"]=9,["name"]="Recipe: Transmute Air to Fire",["professions"]={171},["repFaction"]=529,["repStanding"]=5,["subClass"]=6}
+V.Data.items[13483]={["class"]=9,["name"]="Recipe: Transmute Fire to Earth",["professions"]={171},["subClass"]=6}
+V.Data.items[13484]={["class"]=9,["name"]="Recipe: Transmute Earth to Water",["professions"]={171},["repFaction"]=576,["repStanding"]=4,["subClass"]=6}
+V.Data.items[13485]={["class"]=9,["name"]="Recipe: Transmute Water to Air",["professions"]={171},["subClass"]=6}
+V.Data.items[13501]={["class"]=9,["name"]="Recipe: Major Mana Potion",["professions"]={171},["subClass"]=6}
 V.Data.items[13583]={["class"]=15,["name"]="Panda Collar"}
 V.Data.items[13724]={["name"]="Enriched Manna Biscuit",["repFaction"]=529,["repStanding"]=4,["requiredLevel"]=45}
 V.Data.items[13810]={["name"]="Blessed Sunfruit",["repFaction"]=529,["repStanding"]=6,["requiredLevel"]=45}
@@ -826,32 +826,32 @@ V.Data.items[13897]={["class"]=4,["name"]="White Traditional Hanbok"}
 V.Data.items[13898]={["class"]=4,["name"]="Royal Dangui"}
 V.Data.items[13899]={["class"]=4,["name"]="Red Traditional Hanbok"}
 V.Data.items[13900]={["class"]=4,["name"]="Green Wedding Hanbok"}
-V.Data.items[13939]={["class"]=9,["name"]="Recipe: Spotted Yellowtail",["subClass"]=5}
-V.Data.items[13940]={["class"]=9,["name"]="Recipe: Cooked Glossy Mightfish",["subClass"]=5}
-V.Data.items[13941]={["class"]=9,["name"]="Recipe: Filet of Redgill",["subClass"]=5}
-V.Data.items[13942]={["class"]=9,["name"]="Recipe: Grilled Squid",["subClass"]=5}
-V.Data.items[13943]={["class"]=9,["name"]="Recipe: Hot Smoked Bass",["subClass"]=5}
-V.Data.items[13945]={["class"]=9,["name"]="Recipe: Nightfin Soup",["subClass"]=5}
-V.Data.items[13946]={["class"]=9,["name"]="Recipe: Poached Sunscale Salmon",["subClass"]=5}
-V.Data.items[13947]={["class"]=9,["name"]="Recipe: Lobster Stew",["subClass"]=5}
-V.Data.items[13948]={["class"]=9,["name"]="Recipe: Mightfish Steak",["subClass"]=5}
-V.Data.items[13949]={["class"]=9,["name"]="Recipe: Baked Salmon",["subClass"]=5}
+V.Data.items[13939]={["class"]=9,["name"]="Recipe: Spotted Yellowtail",["professions"]={185},["subClass"]=5}
+V.Data.items[13940]={["class"]=9,["name"]="Recipe: Cooked Glossy Mightfish",["professions"]={185},["subClass"]=5}
+V.Data.items[13941]={["class"]=9,["name"]="Recipe: Filet of Redgill",["professions"]={185},["subClass"]=5}
+V.Data.items[13942]={["class"]=9,["name"]="Recipe: Grilled Squid",["professions"]={185},["subClass"]=5}
+V.Data.items[13943]={["class"]=9,["name"]="Recipe: Hot Smoked Bass",["professions"]={185},["subClass"]=5}
+V.Data.items[13945]={["class"]=9,["name"]="Recipe: Nightfin Soup",["professions"]={185},["subClass"]=5}
+V.Data.items[13946]={["class"]=9,["name"]="Recipe: Poached Sunscale Salmon",["professions"]={185},["subClass"]=5}
+V.Data.items[13947]={["class"]=9,["name"]="Recipe: Lobster Stew",["professions"]={185},["subClass"]=5}
+V.Data.items[13948]={["class"]=9,["name"]="Recipe: Mightfish Steak",["professions"]={185},["subClass"]=5}
+V.Data.items[13949]={["class"]=9,["name"]="Recipe: Baked Salmon",["professions"]={185},["subClass"]=5}
 V.Data.items[14062]={["name"]="Kodo Mount"}
-V.Data.items[14256]={["class"]=7,["name"]="Felcloth"}
-V.Data.items[14341]={["class"]=7,["name"]="Rune Thread"}
-V.Data.items[14468]={["class"]=9,["name"]="Pattern: Runecloth Bag",["subClass"]=2}
-V.Data.items[14469]={["class"]=9,["name"]="Pattern: Runecloth Robe",["subClass"]=2}
-V.Data.items[14472]={["class"]=9,["name"]="Pattern: Runecloth Cloak",["subClass"]=2}
-V.Data.items[14481]={["class"]=9,["name"]="Pattern: Runecloth Gloves",["subClass"]=2}
-V.Data.items[14483]={["class"]=9,["name"]="Pattern: Felcloth Pants",["subClass"]=2}
-V.Data.items[14488]={["class"]=9,["name"]="Pattern: Runecloth Boots",["subClass"]=2}
-V.Data.items[14526]={["class"]=9,["name"]="Pattern: Mooncloth",["subClass"]=2}
-V.Data.items[14530]={["name"]="Heavy Runecloth Bandage",["subClass"]=5}
-V.Data.items[14627]={["class"]=9,["name"]="Pattern: Bright Yellow Shirt",["subClass"]=2}
-V.Data.items[14630]={["class"]=9,["name"]="Pattern: Enchanter's Cowl",["subClass"]=2}
-V.Data.items[14634]={["class"]=9,["name"]="Recipe: Frost Oil",["subClass"]=6}
-V.Data.items[14635]={["class"]=9,["name"]="Pattern: Gem-studded Leather Belt",["subClass"]=1}
-V.Data.items[14639]={["class"]=9,["name"]="Schematic: Minor Recombobulator",["subClass"]=3}
+V.Data.items[14256]={["class"]=7,["craftMaterial"]=true,["name"]="Felcloth",["professions"]={165,197}}
+V.Data.items[14341]={["class"]=7,["craftMaterial"]=true,["name"]="Rune Thread",["professions"]={165,197}}
+V.Data.items[14468]={["class"]=9,["name"]="Pattern: Runecloth Bag",["professions"]={197},["subClass"]=2}
+V.Data.items[14469]={["class"]=9,["name"]="Pattern: Runecloth Robe",["professions"]={197},["subClass"]=2}
+V.Data.items[14472]={["class"]=9,["name"]="Pattern: Runecloth Cloak",["professions"]={197},["subClass"]=2}
+V.Data.items[14481]={["class"]=9,["name"]="Pattern: Runecloth Gloves",["professions"]={197},["subClass"]=2}
+V.Data.items[14483]={["class"]=9,["name"]="Pattern: Felcloth Pants",["professions"]={197},["subClass"]=2}
+V.Data.items[14488]={["class"]=9,["name"]="Pattern: Runecloth Boots",["professions"]={197},["subClass"]=2}
+V.Data.items[14526]={["class"]=9,["name"]="Pattern: Mooncloth",["professions"]={197},["subClass"]=2}
+V.Data.items[14530]={["craftMaterial"]=true,["name"]="Heavy Runecloth Bandage",["professions"]={129},["subClass"]=5}
+V.Data.items[14627]={["class"]=9,["name"]="Pattern: Bright Yellow Shirt",["professions"]={197},["subClass"]=2}
+V.Data.items[14630]={["class"]=9,["name"]="Pattern: Enchanter's Cowl",["professions"]={197},["subClass"]=2}
+V.Data.items[14634]={["class"]=9,["name"]="Recipe: Frost Oil",["professions"]={171},["subClass"]=6}
+V.Data.items[14635]={["class"]=9,["name"]="Pattern: Gem-studded Leather Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[14639]={["class"]=9,["name"]="Schematic: Minor Recombobulator",["professions"]={202},["subClass"]=3}
 V.Data.items[15196]={["class"]=4,["name"]="Private's Tabard",["pvpRank"]=1,["side"]="A"}
 V.Data.items[15197]={["class"]=4,["name"]="Scout's Tabard",["pvpRank"]=1,["side"]="H"}
 V.Data.items[15198]={["class"]=4,["name"]="Knight's Colors",["pvpRank"]=6,["side"]="A"}
@@ -863,21 +863,21 @@ V.Data.items[15292]={["class"]=15,["name"]="Green Kodo",["requiredLevel"]=60}
 V.Data.items[15293]={["class"]=15,["name"]="Teal Kodo",["requiredLevel"]=60}
 V.Data.items[15326]={["class"]=2,["name"]="Gleaming Throwing Axe",["requiredLevel"]=35,["subClass"]=16}
 V.Data.items[15327]={["class"]=2,["name"]="Wicked Throwing Dagger",["requiredLevel"]=35,["subClass"]=16}
-V.Data.items[15724]={["class"]=9,["name"]="Pattern: Heavy Scorpid Bracers",["subClass"]=1}
-V.Data.items[15725]={["class"]=9,["name"]="Pattern: Wicked Leather Gauntlets",["subClass"]=1}
-V.Data.items[15726]={["class"]=9,["name"]="Pattern: Green Dragonscale Breastplate",["subClass"]=1}
-V.Data.items[15729]={["class"]=9,["name"]="Pattern: Chimeric Gloves",["subClass"]=1}
-V.Data.items[15734]={["class"]=9,["name"]="Pattern: Living Shoulders",["subClass"]=1}
-V.Data.items[15735]={["class"]=9,["name"]="Pattern: Ironfeather Shoulders",["subClass"]=1}
-V.Data.items[15740]={["class"]=9,["name"]="Pattern: Frostsaber Boots",["subClass"]=1}
-V.Data.items[15741]={["class"]=9,["name"]="Pattern: Stormshroud Pants",["subClass"]=1}
-V.Data.items[15742]={["class"]=9,["name"]="Pattern: Warbear Harness",["subClass"]=1}
-V.Data.items[15751]={["class"]=9,["name"]="Pattern: Blue Dragonscale Breastplate",["subClass"]=1}
-V.Data.items[15754]={["class"]=9,["name"]="Pattern: Warbear Woolies",["subClass"]=1}
-V.Data.items[15756]={["class"]=9,["name"]="Pattern: Runic Leather Headband",["subClass"]=1}
-V.Data.items[15758]={["class"]=9,["name"]="Pattern: Devilsaur Gauntlets",["subClass"]=1}
-V.Data.items[15759]={["class"]=9,["name"]="Pattern: Black Dragonscale Breastplate",["subClass"]=1}
-V.Data.items[15762]={["class"]=9,["name"]="Pattern: Heavy Scorpid Helm",["subClass"]=1}
+V.Data.items[15724]={["class"]=9,["name"]="Pattern: Heavy Scorpid Bracers",["professions"]={165},["subClass"]=1}
+V.Data.items[15725]={["class"]=9,["name"]="Pattern: Wicked Leather Gauntlets",["professions"]={165},["subClass"]=1}
+V.Data.items[15726]={["class"]=9,["name"]="Pattern: Green Dragonscale Breastplate",["professions"]={165},["subClass"]=1}
+V.Data.items[15729]={["class"]=9,["name"]="Pattern: Chimeric Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[15734]={["class"]=9,["name"]="Pattern: Living Shoulders",["professions"]={165},["subClass"]=1}
+V.Data.items[15735]={["class"]=9,["name"]="Pattern: Ironfeather Shoulders",["professions"]={165},["subClass"]=1}
+V.Data.items[15740]={["class"]=9,["name"]="Pattern: Frostsaber Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[15741]={["class"]=9,["name"]="Pattern: Stormshroud Pants",["professions"]={165},["subClass"]=1}
+V.Data.items[15742]={["class"]=9,["name"]="Pattern: Warbear Harness",["professions"]={165},["subClass"]=1}
+V.Data.items[15751]={["class"]=9,["name"]="Pattern: Blue Dragonscale Breastplate",["professions"]={165},["subClass"]=1}
+V.Data.items[15754]={["class"]=9,["name"]="Pattern: Warbear Woolies",["professions"]={165},["subClass"]=1}
+V.Data.items[15756]={["class"]=9,["name"]="Pattern: Runic Leather Headband",["professions"]={165},["subClass"]=1}
+V.Data.items[15758]={["class"]=9,["name"]="Pattern: Devilsaur Gauntlets",["professions"]={165},["subClass"]=1}
+V.Data.items[15759]={["class"]=9,["name"]="Pattern: Black Dragonscale Breastplate",["professions"]={165},["subClass"]=1}
+V.Data.items[15762]={["class"]=9,["name"]="Pattern: Heavy Scorpid Helm",["professions"]={165},["subClass"]=1}
 V.Data.items[15807]={["class"]=2,["name"]="Light Crossbow",["requiredLevel"]=3,["subClass"]=18}
 V.Data.items[15808]={["class"]=2,["name"]="Fine Light Crossbow",["requiredLevel"]=16,["subClass"]=18}
 V.Data.items[15809]={["class"]=2,["name"]="Heavy Crossbow",["requiredLevel"]=29,["subClass"]=18}
@@ -891,24 +891,24 @@ V.Data.items[15906]={["class"]=2,["name"]="Left-Handed Brass Knuckles",["require
 V.Data.items[15907]={["class"]=2,["name"]="Left-Handed Claw",["requiredLevel"]=20,["subClass"]=13}
 V.Data.items[15909]={["class"]=2,["name"]="Left-Handed Blades",["requiredLevel"]=30,["subClass"]=13}
 V.Data.items[15997]={["class"]=6,["name"]="Thorium Shells",["requiredLevel"]=52,["subClass"]=3}
-V.Data.items[16041]={["class"]=9,["name"]="Schematic: Thorium Grenade",["subClass"]=3}
-V.Data.items[16042]={["class"]=9,["name"]="Schematic: Thorium Widget",["subClass"]=3}
-V.Data.items[16046]={["class"]=9,["name"]="Schematic: Masterwork Target Dummy",["subClass"]=3}
-V.Data.items[16047]={["class"]=9,["name"]="Schematic: Thorium Tube",["subClass"]=3}
-V.Data.items[16050]={["class"]=9,["name"]="Schematic: Delicate Arcanite Converter",["subClass"]=3}
+V.Data.items[16041]={["class"]=9,["name"]="Schematic: Thorium Grenade",["professions"]={202},["subClass"]=3}
+V.Data.items[16042]={["class"]=9,["name"]="Schematic: Thorium Widget",["professions"]={202},["subClass"]=3}
+V.Data.items[16046]={["class"]=9,["name"]="Schematic: Masterwork Target Dummy",["professions"]={202},["subClass"]=3}
+V.Data.items[16047]={["class"]=9,["name"]="Schematic: Thorium Tube",["professions"]={202},["subClass"]=3}
+V.Data.items[16050]={["class"]=9,["name"]="Schematic: Delicate Arcanite Converter",["professions"]={202},["subClass"]=3}
 V.Data.items[16059]={["class"]=4,["name"]="Common Brown Shirt"}
 V.Data.items[16060]={["class"]=4,["name"]="Common White Shirt"}
 V.Data.items[16068]={["name"]="Test Fire Resist Cloth LockBox"}
 V.Data.items[16069]={["name"]="Test Fire Resist Leather LockBox"}
 V.Data.items[16070]={["name"]="Test Fire Resist Mail LockBox"}
 V.Data.items[16071]={["name"]="Test Fire Resist Plate LockBox"}
-V.Data.items[16072]={["class"]=9,["name"]="Expert Cookbook",["subClass"]=5}
-V.Data.items[16083]={["class"]=9,["name"]="Expert Fishing - The Bass and You",["requiredLevel"]=20,["subClass"]=9}
-V.Data.items[16084]={["class"]=9,["name"]="Expert First Aid - Under Wraps",["subClass"]=7}
-V.Data.items[16110]={["class"]=9,["name"]="Recipe: Monster Omelet",["subClass"]=5}
-V.Data.items[16111]={["class"]=9,["name"]="Recipe: Spiced Chili Crab",["subClass"]=5}
-V.Data.items[16112]={["class"]=9,["name"]="Manual: Heavy Silk Bandage",["subClass"]=7}
-V.Data.items[16113]={["class"]=9,["name"]="Manual: Mageweave Bandage",["subClass"]=7}
+V.Data.items[16072]={["class"]=9,["name"]="Expert Cookbook",["professions"]={185},["subClass"]=5}
+V.Data.items[16083]={["class"]=9,["name"]="Expert Fishing - The Bass and You",["professions"]={356},["requiredLevel"]=20,["subClass"]=9}
+V.Data.items[16084]={["class"]=9,["name"]="Expert First Aid - Under Wraps",["professions"]={129},["subClass"]=7}
+V.Data.items[16110]={["class"]=9,["name"]="Recipe: Monster Omelet",["professions"]={185},["subClass"]=5}
+V.Data.items[16111]={["class"]=9,["name"]="Recipe: Spiced Chili Crab",["professions"]={185},["subClass"]=5}
+V.Data.items[16112]={["class"]=9,["name"]="Manual: Heavy Silk Bandage",["professions"]={129},["subClass"]=7}
+V.Data.items[16113]={["class"]=9,["name"]="Manual: Mageweave Bandage",["professions"]={129},["subClass"]=7}
 V.Data.items[16166]={["name"]="Bean Soup",["requiredLevel"]=1}
 V.Data.items[16167]={["name"]="Versicolor Treat",["requiredLevel"]=5}
 V.Data.items[16168]={["name"]="Heaven Peach",["requiredLevel"]=35}
@@ -931,10 +931,10 @@ V.Data.items[16185]={["name"]="Test Arcane Resist Plate LockBox"}
 V.Data.items[16186]={["name"]="Test Arcane Resist Cloth LockBox"}
 V.Data.items[16187]={["name"]="Test Arcane Resist Leather LockBox"}
 V.Data.items[16188]={["name"]="Test Arcane Resist Mail LockBox"}
-V.Data.items[16217]={["class"]=9,["name"]="Formula: Enchant Shield - Greater Stamina",["subClass"]=8}
-V.Data.items[16221]={["class"]=9,["name"]="Formula: Enchant Chest - Major Health",["subClass"]=8}
-V.Data.items[16224]={["class"]=9,["name"]="Formula: Enchant Cloak - Superior Defense",["subClass"]=8}
-V.Data.items[16243]={["class"]=9,["name"]="Formula: Runed Arcanite Rod",["subClass"]=8}
+V.Data.items[16217]={["class"]=9,["name"]="Formula: Enchant Shield - Greater Stamina",["professions"]={333},["subClass"]=8}
+V.Data.items[16221]={["class"]=9,["name"]="Formula: Enchant Chest - Major Health",["professions"]={333},["subClass"]=8}
+V.Data.items[16224]={["class"]=9,["name"]="Formula: Enchant Cloak - Superior Defense",["professions"]={333},["subClass"]=8}
+V.Data.items[16243]={["class"]=9,["name"]="Formula: Runed Arcanite Rod",["professions"]={333},["subClass"]=8}
 V.Data.items[16302]={["class"]=9,["name"]="Grimoire of Firebolt (Rank 2)",["requiredLevel"]=8}
 V.Data.items[16316]={["class"]=9,["name"]="Grimoire of Firebolt (Rank 3)",["requiredLevel"]=18}
 V.Data.items[16317]={["class"]=9,["name"]="Grimoire of Firebolt (Rank 4)",["requiredLevel"]=28}
@@ -1147,22 +1147,22 @@ V.Data.items[16577]={["class"]=4,["name"]="Warlord's Mail Armor",["pvpRank"]=13,
 V.Data.items[16578]={["class"]=4,["name"]="Warlord's Mail Helm",["pvpRank"]=13,["requiredLevel"]=60,["side"]="H",["subClass"]=3}
 V.Data.items[16579]={["class"]=4,["name"]="General's Mail Leggings",["pvpRank"]=12,["requiredLevel"]=60,["side"]="H",["subClass"]=3}
 V.Data.items[16580]={["class"]=4,["name"]="Warlord's Mail Spaulders",["pvpRank"]=13,["requiredLevel"]=60,["side"]="H",["subClass"]=3}
-V.Data.items[16583]={["class"]=5,["name"]="Demonic Figurine"}
+V.Data.items[16583]={["class"]=5,["craftMaterial"]=true,["name"]="Demonic Figurine",["professions"]={202}}
 V.Data.items[16665]={["class"]=9,["name"]="Tome of Tranquilizing Shot",["requiredLevel"]=60}
 V.Data.items[16763]={["class"]=12,["name"]="Warsong Runner Update"}
 V.Data.items[16764]={["class"]=12,["name"]="Warsong Scout Update"}
 V.Data.items[16765]={["class"]=12,["name"]="Warsong Outrider Update"}
-V.Data.items[16767]={["class"]=9,["name"]="Recipe: Undermine Clam Chowder",["subClass"]=5}
+V.Data.items[16767]={["class"]=9,["name"]="Recipe: Undermine Clam Chowder",["professions"]={185},["subClass"]=5}
 V.Data.items[16768]={["class"]=4,["name"]="Furbolg Medicine Pouch"}
 V.Data.items[16769]={["class"]=2,["name"]="Furbolg Medicine Totem",["requiredLevel"]=47,["subClass"]=4}
-V.Data.items[17017]={["class"]=9,["name"]="Pattern: Flarecore Mantle",["repFaction"]=59,["repStanding"]=5,["subClass"]=2}
-V.Data.items[17018]={["class"]=9,["name"]="Pattern: Flarecore Gloves",["repFaction"]=59,["repStanding"]=4,["subClass"]=2}
+V.Data.items[17017]={["class"]=9,["name"]="Pattern: Flarecore Mantle",["professions"]={197},["repFaction"]=59,["repStanding"]=5,["subClass"]=2}
+V.Data.items[17018]={["class"]=9,["name"]="Pattern: Flarecore Gloves",["professions"]={197},["repFaction"]=59,["repStanding"]=4,["subClass"]=2}
 V.Data.items[17019]={["class"]=5,["name"]="Arcane Dust"}
 V.Data.items[17020]={["class"]=5,["name"]="Arcane Powder"}
 V.Data.items[17021]={["class"]=5,["name"]="Wild Berries"}
-V.Data.items[17022]={["class"]=9,["name"]="Pattern: Corehound Boots",["repFaction"]=59,["repStanding"]=4,["subClass"]=1}
-V.Data.items[17023]={["class"]=9,["name"]="Pattern: Molten Helm",["repFaction"]=59,["repStanding"]=4,["subClass"]=1}
-V.Data.items[17025]={["class"]=9,["name"]="Pattern: Black Dragonscale Boots",["repFaction"]=59,["repStanding"]=5,["subClass"]=1}
+V.Data.items[17022]={["class"]=9,["name"]="Pattern: Corehound Boots",["professions"]={165},["repFaction"]=59,["repStanding"]=4,["subClass"]=1}
+V.Data.items[17023]={["class"]=9,["name"]="Pattern: Molten Helm",["professions"]={165},["repFaction"]=59,["repStanding"]=4,["subClass"]=1}
+V.Data.items[17025]={["class"]=9,["name"]="Pattern: Black Dragonscale Boots",["professions"]={165},["repFaction"]=59,["repStanding"]=5,["subClass"]=1}
 V.Data.items[17026]={["class"]=5,["name"]="Wild Thornroot"}
 V.Data.items[17028]={["class"]=5,["name"]="Holy Candle"}
 V.Data.items[17029]={["class"]=5,["name"]="Sacred Candle"}
@@ -1170,18 +1170,18 @@ V.Data.items[17030]={["class"]=5,["name"]="Ankh"}
 V.Data.items[17031]={["class"]=5,["name"]="Rune of Teleportation"}
 V.Data.items[17032]={["class"]=5,["name"]="Rune of Portals"}
 V.Data.items[17033]={["class"]=5,["name"]="Symbol of Divinity"}
-V.Data.items[17034]={["class"]=5,["name"]="Maple Seed"}
-V.Data.items[17035]={["class"]=5,["name"]="Stranglethorn Seed"}
+V.Data.items[17034]={["class"]=5,["craftMaterial"]=true,["name"]="Maple Seed",["professions"]={333}}
+V.Data.items[17035]={["class"]=5,["craftMaterial"]=true,["name"]="Stranglethorn Seed",["professions"]={333}}
 V.Data.items[17036]={["class"]=5,["name"]="Ashwood Seed"}
 V.Data.items[17037]={["class"]=5,["name"]="Hornbeam Seed"}
 V.Data.items[17038]={["class"]=5,["name"]="Ironwood Seed"}
-V.Data.items[17049]={["class"]=9,["name"]="Plans: Fiery Chain Girdle",["repFaction"]=59,["repStanding"]=5,["subClass"]=4}
-V.Data.items[17051]={["class"]=9,["name"]="Plans: Dark Iron Bracers",["repFaction"]=59,["repStanding"]=4,["subClass"]=4}
-V.Data.items[17052]={["class"]=9,["name"]="Plans: Dark Iron Leggings",["repFaction"]=59,["repStanding"]=6,["subClass"]=4}
-V.Data.items[17053]={["class"]=9,["name"]="Plans: Fiery Chain Shoulders",["repFaction"]=59,["repStanding"]=6,["subClass"]=4}
-V.Data.items[17059]={["class"]=9,["name"]="Plans: Dark Iron Reaver",["repFaction"]=59,["repStanding"]=5,["subClass"]=4}
-V.Data.items[17060]={["class"]=9,["name"]="Plans: Dark Iron Destroyer",["repFaction"]=59,["repStanding"]=5,["subClass"]=4}
-V.Data.items[17062]={["class"]=9,["name"]="Recipe: Mithril Head Trout",["subClass"]=5}
+V.Data.items[17049]={["class"]=9,["name"]="Plans: Fiery Chain Girdle",["professions"]={164},["repFaction"]=59,["repStanding"]=5,["subClass"]=4}
+V.Data.items[17051]={["class"]=9,["name"]="Plans: Dark Iron Bracers",["professions"]={164},["repFaction"]=59,["repStanding"]=4,["subClass"]=4}
+V.Data.items[17052]={["class"]=9,["name"]="Plans: Dark Iron Leggings",["professions"]={164},["repFaction"]=59,["repStanding"]=6,["subClass"]=4}
+V.Data.items[17053]={["class"]=9,["name"]="Plans: Fiery Chain Shoulders",["professions"]={164},["repFaction"]=59,["repStanding"]=6,["subClass"]=4}
+V.Data.items[17059]={["class"]=9,["name"]="Plans: Dark Iron Reaver",["professions"]={164},["repFaction"]=59,["repStanding"]=5,["subClass"]=4}
+V.Data.items[17060]={["class"]=9,["name"]="Plans: Dark Iron Destroyer",["professions"]={164},["repFaction"]=59,["repStanding"]=5,["subClass"]=4}
+V.Data.items[17062]={["class"]=9,["name"]="Recipe: Mithril Head Trout",["professions"]={185},["subClass"]=5}
 V.Data.items[17119]={["name"]="Deeprun Rat Kabob",["requiredLevel"]=5}
 V.Data.items[17183]={["class"]=4,["name"]="Dented Buckler",["requiredLevel"]=1,["subClass"]=6}
 V.Data.items[17184]={["class"]=4,["name"]="Small Shield",["requiredLevel"]=1,["subClass"]=6}
@@ -1192,12 +1192,12 @@ V.Data.items[17188]={["class"]=4,["name"]="Ringed Buckler",["requiredLevel"]=14,
 V.Data.items[17189]={["class"]=4,["name"]="Metal Buckler",["requiredLevel"]=29,["subClass"]=6}
 V.Data.items[17190]={["class"]=4,["name"]="Ornate Buckler",["requiredLevel"]=42,["subClass"]=6}
 V.Data.items[17192]={["class"]=4,["name"]="Reinforced Targe",["requiredLevel"]=19,["subClass"]=6}
-V.Data.items[17194]={["class"]=15,["name"]="Holiday Spices",["subClass"]=3}
+V.Data.items[17194]={["class"]=15,["craftMaterial"]=true,["name"]="Holiday Spices",["professions"]={185},["subClass"]=3}
 V.Data.items[17195]={["class"]=15,["name"]="Fake Mistletoe"}
-V.Data.items[17196]={["name"]="Holiday Spirits",["requiredLevel"]=1}
-V.Data.items[17200]={["class"]=9,["name"]="Recipe: Gingerbread Cookie",["subClass"]=5}
-V.Data.items[17201]={["class"]=9,["name"]="Recipe: Egg Nog",["subClass"]=5}
-V.Data.items[17202]={["class"]=15,["name"]="Snowball",["subClass"]=3}
+V.Data.items[17196]={["craftMaterial"]=true,["name"]="Holiday Spirits",["professions"]={185},["requiredLevel"]=1}
+V.Data.items[17200]={["class"]=9,["name"]="Recipe: Gingerbread Cookie",["professions"]={185},["subClass"]=5}
+V.Data.items[17201]={["class"]=9,["name"]="Recipe: Egg Nog",["professions"]={185},["subClass"]=5}
+V.Data.items[17202]={["class"]=15,["craftMaterial"]=true,["name"]="Snowball",["professions"]={202},["subClass"]=3}
 V.Data.items[17303]={["name"]="Blue Ribboned Wrapping Paper",["subClass"]=8}
 V.Data.items[17304]={["name"]="Green Ribboned Wrapping Paper",["subClass"]=8}
 V.Data.items[17307]={["name"]="Purple Ribboned Wrapping Paper",["subClass"]=8}
@@ -1262,15 +1262,15 @@ V.Data.items[17623]={["class"]=4,["name"]="Warlord's Satin Cowl",["pvpRank"]=13,
 V.Data.items[17624]={["class"]=4,["name"]="Warlord's Satin Robes",["pvpRank"]=13,["requiredLevel"]=60,["side"]="H",["subClass"]=1}
 V.Data.items[17625]={["class"]=4,["name"]="General's Satin Leggings",["pvpRank"]=12,["requiredLevel"]=60,["side"]="H",["subClass"]=1}
 V.Data.items[18042]={["class"]=6,["name"]="Thorium Headed Arrow",["requiredLevel"]=52,["subClass"]=2}
-V.Data.items[18046]={["class"]=9,["name"]="Recipe: Tender Wolf Steak",["subClass"]=5}
-V.Data.items[18160]={["class"]=9,["name"]="Recipe: Thistle Tea",["subClass"]=5}
+V.Data.items[18046]={["class"]=9,["name"]="Recipe: Tender Wolf Steak",["professions"]={185},["subClass"]=5}
+V.Data.items[18160]={["class"]=9,["name"]="Recipe: Thistle Tea",["professions"]={185},["subClass"]=5}
 V.Data.items[18169]={["class"]=12,["name"]="Flame Mantle of the Dawn"}
 V.Data.items[18170]={["class"]=12,["name"]="Frost Mantle of the Dawn"}
 V.Data.items[18171]={["class"]=12,["name"]="Arcane Mantle of the Dawn"}
 V.Data.items[18172]={["class"]=12,["name"]="Nature Mantle of the Dawn"}
 V.Data.items[18173]={["class"]=12,["name"]="Shadow Mantle of the Dawn"}
 V.Data.items[18182]={["class"]=12,["name"]="Chromatic Mantle of the Dawn"}
-V.Data.items[18239]={["class"]=9,["name"]="Pattern: Shadowskin Gloves",["subClass"]=1}
+V.Data.items[18239]={["class"]=9,["name"]="Pattern: Shadowskin Gloves",["professions"]={165},["subClass"]=1}
 V.Data.items[18241]={["class"]=15,["name"]="Black War Steed Bridle",["requiredLevel"]=40}
 V.Data.items[18242]={["class"]=15,["name"]="Reins of the Black War Tiger",["requiredLevel"]=40}
 V.Data.items[18243]={["class"]=15,["name"]="Black Battlestrider",["requiredLevel"]=40}
@@ -1279,7 +1279,7 @@ V.Data.items[18245]={["class"]=15,["name"]="Horn of the Black War Wolf",["requir
 V.Data.items[18246]={["class"]=15,["name"]="Whistle of the Black War Raptor",["requiredLevel"]=40}
 V.Data.items[18247]={["class"]=15,["name"]="Black War Kodo",["requiredLevel"]=40}
 V.Data.items[18248]={["class"]=15,["name"]="Red Skeletal Warhorse",["requiredLevel"]=40}
-V.Data.items[18256]={["class"]=7,["name"]="Imbued Vial"}
+V.Data.items[18256]={["class"]=7,["craftMaterial"]=true,["name"]="Imbued Vial",["professions"]={171,333}}
 V.Data.items[18269]={["name"]="Gordok Green Grog",["subClass"]=8}
 V.Data.items[18284]={["name"]="Kreeg's Stout Beatdown",["subClass"]=8}
 V.Data.items[18287]={["name"]="Evermurky"}
@@ -1309,28 +1309,28 @@ V.Data.items[18455]={["class"]=4,["name"]="Sergeant Major's Dragonhide Armsplint
 V.Data.items[18456]={["class"]=4,["name"]="Sergeant Major's Silk Cuffs",["pvpRank"]=5,["requiredLevel"]=58,["side"]="A",["subClass"]=1}
 V.Data.items[18457]={["class"]=4,["name"]="Sergeant Major's Silk Cuffs",["pvpRank"]=5,["requiredLevel"]=45,["side"]="A",["subClass"]=1}
 V.Data.items[18461]={["class"]=4,["name"]="Sergeant's Cloak",["pvpRank"]=3,["requiredLevel"]=58,["side"]="H",["subClass"]=1}
-V.Data.items[18487]={["class"]=9,["name"]="Pattern: Mooncloth Robe",["subClass"]=2}
-V.Data.items[18567]={["class"]=7,["name"]="Elemental Flux"}
+V.Data.items[18487]={["class"]=9,["name"]="Pattern: Mooncloth Robe",["professions"]={197},["subClass"]=2}
+V.Data.items[18567]={["class"]=7,["craftMaterial"]=true,["name"]="Elemental Flux",["professions"]={164,186}}
 V.Data.items[18606]={["name"]="Alliance Battle Standard",["subClass"]=8}
 V.Data.items[18607]={["name"]="Horde Battle Standard",["subClass"]=8}
 V.Data.items[18629]={["class"]=12,["name"]="Black Lodestone"}
 V.Data.items[18632]={["name"]="Moonbrook Riot Taffy",["requiredLevel"]=25}
 V.Data.items[18633]={["name"]="Styleen's Sour Suckerpop",["requiredLevel"]=5}
 V.Data.items[18635]={["name"]="Bellara's Nutterbar",["requiredLevel"]=35}
-V.Data.items[18647]={["class"]=9,["name"]="Schematic: Red Firework",["subClass"]=3}
-V.Data.items[18648]={["class"]=9,["name"]="Schematic: Green Firework",["subClass"]=3}
-V.Data.items[18649]={["class"]=9,["name"]="Schematic: Blue Firework",["subClass"]=3}
-V.Data.items[18650]={["class"]=9,["name"]="Schematic: EZ-Thro Dynamite II",["subClass"]=3}
-V.Data.items[18651]={["class"]=9,["name"]="Schematic: Truesilver Transformer",["subClass"]=3}
-V.Data.items[18652]={["class"]=9,["name"]="Schematic: Gyrofreeze Ice Reflector",["subClass"]=3}
-V.Data.items[18656]={["class"]=9,["name"]="Schematic: Powerful Seaforium Charge",["subClass"]=3}
+V.Data.items[18647]={["class"]=9,["name"]="Schematic: Red Firework",["professions"]={202},["subClass"]=3}
+V.Data.items[18648]={["class"]=9,["name"]="Schematic: Green Firework",["professions"]={202},["subClass"]=3}
+V.Data.items[18649]={["class"]=9,["name"]="Schematic: Blue Firework",["professions"]={202},["subClass"]=3}
+V.Data.items[18650]={["class"]=9,["name"]="Schematic: EZ-Thro Dynamite II",["professions"]={202},["subClass"]=3}
+V.Data.items[18651]={["class"]=9,["name"]="Schematic: Truesilver Transformer",["professions"]={202},["subClass"]=3}
+V.Data.items[18652]={["class"]=9,["name"]="Schematic: Gyrofreeze Ice Reflector",["professions"]={202},["subClass"]=3}
+V.Data.items[18656]={["class"]=9,["name"]="Schematic: Powerful Seaforium Charge",["professions"]={202},["subClass"]=3}
 V.Data.items[18662]={["name"]="Heavy Leather Ball",["requiredLevel"]=1,["subClass"]=8}
 V.Data.items[18663]={["class"]=12,["name"]="J'eevee's Jar"}
 V.Data.items[18664]={["class"]=15,["name"]="A Treatise on Military Ranks"}
 V.Data.items[18670]={["class"]=12,["name"]="Xorothian Glyphs"}
 V.Data.items[18675]={["class"]=15,["name"]="Military Ranks of the Horde & Alliance"}
 V.Data.items[18687]={["class"]=12,["name"]="Xorothian Stardust"}
-V.Data.items[18731]={["class"]=9,["name"]="Pattern: Heavy Leather Ball",["subClass"]=1}
+V.Data.items[18731]={["class"]=9,["name"]="Pattern: Heavy Leather Ball",["professions"]={165},["subClass"]=1}
 V.Data.items[18766]={["class"]=15,["name"]="Reins of the Swift Frostsaber",["requiredLevel"]=60}
 V.Data.items[18767]={["class"]=15,["name"]="Reins of the Swift Mistsaber",["requiredLevel"]=60}
 V.Data.items[18768]={["class"]=15,["name"]="Reins of the Swift Dawnsaber",["requiredLevel"]=60}
@@ -1401,8 +1401,8 @@ V.Data.items[18874]={["class"]=2,["name"]="High Warlord's War Staff",["pvpRank"]
 V.Data.items[18876]={["class"]=2,["name"]="Grand Marshal's Claymore",["pvpRank"]=14,["requiredLevel"]=60,["side"]="A",["subClass"]=8}
 V.Data.items[18877]={["class"]=2,["name"]="High Warlord's Greatsword",["pvpRank"]=14,["requiredLevel"]=60,["side"]="H",["subClass"]=8}
 V.Data.items[18902]={["class"]=15,["name"]="Reins of the Swift Stormsaber",["requiredLevel"]=60}
-V.Data.items[18949]={["class"]=9,["name"]="Pattern: Barbaric Bracers",["subClass"]=1}
-V.Data.items[19027]={["class"]=9,["name"]="Schematic: Snake Burst Firework",["subClass"]=3}
+V.Data.items[18949]={["class"]=9,["name"]="Pattern: Barbaric Bracers",["professions"]={165},["subClass"]=1}
+V.Data.items[19027]={["class"]=9,["name"]="Schematic: Snake Burst Firework",["professions"]={202},["subClass"]=3}
 V.Data.items[19029]={["class"]=15,["name"]="Horn of the Frostwolf Howler",["requiredLevel"]=60,["side"]="H"}
 V.Data.items[19030]={["class"]=15,["name"]="Stormpike Battle Charger",["requiredLevel"]=60,["side"]="A"}
 V.Data.items[19031]={["class"]=4,["name"]="Frostwolf Battle Tabard",["side"]="H"}
@@ -1437,23 +1437,23 @@ V.Data.items[19101]={["class"]=2,["name"]="Whiteout Staff",["requiredLevel"]=60,
 V.Data.items[19102]={["class"]=2,["name"]="Crackling Staff",["requiredLevel"]=60,["side"]="A",["subClass"]=10}
 V.Data.items[19103]={["class"]=2,["name"]="Frostbite",["requiredLevel"]=60,["side"]="H"}
 V.Data.items[19104]={["class"]=2,["name"]="Stormstrike Hammer",["requiredLevel"]=60,["side"]="A",["subClass"]=4}
-V.Data.items[19202]={["class"]=9,["name"]="Plans: Heavy Timbermaw Belt",["repFaction"]=576,["repStanding"]=5,["subClass"]=1}
-V.Data.items[19203]={["class"]=9,["name"]="Plans: Girdle of the Dawn",["repFaction"]=529,["repStanding"]=5,["subClass"]=4}
-V.Data.items[19204]={["class"]=9,["name"]="Plans: Heavy Timbermaw Boots",["repFaction"]=576,["repStanding"]=6,["subClass"]=1}
-V.Data.items[19205]={["class"]=9,["name"]="Plans: Gloves of the Dawn",["repFaction"]=529,["repStanding"]=6,["subClass"]=4}
-V.Data.items[19206]={["class"]=9,["name"]="Plans: Dark Iron Helm",["repFaction"]=59,["repStanding"]=5,["subClass"]=4}
-V.Data.items[19207]={["class"]=9,["name"]="Plans: Dark Iron Gauntlets",["repFaction"]=59,["repStanding"]=6,["subClass"]=4}
-V.Data.items[19208]={["class"]=9,["name"]="Plans: Black Amnesty",["repFaction"]=59,["repStanding"]=6,["subClass"]=4}
-V.Data.items[19209]={["class"]=9,["name"]="Plans: Blackfury",["repFaction"]=59,["repStanding"]=6,["subClass"]=4}
-V.Data.items[19210]={["class"]=9,["name"]="Plans: Ebon Hand",["repFaction"]=59,["repStanding"]=7,["subClass"]=4}
-V.Data.items[19211]={["class"]=9,["name"]="Plans: Blackguard",["repFaction"]=59,["repStanding"]=7,["subClass"]=4}
-V.Data.items[19212]={["class"]=9,["name"]="Plans: Nightfall",["repFaction"]=59,["repStanding"]=7,["subClass"]=4}
-V.Data.items[19215]={["class"]=9,["name"]="Pattern: Wisdom of the Timbermaw",["repFaction"]=576,["repStanding"]=5,["subClass"]=2}
-V.Data.items[19216]={["class"]=9,["name"]="Pattern: Argent Boots",["repFaction"]=529,["repStanding"]=5,["subClass"]=2}
-V.Data.items[19217]={["class"]=9,["name"]="Pattern: Argent Shoulders",["repFaction"]=529,["repStanding"]=6,["subClass"]=2}
-V.Data.items[19218]={["class"]=9,["name"]="Pattern: Mantle of the Timbermaw",["repFaction"]=576,["repStanding"]=6,["subClass"]=2}
-V.Data.items[19219]={["class"]=9,["name"]="Pattern: Flarecore Robe",["repFaction"]=59,["repStanding"]=5,["subClass"]=2}
-V.Data.items[19220]={["class"]=9,["name"]="Pattern: Flarecore Leggings",["repFaction"]=59,["repStanding"]=6,["subClass"]=2}
+V.Data.items[19202]={["class"]=9,["name"]="Plans: Heavy Timbermaw Belt",["professions"]={165},["repFaction"]=576,["repStanding"]=5,["subClass"]=1}
+V.Data.items[19203]={["class"]=9,["name"]="Plans: Girdle of the Dawn",["professions"]={164},["repFaction"]=529,["repStanding"]=5,["subClass"]=4}
+V.Data.items[19204]={["class"]=9,["name"]="Plans: Heavy Timbermaw Boots",["professions"]={165},["repFaction"]=576,["repStanding"]=6,["subClass"]=1}
+V.Data.items[19205]={["class"]=9,["name"]="Plans: Gloves of the Dawn",["professions"]={164},["repFaction"]=529,["repStanding"]=6,["subClass"]=4}
+V.Data.items[19206]={["class"]=9,["name"]="Plans: Dark Iron Helm",["professions"]={164},["repFaction"]=59,["repStanding"]=5,["subClass"]=4}
+V.Data.items[19207]={["class"]=9,["name"]="Plans: Dark Iron Gauntlets",["professions"]={164},["repFaction"]=59,["repStanding"]=6,["subClass"]=4}
+V.Data.items[19208]={["class"]=9,["name"]="Plans: Black Amnesty",["professions"]={164},["repFaction"]=59,["repStanding"]=6,["subClass"]=4}
+V.Data.items[19209]={["class"]=9,["name"]="Plans: Blackfury",["professions"]={164},["repFaction"]=59,["repStanding"]=6,["subClass"]=4}
+V.Data.items[19210]={["class"]=9,["name"]="Plans: Ebon Hand",["professions"]={164},["repFaction"]=59,["repStanding"]=7,["subClass"]=4}
+V.Data.items[19211]={["class"]=9,["name"]="Plans: Blackguard",["professions"]={164},["repFaction"]=59,["repStanding"]=7,["subClass"]=4}
+V.Data.items[19212]={["class"]=9,["name"]="Plans: Nightfall",["professions"]={164},["repFaction"]=59,["repStanding"]=7,["subClass"]=4}
+V.Data.items[19215]={["class"]=9,["name"]="Pattern: Wisdom of the Timbermaw",["professions"]={197},["repFaction"]=576,["repStanding"]=5,["subClass"]=2}
+V.Data.items[19216]={["class"]=9,["name"]="Pattern: Argent Boots",["professions"]={197},["repFaction"]=529,["repStanding"]=5,["subClass"]=2}
+V.Data.items[19217]={["class"]=9,["name"]="Pattern: Argent Shoulders",["professions"]={197},["repFaction"]=529,["repStanding"]=6,["subClass"]=2}
+V.Data.items[19218]={["class"]=9,["name"]="Pattern: Mantle of the Timbermaw",["professions"]={197},["repFaction"]=576,["repStanding"]=6,["subClass"]=2}
+V.Data.items[19219]={["class"]=9,["name"]="Pattern: Flarecore Robe",["professions"]={197},["repFaction"]=59,["repStanding"]=5,["subClass"]=2}
+V.Data.items[19220]={["class"]=9,["name"]="Pattern: Flarecore Leggings",["professions"]={197},["repFaction"]=59,["repStanding"]=6,["subClass"]=2}
 V.Data.items[19221]={["name"]="Darkmoon Special Reserve"}
 V.Data.items[19222]={["name"]="Cheap Beer"}
 V.Data.items[19223]={["name"]="Darkmoon Dog",["requiredLevel"]=1}
@@ -1483,21 +1483,21 @@ V.Data.items[19321]={["class"]=4,["name"]="The Immovable Object",["requiredLevel
 V.Data.items[19323]={["class"]=2,["name"]="The Unstoppable Force",["requiredLevel"]=60,["side"]="A",["subClass"]=5}
 V.Data.items[19324]={["class"]=2,["name"]="The Lobotomizer",["requiredLevel"]=60,["side"]="A",["subClass"]=15}
 V.Data.items[19325]={["class"]=4,["name"]="Don Julio's Band",["requiredLevel"]=60,["side"]="A"}
-V.Data.items[19326]={["class"]=9,["name"]="Pattern: Might of the Timbermaw",["repFaction"]=576,["repStanding"]=5,["subClass"]=1}
-V.Data.items[19327]={["class"]=9,["name"]="Pattern: Timbermaw Brawlers",["repFaction"]=576,["repStanding"]=6,["subClass"]=1}
-V.Data.items[19328]={["class"]=9,["name"]="Pattern: Dawn Treaders",["repFaction"]=529,["repStanding"]=5,["subClass"]=1}
-V.Data.items[19329]={["class"]=9,["name"]="Pattern: Golden Mantle of the Dawn",["repFaction"]=529,["repStanding"]=6,["subClass"]=1}
-V.Data.items[19330]={["class"]=9,["name"]="Pattern: Lava Belt",["repFaction"]=59,["repStanding"]=5,["subClass"]=1}
-V.Data.items[19331]={["class"]=9,["name"]="Pattern: Chromatic Gauntlets",["repFaction"]=59,["repStanding"]=6,["subClass"]=1}
-V.Data.items[19332]={["class"]=9,["name"]="Pattern: Corehound Belt",["repFaction"]=59,["repStanding"]=6,["subClass"]=1}
-V.Data.items[19333]={["class"]=9,["name"]="Pattern: Molten Belt",["repFaction"]=59,["repStanding"]=6,["subClass"]=1}
-V.Data.items[19442]={["class"]=9,["name"]="Formula: Powerful Anti-Venom",["repFaction"]=529,["repStanding"]=5,["subClass"]=7}
-V.Data.items[19444]={["class"]=9,["name"]="Formula: Enchant Weapon - Strength",["repFaction"]=59,["repStanding"]=4,["subClass"]=8}
-V.Data.items[19445]={["class"]=9,["name"]="Formula: Enchant Weapon - Agility",["repFaction"]=576,["repStanding"]=5,["subClass"]=8}
-V.Data.items[19446]={["class"]=9,["name"]="Formula: Enchant Bracer - Mana Regeneration",["repFaction"]=529,["repStanding"]=5,["subClass"]=8}
-V.Data.items[19447]={["class"]=9,["name"]="Formula: Enchant Bracer - Healing",["repFaction"]=529,["repStanding"]=6,["subClass"]=8}
-V.Data.items[19448]={["class"]=9,["name"]="Formula: Enchant Weapon - Mighty Spirit",["repFaction"]=59,["repStanding"]=5,["subClass"]=8}
-V.Data.items[19449]={["class"]=9,["name"]="Formula: Enchant Weapon - Mighty Intellect",["repFaction"]=59,["repStanding"]=6,["subClass"]=8}
+V.Data.items[19326]={["class"]=9,["name"]="Pattern: Might of the Timbermaw",["professions"]={165},["repFaction"]=576,["repStanding"]=5,["subClass"]=1}
+V.Data.items[19327]={["class"]=9,["name"]="Pattern: Timbermaw Brawlers",["professions"]={165},["repFaction"]=576,["repStanding"]=6,["subClass"]=1}
+V.Data.items[19328]={["class"]=9,["name"]="Pattern: Dawn Treaders",["professions"]={165},["repFaction"]=529,["repStanding"]=5,["subClass"]=1}
+V.Data.items[19329]={["class"]=9,["name"]="Pattern: Golden Mantle of the Dawn",["professions"]={165},["repFaction"]=529,["repStanding"]=6,["subClass"]=1}
+V.Data.items[19330]={["class"]=9,["name"]="Pattern: Lava Belt",["professions"]={165},["repFaction"]=59,["repStanding"]=5,["subClass"]=1}
+V.Data.items[19331]={["class"]=9,["name"]="Pattern: Chromatic Gauntlets",["professions"]={165},["repFaction"]=59,["repStanding"]=6,["subClass"]=1}
+V.Data.items[19332]={["class"]=9,["name"]="Pattern: Corehound Belt",["professions"]={165},["repFaction"]=59,["repStanding"]=6,["subClass"]=1}
+V.Data.items[19333]={["class"]=9,["name"]="Pattern: Molten Belt",["professions"]={165},["repFaction"]=59,["repStanding"]=6,["subClass"]=1}
+V.Data.items[19442]={["class"]=9,["name"]="Formula: Powerful Anti-Venom",["professions"]={129},["repFaction"]=529,["repStanding"]=5,["subClass"]=7}
+V.Data.items[19444]={["class"]=9,["name"]="Formula: Enchant Weapon - Strength",["professions"]={333},["repFaction"]=59,["repStanding"]=4,["subClass"]=8}
+V.Data.items[19445]={["class"]=9,["name"]="Formula: Enchant Weapon - Agility",["professions"]={333},["repFaction"]=576,["repStanding"]=5,["subClass"]=8}
+V.Data.items[19446]={["class"]=9,["name"]="Formula: Enchant Bracer - Mana Regeneration",["professions"]={333},["repFaction"]=529,["repStanding"]=5,["subClass"]=8}
+V.Data.items[19447]={["class"]=9,["name"]="Formula: Enchant Bracer - Healing",["professions"]={333},["repFaction"]=529,["repStanding"]=6,["subClass"]=8}
+V.Data.items[19448]={["class"]=9,["name"]="Formula: Enchant Weapon - Mighty Spirit",["professions"]={333},["repFaction"]=59,["repStanding"]=5,["subClass"]=8}
+V.Data.items[19449]={["class"]=9,["name"]="Formula: Enchant Weapon - Mighty Intellect",["professions"]={333},["repFaction"]=59,["repStanding"]=6,["subClass"]=8}
 V.Data.items[19483]={["class"]=15,["name"]="Peeling the Onion",["side"]="H"}
 V.Data.items[19484]={["class"]=15,["name"]="The Frostwolf Artichoke",["side"]="A"}
 V.Data.items[19505]={["class"]=4,["name"]="Warsong Battle Tabard",["side"]="H"}
@@ -1578,30 +1578,30 @@ V.Data.items[19590]={["class"]=4,["name"]="Forest Stalker's Bracers",["requiredL
 V.Data.items[19595]={["class"]=4,["name"]="Dryad's Wrist Bindings",["requiredLevel"]=60,["side"]="A",["subClass"]=1}
 V.Data.items[19596]={["class"]=4,["name"]="Dryad's Wrist Bindings",["requiredLevel"]=50,["side"]="A",["subClass"]=1}
 V.Data.items[19597]={["class"]=4,["name"]="Dryad's Wrist Bindings",["requiredLevel"]=40,["side"]="A",["subClass"]=1}
-V.Data.items[19764]={["class"]=9,["name"]="Pattern: Bloodvine Vest",["repFaction"]=270,["repStanding"]=6,["subClass"]=2}
-V.Data.items[19765]={["class"]=9,["name"]="Pattern: Bloodvine Leggings",["repFaction"]=270,["repStanding"]=5,["subClass"]=2}
-V.Data.items[19766]={["class"]=9,["name"]="Pattern: Bloodvine Boots",["repFaction"]=270,["repStanding"]=4,["subClass"]=2}
-V.Data.items[19769]={["class"]=9,["name"]="Pattern: Primal Batskin Jerkin",["repFaction"]=270,["repStanding"]=6,["subClass"]=1}
-V.Data.items[19770]={["class"]=9,["name"]="Pattern: Primal Batskin Gloves",["repFaction"]=270,["repStanding"]=5,["subClass"]=1}
-V.Data.items[19771]={["class"]=9,["name"]="Pattern: Primal Batskin Bracers",["repFaction"]=270,["repStanding"]=4,["subClass"]=1}
-V.Data.items[19772]={["class"]=9,["name"]="Pattern: Blood Tiger Breastplate",["repFaction"]=270,["repStanding"]=6,["subClass"]=1}
-V.Data.items[19773]={["class"]=9,["name"]="Pattern: Blood Tiger Shoulders",["repFaction"]=270,["repStanding"]=5,["subClass"]=1}
-V.Data.items[19776]={["class"]=9,["name"]="Plans: Bloodsoul Breastplate",["repFaction"]=270,["repStanding"]=6,["subClass"]=4}
-V.Data.items[19777]={["class"]=9,["name"]="Plans: Bloodsoul Shoulders",["repFaction"]=270,["repStanding"]=5,["subClass"]=4}
-V.Data.items[19778]={["class"]=9,["name"]="Plans: Bloodsoul Gauntlets",["repFaction"]=270,["repStanding"]=4,["subClass"]=4}
-V.Data.items[19779]={["class"]=9,["name"]="Plans: Darksoul Breastplate",["repFaction"]=270,["repStanding"]=6,["subClass"]=4}
-V.Data.items[19780]={["class"]=9,["name"]="Plans: Darksoul Leggings",["repFaction"]=270,["repStanding"]=5,["subClass"]=4}
-V.Data.items[19781]={["class"]=9,["name"]="Plans: Darksoul Shoulders",["repFaction"]=270,["repStanding"]=4,["subClass"]=4}
+V.Data.items[19764]={["class"]=9,["name"]="Pattern: Bloodvine Vest",["professions"]={197},["repFaction"]=270,["repStanding"]=6,["subClass"]=2}
+V.Data.items[19765]={["class"]=9,["name"]="Pattern: Bloodvine Leggings",["professions"]={197},["repFaction"]=270,["repStanding"]=5,["subClass"]=2}
+V.Data.items[19766]={["class"]=9,["name"]="Pattern: Bloodvine Boots",["professions"]={197},["repFaction"]=270,["repStanding"]=4,["subClass"]=2}
+V.Data.items[19769]={["class"]=9,["name"]="Pattern: Primal Batskin Jerkin",["professions"]={165},["repFaction"]=270,["repStanding"]=6,["subClass"]=1}
+V.Data.items[19770]={["class"]=9,["name"]="Pattern: Primal Batskin Gloves",["professions"]={165},["repFaction"]=270,["repStanding"]=5,["subClass"]=1}
+V.Data.items[19771]={["class"]=9,["name"]="Pattern: Primal Batskin Bracers",["professions"]={165},["repFaction"]=270,["repStanding"]=4,["subClass"]=1}
+V.Data.items[19772]={["class"]=9,["name"]="Pattern: Blood Tiger Breastplate",["professions"]={165},["repFaction"]=270,["repStanding"]=6,["subClass"]=1}
+V.Data.items[19773]={["class"]=9,["name"]="Pattern: Blood Tiger Shoulders",["professions"]={165},["repFaction"]=270,["repStanding"]=5,["subClass"]=1}
+V.Data.items[19776]={["class"]=9,["name"]="Plans: Bloodsoul Breastplate",["professions"]={164},["repFaction"]=270,["repStanding"]=6,["subClass"]=4}
+V.Data.items[19777]={["class"]=9,["name"]="Plans: Bloodsoul Shoulders",["professions"]={164},["repFaction"]=270,["repStanding"]=5,["subClass"]=4}
+V.Data.items[19778]={["class"]=9,["name"]="Plans: Bloodsoul Gauntlets",["professions"]={164},["repFaction"]=270,["repStanding"]=4,["subClass"]=4}
+V.Data.items[19779]={["class"]=9,["name"]="Plans: Darksoul Breastplate",["professions"]={164},["repFaction"]=270,["repStanding"]=6,["subClass"]=4}
+V.Data.items[19780]={["class"]=9,["name"]="Plans: Darksoul Leggings",["professions"]={164},["repFaction"]=270,["repStanding"]=5,["subClass"]=4}
+V.Data.items[19781]={["class"]=9,["name"]="Plans: Darksoul Shoulders",["professions"]={164},["repFaction"]=270,["repStanding"]=4,["subClass"]=4}
 V.Data.items[19872]={["class"]=15,["name"]="Swift Razzashi Raptor",["requiredLevel"]=60}
 V.Data.items[19902]={["class"]=15,["name"]="Swift Zulian Tiger",["requiredLevel"]=60}
 V.Data.items[19974]={["class"]=12,["name"]="Mudskunk Lure"}
-V.Data.items[20000]={["class"]=9,["name"]="Schematic: Bloodvine Goggles",["repFaction"]=270,["repStanding"]=5,["subClass"]=3}
-V.Data.items[20001]={["class"]=9,["name"]="Schematic: Bloodvine Lens",["repFaction"]=270,["repStanding"]=4,["subClass"]=3}
-V.Data.items[20011]={["class"]=9,["name"]="Recipe: Mageblood Potion",["repFaction"]=270,["repStanding"]=6,["subClass"]=6}
-V.Data.items[20012]={["class"]=9,["name"]="Recipe: Greater Dreamless Sleep",["repFaction"]=270,["repStanding"]=4,["subClass"]=6}
-V.Data.items[20013]={["class"]=9,["name"]="Recipe: Living Action Potion",["repFaction"]=270,["repStanding"]=7,["subClass"]=6}
-V.Data.items[20014]={["class"]=9,["name"]="Recipe: Major Troll's Blood Potion",["repFaction"]=270,["repStanding"]=5,["subClass"]=6}
-V.Data.items[20040]={["class"]=9,["name"]="Plans: Dark Iron Boots",["repFaction"]=59,["repStanding"]=7,["subClass"]=4}
+V.Data.items[20000]={["class"]=9,["name"]="Schematic: Bloodvine Goggles",["professions"]={202},["repFaction"]=270,["repStanding"]=5,["subClass"]=3}
+V.Data.items[20001]={["class"]=9,["name"]="Schematic: Bloodvine Lens",["professions"]={202},["repFaction"]=270,["repStanding"]=4,["subClass"]=3}
+V.Data.items[20011]={["class"]=9,["name"]="Recipe: Mageblood Potion",["professions"]={171},["repFaction"]=270,["repStanding"]=6,["subClass"]=6}
+V.Data.items[20012]={["class"]=9,["name"]="Recipe: Greater Dreamless Sleep",["professions"]={171},["repFaction"]=270,["repStanding"]=4,["subClass"]=6}
+V.Data.items[20013]={["class"]=9,["name"]="Recipe: Living Action Potion",["professions"]={171},["repFaction"]=270,["repStanding"]=7,["subClass"]=6}
+V.Data.items[20014]={["class"]=9,["name"]="Recipe: Major Troll's Blood Potion",["professions"]={171},["repFaction"]=270,["repStanding"]=5,["subClass"]=6}
+V.Data.items[20040]={["class"]=9,["name"]="Plans: Dark Iron Boots",["professions"]={164},["repFaction"]=59,["repStanding"]=7,["subClass"]=4}
 V.Data.items[20041]={["class"]=4,["name"]="Highlander's Plate Girdle",["repFaction"]=509,["repStanding"]=5,["requiredLevel"]=58,["side"]="A",["subClass"]=4}
 V.Data.items[20042]={["class"]=4,["name"]="Highlander's Lamellar Girdle",["repFaction"]=509,["repStanding"]=5,["requiredLevel"]=58,["side"]="A",["subClass"]=4}
 V.Data.items[20043]={["class"]=4,["name"]="Highlander's Chain Girdle",["repFaction"]=509,["repStanding"]=5,["requiredLevel"]=58,["side"]="A",["subClass"]=3}
@@ -1629,7 +1629,7 @@ V.Data.items[20070]={["class"]=2,["name"]="Sageclaw",["repFaction"]=509,["repSta
 V.Data.items[20071]={["class"]=4,["name"]="Talisman of Arathor",["repFaction"]=509,["repStanding"]=4,["requiredLevel"]=58,["side"]="A"}
 V.Data.items[20072]={["class"]=4,["name"]="Defiler's Talisman",["repFaction"]=510,["repStanding"]=4,["requiredLevel"]=58,["side"]="H"}
 V.Data.items[20073]={["class"]=4,["name"]="Cloak of the Honor Guard",["repFaction"]=509,["repStanding"]=7,["requiredLevel"]=60,["side"]="A",["subClass"]=1}
-V.Data.items[20075]={["class"]=9,["name"]="Recipe: Heavy Crocolisk Stew",["subClass"]=5}
+V.Data.items[20075]={["class"]=9,["name"]="Recipe: Heavy Crocolisk Stew",["professions"]={185},["subClass"]=5}
 V.Data.items[20088]={["class"]=4,["name"]="Highlander's Chain Girdle",["repFaction"]=509,["repStanding"]=5,["requiredLevel"]=48,["side"]="A",["subClass"]=3}
 V.Data.items[20089]={["class"]=4,["name"]="Highlander's Chain Girdle",["repFaction"]=509,["repStanding"]=5,["requiredLevel"]=40,["side"]="A",["subClass"]=3}
 V.Data.items[20090]={["class"]=4,["name"]="Highlander's Chain Girdle",["repFaction"]=509,["repStanding"]=5,["requiredLevel"]=28,["side"]="A",["subClass"]=2}
@@ -1741,9 +1741,9 @@ V.Data.items[20235]={["name"]="Defiler's Silk Bandage",["repFaction"]=510,["repS
 V.Data.items[20237]={["name"]="Highlander's Mageweave Bandage",["repFaction"]=509,["repStanding"]=4,["requiredLevel"]=35,["side"]="A",["subClass"]=5}
 V.Data.items[20243]={["name"]="Highlander's Runecloth Bandage",["repFaction"]=509,["repStanding"]=4,["requiredLevel"]=45,["side"]="A",["subClass"]=5}
 V.Data.items[20244]={["name"]="Highlander's Silk Bandage",["repFaction"]=509,["repStanding"]=4,["requiredLevel"]=25,["side"]="A",["subClass"]=5}
-V.Data.items[20253]={["class"]=9,["name"]="Pattern: Warbear Harness",["repFaction"]=576,["repStanding"]=4,["subClass"]=1}
-V.Data.items[20254]={["class"]=9,["name"]="Pattern: Warbear Woolies",["repFaction"]=576,["repStanding"]=4,["subClass"]=1}
-V.Data.items[20382]={["class"]=9,["name"]="Pattern: Dreamscale Breastplate",["subClass"]=1}
+V.Data.items[20253]={["class"]=9,["name"]="Pattern: Warbear Harness",["professions"]={165},["repFaction"]=576,["repStanding"]=4,["subClass"]=1}
+V.Data.items[20254]={["class"]=9,["name"]="Pattern: Warbear Woolies",["professions"]={165},["repFaction"]=576,["repStanding"]=4,["subClass"]=1}
+V.Data.items[20382]={["class"]=9,["name"]="Pattern: Dreamscale Breastplate",["professions"]={165},["subClass"]=1}
 V.Data.items[20387]={["class"]=12,["name"]="Forsaken Stink Bomb Cluster"}
 V.Data.items[20425]={["class"]=2,["name"]="Advisor's Gnarled Staff",["requiredLevel"]=18,["side"]="H",["subClass"]=10}
 V.Data.items[20426]={["class"]=4,["name"]="Advisor's Ring",["requiredLevel"]=18,["side"]="H"}
@@ -1761,31 +1761,31 @@ V.Data.items[20441]={["class"]=2,["name"]="Scout's Blade",["requiredLevel"]=18,[
 V.Data.items[20442]={["class"]=4,["name"]="Scout's Medallion",["requiredLevel"]=18,["side"]="H"}
 V.Data.items[20443]={["class"]=2,["name"]="Sentinel's Blade",["requiredLevel"]=18,["side"]="A",["subClass"]=15}
 V.Data.items[20444]={["class"]=4,["name"]="Sentinel's Medallion",["requiredLevel"]=18,["side"]="A"}
-V.Data.items[20506]={["class"]=9,["name"]="Pattern: Spitfire Bracers",["subClass"]=1}
-V.Data.items[20507]={["class"]=9,["name"]="Pattern: Spitfire Gauntlets",["subClass"]=1}
-V.Data.items[20508]={["class"]=9,["name"]="Pattern: Spitfire Breastplate",["subClass"]=1}
-V.Data.items[20509]={["class"]=9,["name"]="Pattern: Sandstalker Bracers",["subClass"]=1}
-V.Data.items[20510]={["class"]=9,["name"]="Pattern: Sandstalker Gauntlets",["subClass"]=1}
-V.Data.items[20511]={["class"]=9,["name"]="Pattern: Sandstalker Breastplate",["subClass"]=1}
+V.Data.items[20506]={["class"]=9,["name"]="Pattern: Spitfire Bracers",["professions"]={165},["subClass"]=1}
+V.Data.items[20507]={["class"]=9,["name"]="Pattern: Spitfire Gauntlets",["professions"]={165},["subClass"]=1}
+V.Data.items[20508]={["class"]=9,["name"]="Pattern: Spitfire Breastplate",["professions"]={165},["subClass"]=1}
+V.Data.items[20509]={["class"]=9,["name"]="Pattern: Sandstalker Bracers",["professions"]={165},["subClass"]=1}
+V.Data.items[20510]={["class"]=9,["name"]="Pattern: Sandstalker Gauntlets",["professions"]={165},["subClass"]=1}
+V.Data.items[20511]={["class"]=9,["name"]="Pattern: Sandstalker Breastplate",["professions"]={165},["subClass"]=1}
 V.Data.items[20557]={["name"]="Hallow's End Pumpkin Treat",["subClass"]=8}
-V.Data.items[20576]={["class"]=9,["name"]="Pattern: Black Whelp Tunic",["subClass"]=1}
+V.Data.items[20576]={["class"]=9,["name"]="Pattern: Black Whelp Tunic",["professions"]={165},["subClass"]=1}
 V.Data.items[20604]={["class"]=12,["name"]="Stink Bomb Cleaner"}
-V.Data.items[20732]={["class"]=9,["name"]="Formula: Enchant Cloak - Greater Fire Resistance",["repFaction"]=609,["repStanding"]=4,["subClass"]=8}
-V.Data.items[20733]={["class"]=9,["name"]="Formula: Enchant Cloak - Greater Nature Resistance",["repFaction"]=609,["repStanding"]=5,["subClass"]=8}
-V.Data.items[20752]={["class"]=9,["name"]="Formula: Minor Mana Oil",["subClass"]=8}
-V.Data.items[20753]={["class"]=9,["name"]="Formula: Lesser Wizard Oil",["subClass"]=8}
-V.Data.items[20754]={["class"]=9,["name"]="Formula: Lesser Mana Oil",["subClass"]=8}
-V.Data.items[20755]={["class"]=9,["name"]="Formula: Wizard Oil",["subClass"]=8}
-V.Data.items[20756]={["class"]=9,["name"]="Formula: Brilliant Wizard Oil",["repFaction"]=270,["repStanding"]=5,["subClass"]=8}
-V.Data.items[20757]={["class"]=9,["name"]="Formula: Brilliant Mana Oil",["repFaction"]=270,["repStanding"]=4,["subClass"]=8}
-V.Data.items[20758]={["class"]=9,["name"]="Formula: Minor Wizard Oil",["subClass"]=8}
-V.Data.items[20761]={["class"]=9,["name"]="Recipe: Transmute Elemental Fire",["repFaction"]=59,["repStanding"]=4,["subClass"]=6}
+V.Data.items[20732]={["class"]=9,["name"]="Formula: Enchant Cloak - Greater Fire Resistance",["professions"]={333},["repFaction"]=609,["repStanding"]=4,["subClass"]=8}
+V.Data.items[20733]={["class"]=9,["name"]="Formula: Enchant Cloak - Greater Nature Resistance",["professions"]={333},["repFaction"]=609,["repStanding"]=5,["subClass"]=8}
+V.Data.items[20752]={["class"]=9,["name"]="Formula: Minor Mana Oil",["professions"]={333},["subClass"]=8}
+V.Data.items[20753]={["class"]=9,["name"]="Formula: Lesser Wizard Oil",["professions"]={333},["subClass"]=8}
+V.Data.items[20754]={["class"]=9,["name"]="Formula: Lesser Mana Oil",["professions"]={333},["subClass"]=8}
+V.Data.items[20755]={["class"]=9,["name"]="Formula: Wizard Oil",["professions"]={333},["subClass"]=8}
+V.Data.items[20756]={["class"]=9,["name"]="Formula: Brilliant Wizard Oil",["professions"]={333},["repFaction"]=270,["repStanding"]=5,["subClass"]=8}
+V.Data.items[20757]={["class"]=9,["name"]="Formula: Brilliant Mana Oil",["professions"]={333},["repFaction"]=270,["repStanding"]=4,["subClass"]=8}
+V.Data.items[20758]={["class"]=9,["name"]="Formula: Minor Wizard Oil",["professions"]={333},["subClass"]=8}
+V.Data.items[20761]={["class"]=9,["name"]="Recipe: Transmute Elemental Fire",["professions"]={171},["repFaction"]=59,["repStanding"]=4,["subClass"]=6}
 V.Data.items[20844]={["name"]="Deadly Poison V",["requiredLevel"]=60}
 V.Data.items[21030]={["name"]="Darnassus Kimchi Pie",["requiredLevel"]=35}
 V.Data.items[21031]={["name"]="Cabbage Kimchi",["requiredLevel"]=45}
 V.Data.items[21033]={["name"]="Radish Kimchi",["requiredLevel"]=45}
 V.Data.items[21044]={["name"]="Reindeer Reins"}
-V.Data.items[21099]={["class"]=9,["name"]="Recipe: Smoked Sagefish",["subClass"]=5}
+V.Data.items[21099]={["class"]=9,["name"]="Recipe: Smoked Sagefish",["professions"]={185},["subClass"]=5}
 V.Data.items[21115]={["class"]=4,["name"]="Defiler's Talisman",["repFaction"]=510,["repStanding"]=4,["requiredLevel"]=48,["side"]="H"}
 V.Data.items[21116]={["class"]=4,["name"]="Defiler's Talisman",["repFaction"]=510,["repStanding"]=4,["requiredLevel"]=38,["side"]="H"}
 V.Data.items[21117]={["class"]=4,["name"]="Talisman of Arathor",["repFaction"]=509,["repStanding"]=4,["requiredLevel"]=48,["side"]="A"}
@@ -1794,8 +1794,8 @@ V.Data.items[21119]={["class"]=4,["name"]="Talisman of Arathor",["repFaction"]=5
 V.Data.items[21120]={["class"]=4,["name"]="Defiler's Talisman",["repFaction"]=510,["repStanding"]=4,["requiredLevel"]=28,["side"]="H"}
 V.Data.items[21176]={["class"]=15,["name"]="Black Qiraji Resonating Crystal",["requiredLevel"]=60}
 V.Data.items[21177]={["class"]=5,["name"]="Symbol of Kings"}
-V.Data.items[21219]={["class"]=9,["name"]="Recipe: Sagefish Delight",["subClass"]=5}
-V.Data.items[21358]={["class"]=9,["name"]="Pattern: Soul Pouch",["subClass"]=2}
+V.Data.items[21219]={["class"]=9,["name"]="Recipe: Sagefish Delight",["professions"]={185},["subClass"]=5}
+V.Data.items[21358]={["class"]=9,["name"]="Pattern: Soul Pouch",["professions"]={197},["subClass"]=2}
 V.Data.items[21552]={["name"]="Striped Yellowtail",["requiredLevel"]=35}
 V.Data.items[21557]={["class"]=12,["name"]="Small Red Rocket",["subClass"]=3}
 V.Data.items[21558]={["class"]=12,["name"]="Small Blue Rocket",["subClass"]=3}
@@ -1815,22 +1815,22 @@ V.Data.items[21829]={["class"]=12,["name"]="Perfume Bottle",["subClass"]=3}
 V.Data.items[21833]={["class"]=12,["name"]="Cologne Bottle",["subClass"]=3}
 V.Data.items[21939]={["class"]=15,["name"]="Fel Elemental Rod"}
 V.Data.items[22014]={["class"]=12,["name"]="Hallowed Brazier",["repFaction"]=529,["repStanding"]=5}
-V.Data.items[22209]={["class"]=9,["name"]="Plans: Heavy Obsidian Belt",["subClass"]=4}
-V.Data.items[22214]={["class"]=9,["name"]="Plans: Light Obsidian Belt",["subClass"]=4}
-V.Data.items[22219]={["class"]=9,["name"]="Plans: Jagged Obsidian Shield",["repFaction"]=609,["repStanding"]=6,["subClass"]=4}
-V.Data.items[22221]={["class"]=9,["name"]="Plans: Obsidian Mail Tunic",["repFaction"]=609,["repStanding"]=7,["subClass"]=4}
-V.Data.items[22250]={["class"]=1,["name"]="Herb Pouch",["subClass"]=2}
-V.Data.items[22307]={["class"]=9,["name"]="Pattern: Enchanted Mageweave Pouch",["subClass"]=2}
-V.Data.items[22308]={["class"]=9,["name"]="Pattern: Enchanted Runecloth Bag",["subClass"]=2}
-V.Data.items[22310]={["class"]=9,["name"]="Pattern: Cenarion Herb Bag",["repFaction"]=609,["repStanding"]=4,["subClass"]=2}
-V.Data.items[22312]={["class"]=9,["name"]="Pattern: Satchel of Cenarius",["repFaction"]=609,["repStanding"]=6,["subClass"]=2}
+V.Data.items[22209]={["class"]=9,["name"]="Plans: Heavy Obsidian Belt",["professions"]={164},["subClass"]=4}
+V.Data.items[22214]={["class"]=9,["name"]="Plans: Light Obsidian Belt",["professions"]={164},["subClass"]=4}
+V.Data.items[22219]={["class"]=9,["name"]="Plans: Jagged Obsidian Shield",["professions"]={164},["repFaction"]=609,["repStanding"]=6,["subClass"]=4}
+V.Data.items[22221]={["class"]=9,["name"]="Plans: Obsidian Mail Tunic",["professions"]={164},["repFaction"]=609,["repStanding"]=7,["subClass"]=4}
+V.Data.items[22250]={["class"]=1,["name"]="Herb Pouch",["professions"]={182},["subClass"]=2}
+V.Data.items[22307]={["class"]=9,["name"]="Pattern: Enchanted Mageweave Pouch",["professions"]={197},["subClass"]=2}
+V.Data.items[22308]={["class"]=9,["name"]="Pattern: Enchanted Runecloth Bag",["professions"]={197},["subClass"]=2}
+V.Data.items[22310]={["class"]=9,["name"]="Pattern: Cenarion Herb Bag",["professions"]={197},["repFaction"]=609,["repStanding"]=4,["subClass"]=2}
+V.Data.items[22312]={["class"]=9,["name"]="Pattern: Satchel of Cenarius",["professions"]={197},["repFaction"]=609,["repStanding"]=6,["subClass"]=2}
 V.Data.items[22324]={["name"]="Winter Kimchi",["requiredLevel"]=45}
-V.Data.items[22392]={["class"]=9,["name"]="Formula: Enchant 2H Weapon - Agility",["repFaction"]=576,["repStanding"]=4,["subClass"]=8}
+V.Data.items[22392]={["class"]=9,["name"]="Formula: Enchant 2H Weapon - Agility",["professions"]={333},["repFaction"]=576,["repStanding"]=4,["subClass"]=8}
 V.Data.items[22651]={["class"]=4,["name"]="Outrider's Plate Legguards",["requiredLevel"]=60,["side"]="H",["subClass"]=4}
 V.Data.items[22672]={["class"]=4,["name"]="Sentinel's Plate Legguards",["requiredLevel"]=60,["side"]="A",["subClass"]=4}
 V.Data.items[22673]={["class"]=4,["name"]="Outrider's Chain Leggings",["requiredLevel"]=60,["side"]="H",["subClass"]=3}
 V.Data.items[22676]={["class"]=4,["name"]="Outrider's Mail Leggings",["requiredLevel"]=60,["side"]="H",["subClass"]=3}
-V.Data.items[22683]={["class"]=9,["name"]="Pattern: Gaea's Embrace",["repFaction"]=609,["repStanding"]=6,["subClass"]=2}
+V.Data.items[22683]={["class"]=9,["name"]="Pattern: Gaea's Embrace",["professions"]={197},["repFaction"]=609,["repStanding"]=6,["subClass"]=2}
 V.Data.items[22740]={["class"]=4,["name"]="Outrider's Leather Pants",["requiredLevel"]=60,["side"]="H",["subClass"]=2}
 V.Data.items[22741]={["class"]=4,["name"]="Outrider's Lizardhide Pants",["requiredLevel"]=60,["side"]="H",["subClass"]=2}
 V.Data.items[22747]={["class"]=4,["name"]="Outrider's Silk Leggings",["requiredLevel"]=60,["side"]="H",["subClass"]=1}
@@ -1839,15 +1839,15 @@ V.Data.items[22749]={["class"]=4,["name"]="Sentinel's Leather Pants",["requiredL
 V.Data.items[22750]={["class"]=4,["name"]="Sentinel's Lizardhide Pants",["requiredLevel"]=60,["side"]="A",["subClass"]=2}
 V.Data.items[22752]={["class"]=4,["name"]="Sentinel's Silk Leggings",["requiredLevel"]=60,["side"]="A",["subClass"]=1}
 V.Data.items[22753]={["class"]=4,["name"]="Sentinel's Lamellar Legguards",["requiredLevel"]=60,["side"]="A",["subClass"]=4}
-V.Data.items[22766]={["class"]=9,["name"]="Plans: Ironvine Breastplate",["subClass"]=4}
-V.Data.items[22767]={["class"]=9,["name"]="Plans: Ironvine Gloves",["subClass"]=4}
-V.Data.items[22768]={["class"]=9,["name"]="Plans: Ironvine Belt",["subClass"]=4}
-V.Data.items[22769]={["class"]=9,["name"]="Pattern: Bramblewood Belt",["subClass"]=1}
-V.Data.items[22770]={["class"]=9,["name"]="Pattern: Bramblewood Boots",["subClass"]=1}
-V.Data.items[22771]={["class"]=9,["name"]="Pattern: Bramblewood Helm",["subClass"]=1}
-V.Data.items[22772]={["class"]=9,["name"]="Pattern: Sylvan Shoulders",["repFaction"]=609,["repStanding"]=4,["subClass"]=2}
-V.Data.items[22773]={["class"]=9,["name"]="Pattern: Sylvan Crown",["repFaction"]=609,["repStanding"]=5,["subClass"]=2}
-V.Data.items[22774]={["class"]=9,["name"]="Pattern: Sylvan Vest",["repFaction"]=609,["repStanding"]=6,["subClass"]=2}
+V.Data.items[22766]={["class"]=9,["name"]="Plans: Ironvine Breastplate",["professions"]={164},["subClass"]=4}
+V.Data.items[22767]={["class"]=9,["name"]="Plans: Ironvine Gloves",["professions"]={164},["subClass"]=4}
+V.Data.items[22768]={["class"]=9,["name"]="Plans: Ironvine Belt",["professions"]={164},["subClass"]=4}
+V.Data.items[22769]={["class"]=9,["name"]="Pattern: Bramblewood Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[22770]={["class"]=9,["name"]="Pattern: Bramblewood Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[22771]={["class"]=9,["name"]="Pattern: Bramblewood Helm",["professions"]={165},["subClass"]=1}
+V.Data.items[22772]={["class"]=9,["name"]="Pattern: Sylvan Shoulders",["professions"]={197},["repFaction"]=609,["repStanding"]=4,["subClass"]=2}
+V.Data.items[22773]={["class"]=9,["name"]="Pattern: Sylvan Crown",["professions"]={197},["repFaction"]=609,["repStanding"]=5,["subClass"]=2}
+V.Data.items[22774]={["class"]=9,["name"]="Pattern: Sylvan Vest",["professions"]={197},["repFaction"]=609,["repStanding"]=6,["subClass"]=2}
 V.Data.items[22843]={["class"]=4,["name"]="Blood Guard's Chain Greaves",["pvpRank"]=7,["requiredLevel"]=60,["side"]="H",["subClass"]=3}
 V.Data.items[22852]={["class"]=4,["name"]="Blood Guard's Dragonhide Treads",["pvpRank"]=7,["requiredLevel"]=60,["side"]="H",["subClass"]=2}
 V.Data.items[22855]={["class"]=4,["name"]="Blood Guard's Dreadweave Walkers",["pvpRank"]=7,["requiredLevel"]=60,["side"]="H",["subClass"]=1}
@@ -2050,9 +2050,9 @@ V.Data.items[210589]={["name"]="Echo of the Ancestors",["requiredLevel"]=1}
 V.Data.items[210596]={["name"]="Rune of Cobra Strikes",["requiredLevel"]=1}
 V.Data.items[210653]={["name"]="Rune of Main Gauche",["requiredLevel"]=1}
 V.Data.items[210654]={["name"]="Spell Notes: Rewind Time",["requiredLevel"]=1}
-V.Data.items[210709]={["class"]=9,["name"]="Recipe: Elixir of Coalesced Regret",["subClass"]=6}
+V.Data.items[210709]={["class"]=9,["name"]="Recipe: Elixir of Coalesced Regret",["professions"]={171},["subClass"]=6}
 V.Data.items[210746]={["name"]="Rune of Earth Shield",["requiredLevel"]=1}
-V.Data.items[210779]={["class"]=9,["name"]="Plans: Mantle of the Second War",["subClass"]=4}
+V.Data.items[210779]={["class"]=9,["name"]="Plans: Mantle of the Second War",["professions"]={164},["subClass"]=4}
 V.Data.items[210811]={["name"]="Rune of Primordial Fury",["requiredLevel"]=1}
 V.Data.items[210817]={["name"]="Rune of Survival",["requiredLevel"]=1}
 V.Data.items[210818]={["name"]="Rune of Lone Wolf",["requiredLevel"]=1}
@@ -2064,7 +2064,7 @@ V.Data.items[210825]={["name"]="Rune of the Warbringer",["requiredLevel"]=1}
 V.Data.items[210979]={["name"]="Rune of Shadowstep",["requiredLevel"]=1}
 V.Data.items[210980]={["name"]="Rune of Metamorphosis",["requiredLevel"]=1}
 V.Data.items[211205]={["name"]="Rune of Cobra Slayer",["requiredLevel"]=1}
-V.Data.items[211247]={["class"]=9,["name"]="Pattern: Phoenix Bindings",["subClass"]=2}
+V.Data.items[211247]={["class"]=9,["name"]="Pattern: Phoenix Bindings",["professions"]={197},["subClass"]=2}
 V.Data.items[211385]={["name"]="Rune of Serpent Spread",["requiredLevel"]=1}
 V.Data.items[211386]={["name"]="Spell Notes: Arcane Surge",["requiredLevel"]=1}
 V.Data.items[211387]={["name"]="Rune of Beckoning Light",["requiredLevel"]=1}
@@ -2089,7 +2089,7 @@ V.Data.items[211779]={["class"]=15,["name"]="Comprehension Charm",["requiredLeve
 V.Data.items[211856]={["class"]=4,["name"]="Resilient Mail Coif",["requiredLevel"]=20,["side"]="A",["subClass"]=3}
 V.Data.items[211857]={["class"]=4,["name"]="Resilient Leather Mask",["requiredLevel"]=20,["side"]="A",["subClass"]=2}
 V.Data.items[212160]={["name"]="Chronoboon Displacer",["subClass"]=8}
-V.Data.items[212230]={["class"]=9,["name"]="Schematic: Soul Vessel",["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[212230]={["class"]=9,["name"]="Schematic: Soul Vessel",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
 V.Data.items[212548]={["name"]="Rune of Eclipse",["requiredLevel"]=1}
 V.Data.items[212549]={["name"]="Rune of the Trapper",["requiredLevel"]=1}
 V.Data.items[212551]={["name"]="Rune of Warfare",["requiredLevel"]=1}
@@ -2147,38 +2147,38 @@ V.Data.items[213142]={["name"]="Prophecy of Imprisoned Malice",["requiredLevel"]
 V.Data.items[213143]={["name"]="Apocryphal Epiphany",["requiredLevel"]=1}
 V.Data.items[213144]={["name"]="Luminous Epiphany",["requiredLevel"]=1}
 V.Data.items[213565]={["class"]=15,["name"]="Entomology Starter Kit",["requiredLevel"]=1}
-V.Data.items[215129]={["class"]=9,["name"]="Formula: Enchant Weapon - Dismantle",["subClass"]=8}
-V.Data.items[215138]={["class"]=9,["name"]="Formula: Enchant Chest - Retricutioner",["subClass"]=8}
-V.Data.items[215141]={["class"]=9,["name"]="Enchanted Sigil: Innovation",["subClass"]=8}
-V.Data.items[215149]={["class"]=9,["name"]="Pattern: Gneuro-Linked Arcano-Filament Monocle",["subClass"]=2}
-V.Data.items[215152]={["class"]=9,["name"]="Pattern: Glowing Gneuro-Linked Cowl",["subClass"]=1}
-V.Data.items[215153]={["class"]=9,["name"]="Schematic: Whirling Truesilver Gearwall",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[215155]={["class"]=9,["name"]="Plans: Tempered Interference-Negating Helmet",["subClass"]=4}
-V.Data.items[215156]={["class"]=9,["name"]="Schematic: Hyperconductive Goldwrap",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[215163]={["class"]=9,["name"]="Recipe: Mildly-Irradiated Rejuvenation Potion",["subClass"]=6}
-V.Data.items[215367]={["class"]=9,["name"]="Pattern: Faintly Glowing Leather",["subClass"]=1}
-V.Data.items[215368]={["class"]=9,["name"]="Pattern: Hyperconductive Arcano-Filament",["subClass"]=2}
-V.Data.items[215369]={["class"]=9,["name"]="Pattern: Invoker's Cord",["subClass"]=2}
-V.Data.items[215370]={["class"]=9,["name"]="Pattern: Invoker's Mantle",["subClass"]=2}
-V.Data.items[215383]={["class"]=9,["name"]="Plans: Reflective Truesilver Braincage",["subClass"]=4}
-V.Data.items[215384]={["class"]=9,["name"]="Plans: Low-Background Truesilver Plates",["subClass"]=4}
-V.Data.items[215422]={["class"]=9,["name"]="Pattern: Glowing Hyperconductive Scale Coif",["subClass"]=1}
-V.Data.items[215423]={["class"]=9,["name"]="Pattern: Gneuro-Conductive Channeler's Hood",["subClass"]=1}
-V.Data.items[215424]={["class"]=9,["name"]="Pattern: Rad-Resistant Scale Hood",["subClass"]=1}
-V.Data.items[215429]={["class"]=9,["name"]="Schematic: Polished Truesilver Gears",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[215431]={["class"]=9,["name"]="Schematic: High-Yield Radiation Bomb",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[215432]={["class"]=9,["name"]="Schematic: Ez-Thro Radiation Bomb",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[215433]={["class"]=9,["name"]="Recipe: Insulating Gniodine",["subClass"]=6}
+V.Data.items[215129]={["class"]=9,["name"]="Formula: Enchant Weapon - Dismantle",["professions"]={333},["subClass"]=8}
+V.Data.items[215138]={["class"]=9,["name"]="Formula: Enchant Chest - Retricutioner",["professions"]={333},["subClass"]=8}
+V.Data.items[215141]={["class"]=9,["name"]="Enchanted Sigil: Innovation",["professions"]={333},["subClass"]=8}
+V.Data.items[215149]={["class"]=9,["name"]="Pattern: Gneuro-Linked Arcano-Filament Monocle",["professions"]={197},["subClass"]=2}
+V.Data.items[215152]={["class"]=9,["name"]="Pattern: Glowing Gneuro-Linked Cowl",["professions"]={165},["subClass"]=1}
+V.Data.items[215153]={["class"]=9,["name"]="Schematic: Whirling Truesilver Gearwall",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[215155]={["class"]=9,["name"]="Plans: Tempered Interference-Negating Helmet",["professions"]={164},["subClass"]=4}
+V.Data.items[215156]={["class"]=9,["name"]="Schematic: Hyperconductive Goldwrap",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[215163]={["class"]=9,["name"]="Recipe: Mildly-Irradiated Rejuvenation Potion",["professions"]={171},["subClass"]=6}
+V.Data.items[215367]={["class"]=9,["name"]="Pattern: Faintly Glowing Leather",["professions"]={165},["subClass"]=1}
+V.Data.items[215368]={["class"]=9,["name"]="Pattern: Hyperconductive Arcano-Filament",["professions"]={197},["subClass"]=2}
+V.Data.items[215369]={["class"]=9,["name"]="Pattern: Invoker's Cord",["professions"]={197},["subClass"]=2}
+V.Data.items[215370]={["class"]=9,["name"]="Pattern: Invoker's Mantle",["professions"]={197},["subClass"]=2}
+V.Data.items[215383]={["class"]=9,["name"]="Plans: Reflective Truesilver Braincage",["professions"]={164},["subClass"]=4}
+V.Data.items[215384]={["class"]=9,["name"]="Plans: Low-Background Truesilver Plates",["professions"]={164},["subClass"]=4}
+V.Data.items[215422]={["class"]=9,["name"]="Pattern: Glowing Hyperconductive Scale Coif",["professions"]={165},["subClass"]=1}
+V.Data.items[215423]={["class"]=9,["name"]="Pattern: Gneuro-Conductive Channeler's Hood",["professions"]={165},["subClass"]=1}
+V.Data.items[215424]={["class"]=9,["name"]="Pattern: Rad-Resistant Scale Hood",["professions"]={165},["subClass"]=1}
+V.Data.items[215429]={["class"]=9,["name"]="Schematic: Polished Truesilver Gears",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[215431]={["class"]=9,["name"]="Schematic: High-Yield Radiation Bomb",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[215432]={["class"]=9,["name"]="Schematic: Ez-Thro Radiation Bomb",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[215433]={["class"]=9,["name"]="Recipe: Insulating Gniodine",["professions"]={171},["subClass"]=6}
 V.Data.items[216491]={["name"]="Shipment of Stranglethorn Lumber",["subClass"]=8}
 V.Data.items[216492]={["class"]=15,["name"]="Whistle of the Mottled Raptor",["requiredLevel"]=40,["subClass"]=5}
 V.Data.items[216606]={["name"]="Rune of Two-Handed Mastery",["requiredLevel"]=1}
 V.Data.items[216748]={["name"]="Grimoire of Portal of Summoning",["requiredLevel"]=1,["subClass"]=8}
-V.Data.items[217244]={["class"]=9,["name"]="Pattern: Crimson Silk Robe",["subClass"]=2}
-V.Data.items[217258]={["class"]=9,["name"]="Pattern: Enchanter's Cowl",["subClass"]=2}
-V.Data.items[217271]={["class"]=9,["name"]="Pattern: Turtle Scale Gloves",["subClass"]=1}
-V.Data.items[217280]={["class"]=9,["name"]="Plans: Golden Scale Coif",["subClass"]=4}
-V.Data.items[217282]={["class"]=9,["name"]="Plans: Moonsteel Broadsword",["subClass"]=4}
-V.Data.items[217399]={["class"]=9,["name"]="Recipe: Lesser Arcane Elixir",["subClass"]=6}
+V.Data.items[217244]={["class"]=9,["name"]="Pattern: Crimson Silk Robe",["professions"]={197},["subClass"]=2}
+V.Data.items[217258]={["class"]=9,["name"]="Pattern: Enchanter's Cowl",["professions"]={197},["subClass"]=2}
+V.Data.items[217271]={["class"]=9,["name"]="Pattern: Turtle Scale Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[217280]={["class"]=9,["name"]="Plans: Golden Scale Coif",["professions"]={164},["subClass"]=4}
+V.Data.items[217282]={["class"]=9,["name"]="Plans: Moonsteel Broadsword",["professions"]={164},["subClass"]=4}
+V.Data.items[217399]={["class"]=9,["name"]="Recipe: Lesser Arcane Elixir",["professions"]={171},["subClass"]=6}
 V.Data.items[217736]={["name"]="Rune of the Coterie",["requiredLevel"]=1}
 V.Data.items[219147]={["name"]="Rune of Grace",["requiredLevel"]=1}
 V.Data.items[220164]={["name"]="Rune of the Gladiator",["requiredLevel"]=1}
@@ -2316,7 +2316,7 @@ V.Data.items[221020]={["name"]="Rune of the Moon Goddess",["requiredLevel"]=1}
 V.Data.items[221267]={["name"]="Rune of the Bloodthirsty",["requiredLevel"]=1}
 V.Data.items[221315]={["class"]=4,["name"]="Traveler's Symbols"}
 V.Data.items[221316]={["class"]=4,["name"]="Premo's Poise-Demanding Uniform"}
-V.Data.items[221336]={["class"]=9,["name"]="Schematic: Goblin Mining Helmet",["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[221336]={["class"]=9,["name"]="Schematic: Goblin Mining Helmet",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
 V.Data.items[221418]={["name"]="Agamaggan's Roar",["subClass"]=8}
 V.Data.items[221428]={["name"]="Rune of Foul Play",["requiredLevel"]=1}
 V.Data.items[221433]={["name"]="Rune of Focus",["requiredLevel"]=1}
@@ -2706,7 +2706,7 @@ V.Data.items[227807]={["class"]=4,["name"]="Dense Timbermaw Belt",["requiredLeve
 V.Data.items[227808]={["class"]=4,["name"]="Rugged Mantle of the Timbermaw",["requiredLevel"]=60,["subClass"]=1}
 V.Data.items[227809]={["class"]=4,["name"]="Studded Timbermaw Brawlers",["requiredLevel"]=60,["subClass"]=2}
 V.Data.items[227810]={["class"]=4,["name"]="Dense Timbermaw Boots",["requiredLevel"]=60,["subClass"]=3}
-V.Data.items[227813]={["name"]="Drinkable Stratholme Holy Water",["requiredLevel"]=55,["subClass"]=8}
+V.Data.items[227813]={["craftMaterial"]=true,["name"]="Drinkable Stratholme Holy Water",["professions"]={185},["requiredLevel"]=55,["subClass"]=8}
 V.Data.items[227814]={["class"]=4,["name"]="Radiant Girdle of the Dawn",["requiredLevel"]=60,["subClass"]=4}
 V.Data.items[227815]={["class"]=4,["name"]="Fine Dawn Treaders",["requiredLevel"]=60,["subClass"]=2}
 V.Data.items[227816]={["class"]=4,["name"]="Argent Elite Boots",["requiredLevel"]=60,["subClass"]=1}
@@ -2716,11 +2716,11 @@ V.Data.items[227819]={["name"]="Blessed Flame Mantle of the Dawn",["subClass"]=6
 V.Data.items[227859]={["class"]=4,["name"]="Shimmering Dawnbringer Shoulders",["requiredLevel"]=60,["subClass"]=4}
 V.Data.items[227862]={["class"]=4,["name"]="Incandescent Mooncloth Boots",["requiredLevel"]=60,["subClass"]=1}
 V.Data.items[227888]={["class"]=4,["name"]="Argent Elite Shoulders",["requiredLevel"]=60,["subClass"]=1}
-V.Data.items[227898]={["class"]=9,["name"]="Pattern: Honed Blue Dragonscale Breastplate",["subClass"]=1}
-V.Data.items[227902]={["class"]=9,["name"]="Pattern: Hardened Black Dragonscale Breastplate",["subClass"]=1}
+V.Data.items[227898]={["class"]=9,["name"]="Pattern: Honed Blue Dragonscale Breastplate",["professions"]={165},["subClass"]=1}
+V.Data.items[227902]={["class"]=9,["name"]="Pattern: Hardened Black Dragonscale Breastplate",["professions"]={165},["subClass"]=1}
 V.Data.items[227921]={["name"]="Rune of Knives",["requiredLevel"]=1}
 V.Data.items[227922]={["name"]="Rune of the Swashbuckler",["requiredLevel"]=1}
-V.Data.items[228121]={["class"]=9,["name"]="Pattern: Leather-Reinforced Runecloth Bag",["subClass"]=2}
+V.Data.items[228121]={["class"]=9,["name"]="Pattern: Leather-Reinforced Runecloth Bag",["professions"]={197},["subClass"]=2}
 V.Data.items[228123]={["name"]="Jubilant Epiphany",["requiredLevel"]=1}
 V.Data.items[228124]={["name"]="Oneiric Epiphany",["requiredLevel"]=1}
 V.Data.items[228126]={["name"]="Aperitive Epiphany",["requiredLevel"]=1}
@@ -2730,13 +2730,13 @@ V.Data.items[228175]={["class"]=4,["name"]="Libram of Holy Alacrity",["requiredL
 V.Data.items[228176]={["class"]=4,["name"]="Totem of Thunder",["requiredLevel"]=60,["subClass"]=9}
 V.Data.items[228189]={["class"]=13,["name"]="Gift of Gob"}
 V.Data.items[228190]={["class"]=4,["name"]="Knowledge of the Timbermaw",["requiredLevel"]=60,["subClass"]=1}
-V.Data.items[228303]={["class"]=9,["name"]="Pattern: Incandescent Mooncloth Robe",["subClass"]=2}
-V.Data.items[228309]={["class"]=9,["name"]="Pattern: Living Green Dragonscale Breastplate",["subClass"]=1}
-V.Data.items[228313]={["class"]=9,["name"]="Plans: Tempest Gauntlets",["subClass"]=4}
-V.Data.items[228979]={["class"]=9,["name"]="Enchanted Sigil: Flowing Waters",["repFaction"]=749,["repStanding"]=6,["subClass"]=8}
-V.Data.items[228982]={["class"]=9,["name"]="Formula: Enchant Shield - Law of Nature",["repFaction"]=576,["repStanding"]=6,["subClass"]=8}
-V.Data.items[229008]={["class"]=9,["name"]="Formula: Enchant Cloak - Greater Fire Resistance",["repFaction"]=59,["repStanding"]=5,["subClass"]=8}
-V.Data.items[229009]={["class"]=9,["name"]="Formula: Enchant Cloak - Greater Nature Resistance",["repFaction"]=59,["repStanding"]=5,["subClass"]=8}
+V.Data.items[228303]={["class"]=9,["name"]="Pattern: Incandescent Mooncloth Robe",["professions"]={197},["subClass"]=2}
+V.Data.items[228309]={["class"]=9,["name"]="Pattern: Living Green Dragonscale Breastplate",["professions"]={165},["subClass"]=1}
+V.Data.items[228313]={["class"]=9,["name"]="Plans: Tempest Gauntlets",["professions"]={164},["subClass"]=4}
+V.Data.items[228979]={["class"]=9,["name"]="Enchanted Sigil: Flowing Waters",["professions"]={333},["repFaction"]=749,["repStanding"]=6,["subClass"]=8}
+V.Data.items[228982]={["class"]=9,["name"]="Formula: Enchant Shield - Law of Nature",["professions"]={333},["repFaction"]=576,["repStanding"]=6,["subClass"]=8}
+V.Data.items[229008]={["class"]=9,["name"]="Formula: Enchant Cloak - Greater Fire Resistance",["professions"]={333},["repFaction"]=59,["repStanding"]=5,["subClass"]=8}
+V.Data.items[229009]={["class"]=9,["name"]="Formula: Enchant Cloak - Greater Nature Resistance",["professions"]={333},["repFaction"]=59,["repStanding"]=5,["subClass"]=8}
 V.Data.items[231530]={["class"]=4,["name"]="Warlord's Plate Armor",["requiredLevel"]=60,["subClass"]=4}
 V.Data.items[231531]={["class"]=4,["name"]="General's Plate Boots",["requiredLevel"]=60,["subClass"]=4}
 V.Data.items[231532]={["class"]=4,["name"]="General's Plate Gauntlets",["requiredLevel"]=60,["subClass"]=4}
@@ -2903,9 +2903,9 @@ V.Data.items[231705]={["class"]=4,["name"]="Field Marshal's Dragonhide Pauldrons
 V.Data.items[231706]={["class"]=4,["name"]="Marshal's Dragonhide Gauntlets",["requiredLevel"]=60,["subClass"]=2}
 V.Data.items[231828]={["name"]="Rune of Meditation Specialization"}
 V.Data.items[231829]={["name"]="Rune of Healing Specialization"}
-V.Data.items[232434]={["class"]=9,["name"]="Manual: Dense Runecloth Bandage",["subClass"]=7}
-V.Data.items[232437]={["class"]=9,["name"]="Recipe: Darkclaw Bisque",["subClass"]=5}
-V.Data.items[232443]={["class"]=9,["name"]="Recipe: Smoked Redgill",["subClass"]=5}
+V.Data.items[232434]={["class"]=9,["name"]="Manual: Dense Runecloth Bandage",["professions"]={129},["subClass"]=7}
+V.Data.items[232437]={["class"]=9,["name"]="Recipe: Darkclaw Bisque",["professions"]={185},["subClass"]=5}
+V.Data.items[232443]={["class"]=9,["name"]="Recipe: Smoked Redgill",["professions"]={185},["subClass"]=5}
 V.Data.items[232454]={["class"]=7,["name"]="Emblem of the Wild Gods",["subClass"]=11}
 V.Data.items[232455]={["class"]=7,["name"]="Emblem of Dishonor",["subClass"]=11}
 V.Data.items[232456]={["class"]=7,["name"]="Emblem of the Violet Eye",["subClass"]=11}
@@ -2915,7 +2915,7 @@ V.Data.items[232459]={["name"]="Rune of Backdraft",["requiredLevel"]=1}
 V.Data.items[232460]={["name"]="Rune of Displacement",["requiredLevel"]=1}
 V.Data.items[232461]={["name"]="Rune of Despair",["requiredLevel"]=1}
 V.Data.items[232462]={["name"]="Rune of Purifying Power",["requiredLevel"]=1}
-V.Data.items[232610]={["class"]=9,["name"]="Formula: Magnificent Trollshine",["repFaction"]=270,["repStanding"]=5,["subClass"]=8}
+V.Data.items[232610]={["class"]=9,["name"]="Formula: Magnificent Trollshine",["professions"]={333},["repFaction"]=270,["repStanding"]=5,["subClass"]=8}
 V.Data.items[233197]={["class"]=15,["name"]="Argent Training Manual",["requiredLevel"]=50}
 V.Data.items[233198]={["class"]=15,["name"]="Horn of the Dawn",["requiredLevel"]=50}
 V.Data.items[233200]={["class"]=15,["name"]="Songflower Seed",["requiredLevel"]=50}
@@ -2947,8 +2947,8 @@ V.Data.items[234199]={["class"]=4,["name"]="Signet Ring of the Bronze Dragonflig
 V.Data.items[234200]={["class"]=4,["name"]="Signet Ring of the Bronze Dragonflight",["requiredLevel"]=60}
 V.Data.items[234201]={["class"]=4,["name"]="Signet Ring of the Bronze Dragonflight",["requiredLevel"]=60}
 V.Data.items[234202]={["class"]=4,["name"]="Signet Ring of the Bronze Dragonflight",["requiredLevel"]=60}
-V.Data.items[234271]={["class"]=9,["name"]="Formula: Scroll: Wrath of the Swarm",["subClass"]=8}
-V.Data.items[234272]={["class"]=9,["name"]="Formula: Enchanted Repellent",["subClass"]=8}
+V.Data.items[234271]={["class"]=9,["name"]="Formula: Scroll: Wrath of the Swarm",["professions"]={333},["subClass"]=8}
+V.Data.items[234272]={["class"]=9,["name"]="Formula: Enchanted Repellent",["professions"]={333},["subClass"]=8}
 V.Data.items[234436]={["class"]=4,["name"]="Signet Ring of the Bronze Dragonflight",["requiredLevel"]=60}
 V.Data.items[234437]={["class"]=4,["name"]="Signet Ring of the Bronze Dragonflight",["requiredLevel"]=60}
 V.Data.items[234438]={["class"]=4,["name"]="Signet Ring of the Bronze Dragonflight",["requiredLevel"]=60}
@@ -3028,7 +3028,7 @@ V.Data.items[237817]={["class"]=4,["name"]="Sentinel's Lizardhide Pants",["requi
 V.Data.items[237818]={["class"]=4,["name"]="Sentinel's Leather Pants",["requiredLevel"]=60,["side"]="A",["subClass"]=2}
 V.Data.items[237819]={["class"]=4,["name"]="Sentinel's Chain Leggings",["requiredLevel"]=60,["side"]="A",["subClass"]=3}
 V.Data.items[237825]={["class"]=4,["name"]="Sentinel's Plate Legguards",["requiredLevel"]=60,["side"]="A",["subClass"]=4}
-V.Data.items[238737]={["class"]=7,["name"]="Tinkerbox",["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[238737]={["class"]=7,["craftMaterial"]=true,["name"]="Tinkerbox",["professions"]={202},["requiredLevel"]=1,["subClass"]=1}
 V.Data.items[238811]={["class"]=12,["name"]="Juicy Apple"}
 V.Data.items[239512]={["class"]=4,["name"]="Lightbreaker Wrists",["requiredLevel"]=60,["subClass"]=4}
 V.Data.items[239513]={["class"]=4,["name"]="Lightbreaker Belt",["requiredLevel"]=60,["subClass"]=4}
@@ -3214,364 +3214,364 @@ V.Data.items[240150]={["class"]=4,["name"]="Heretic Mantle",["requiredLevel"]=60
 V.Data.items[240151]={["class"]=4,["name"]="Heretic Waistguard",["requiredLevel"]=60,["subClass"]=1}
 V.Data.items[240152]={["class"]=4,["name"]="Heretic Wristguards",["requiredLevel"]=60,["subClass"]=1}
 V.Data.items[240153]={["class"]=4,["name"]="Heretic Boots",["requiredLevel"]=60,["subClass"]=1}
-V.Data.items[247786]={["class"]=7,["name"]="Mote of Magic",["subClass"]=12}
+V.Data.items[247786]={["class"]=7,["craftMaterial"]=true,["name"]="Mote of Magic",["professions"]={333},["subClass"]=12}
 V.Data.items[248613]={["name"]="Lightning in a Bottle",["requiredLevel"]=15,["subClass"]=5}
-V.Data.items[248819]={["class"]=7,["name"]="Fel Crystal",["subClass"]=11}
-V.Data.items[248820]={["class"]=7,["name"]="Torbernite",["subClass"]=11}
-V.Data.items[248822]={["class"]=7,["name"]="Death Lotus",["subClass"]=9}
-V.Data.items[249274]={["class"]=7,["name"]="Stranglevine",["subClass"]=9}
-V.Data.items[249391]={["class"]=7,["name"]="Pyrite",["subClass"]=7}
-V.Data.items[249399]={["class"]=7,["name"]="Frilled Lichen",["subClass"]=9}
-V.Data.items[249424]={["class"]=7,["name"]="Rosecap",["subClass"]=9}
-V.Data.items[249425]={["class"]=7,["name"]="Bauxite",["subClass"]=7}
-V.Data.items[249426]={["class"]=7,["name"]="Pitchblende",["subClass"]=7}
-V.Data.items[249427]={["class"]=7,["name"]="Pristine Leather",["subClass"]=6}
-V.Data.items[249428]={["class"]=7,["name"]="Pristine Hide",["subClass"]=6}
-V.Data.items[249429]={["class"]=7,["name"]="Pristine Scale",["subClass"]=6}
-V.Data.items[249476]={["class"]=9,["name"]="Formula: Mystic Mushroom",["subClass"]=8}
-V.Data.items[249477]={["class"]=9,["name"]="Formula: Tenets of the Silver Hand",["subClass"]=8}
-V.Data.items[249478]={["class"]=9,["name"]="Formula: Polished Driftwood Icon",["subClass"]=8}
-V.Data.items[249479]={["class"]=9,["name"]="Formula: Enchant Weapon - Insight",["subClass"]=8}
-V.Data.items[249480]={["class"]=9,["name"]="Formula: Enchant Weapon - Recovery",["subClass"]=8}
-V.Data.items[249481]={["class"]=9,["name"]="Formula: Enchant Weapon - Revelation",["subClass"]=8}
-V.Data.items[249482]={["class"]=9,["name"]="Formula: Glimmering Staff",["subClass"]=8}
-V.Data.items[249483]={["class"]=9,["name"]="Formula: Soulstaff",["subClass"]=8}
-V.Data.items[249484]={["class"]=9,["name"]="Formula: Orb of Mystic Insight",["subClass"]=8}
-V.Data.items[249485]={["class"]=9,["name"]="Formula: Orb of Souls",["subClass"]=8}
-V.Data.items[249486]={["class"]=9,["name"]="Formula: Enchant Bracer - Lesser Agility",["subClass"]=8}
-V.Data.items[249489]={["class"]=9,["name"]="Formula: Enchant Bracer - Lesser Healing Power",["subClass"]=8}
-V.Data.items[249493]={["class"]=9,["name"]="Formula: Talons of Wrath",["subClass"]=8}
-V.Data.items[249494]={["class"]=9,["name"]="Formula: Libram of Invocation",["subClass"]=8}
-V.Data.items[249495]={["class"]=9,["name"]="Formula: Totem of Ancestral Protection",["subClass"]=8}
-V.Data.items[249496]={["class"]=9,["name"]="Formula: Enchant Necklace - Strength",["subClass"]=8}
-V.Data.items[249502]={["class"]=9,["name"]="Formula: Enchant Necklace - Spell Power",["subClass"]=8}
-V.Data.items[249503]={["class"]=9,["name"]="Formula: Enchant Necklace - Healing Power",["subClass"]=8}
-V.Data.items[249504]={["class"]=9,["name"]="Formula: Enchant Necklace - Agility",["subClass"]=8}
-V.Data.items[249505]={["class"]=9,["name"]="Formula: Enchant Necklace - Deflection",["subClass"]=8}
-V.Data.items[249506]={["class"]=9,["name"]="Formula: Radiant Staff",["subClass"]=8}
-V.Data.items[249507]={["class"]=9,["name"]="Formula: Dreamstaff",["subClass"]=8}
-V.Data.items[249508]={["class"]=9,["name"]="Formula: Truesilver Conduit",["subClass"]=8}
-V.Data.items[249509]={["class"]=9,["name"]="Formula: Twisting Essence Jar",["subClass"]=8}
-V.Data.items[249510]={["class"]=9,["name"]="Formula: Enchant Chest - Absorption",["subClass"]=8}
-V.Data.items[249525]={["class"]=9,["name"]="Formula: Enchant 2H Weapon - Mighty Spell Power",["subClass"]=8}
-V.Data.items[249526]={["class"]=9,["name"]="Formula: Enchant 2H Weapon - Mighty Healing Power",["subClass"]=8}
-V.Data.items[249529]={["class"]=9,["name"]="Formula: Idol of the Dream",["subClass"]=8}
-V.Data.items[249530]={["class"]=9,["name"]="Formula: Libram of Holy Alacrity",["subClass"]=8}
-V.Data.items[249532]={["class"]=9,["name"]="Formula: Totem of Thunder",["subClass"]=8}
-V.Data.items[249534]={["class"]=9,["name"]="Formula: Enchant Gloves - Arcane Power",["subClass"]=8}
-V.Data.items[249535]={["class"]=9,["name"]="Formula: Enchant Gloves - Natural Power",["subClass"]=8}
-V.Data.items[249536]={["class"]=9,["name"]="Formula: Enchant Gloves - Holy Power",["subClass"]=8}
-V.Data.items[249537]={["class"]=9,["name"]="Formula: Brilliant Wand",["subClass"]=8}
-V.Data.items[249538]={["class"]=9,["name"]="Formula: Enchant Bracer - Superior Intellect",["subClass"]=8}
-V.Data.items[249539]={["class"]=9,["name"]="Formula: Enchant Bracer - Superior Deflection",["subClass"]=8}
-V.Data.items[249885]={["class"]=9,["name"]="Recipe: Venomous Smoothie",["requiredLevel"]=1,["subClass"]=5}
-V.Data.items[249886]={["class"]=9,["name"]="Recipe: Slimy Smoothie",["requiredLevel"]=1,["subClass"]=5}
-V.Data.items[249887]={["class"]=9,["name"]="Recipe: Mrrggl Smrrthle",["requiredLevel"]=1,["subClass"]=5}
-V.Data.items[249888]={["class"]=9,["name"]="Recipe: Calcified Smoothie",["requiredLevel"]=1,["subClass"]=5}
-V.Data.items[249889]={["class"]=9,["name"]="Recipe: Spicy Smoothie",["requiredLevel"]=1,["subClass"]=5}
-V.Data.items[249890]={["class"]=9,["name"]="Recipe: Wicked Smoothie",["requiredLevel"]=1,["subClass"]=5}
-V.Data.items[250364]={["class"]=9,["name"]="Recipe: Elixir of Cunning",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250365]={["class"]=9,["name"]="Recipe: Elixir of the Phalanx",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250367]={["class"]=9,["name"]="Recipe: Lesser Cleric's Elixir",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250369]={["class"]=9,["name"]="Recipe: Greater Cleric's Elixir",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250371]={["class"]=9,["name"]="Recipe: Elixir of Greater Fortitude",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250372]={["class"]=9,["name"]="Recipe: Elixir of Wicked Regeneration",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250373]={["class"]=9,["name"]="Recipe: Elixir of the Owl",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250374]={["class"]=9,["name"]="Recipe: Elixir of Sages",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250376]={["class"]=9,["name"]="Recipe: Lesser Mageblood Elixir",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250377]={["class"]=9,["name"]="Recipe: Greater Mageblood Elixir",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250378]={["class"]=9,["name"]="Recipe: Lesser Arcane Elixir",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250379]={["class"]=9,["name"]="Recipe: Elixir of Nature Power",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250381]={["class"]=9,["name"]="Recipe: Elixir of Lesser Spirit",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250383]={["class"]=9,["name"]="Recipe: Elixir of Greater Spirit",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250384]={["class"]=9,["name"]="Recipe: Elixir of the Whale",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250386]={["class"]=9,["name"]="Recipe: Elixir of Ferocity",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250387]={["class"]=9,["name"]="Recipe: Elixir of the Grizzly",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250388]={["class"]=9,["name"]="Recipe: Elixir of Lesser Intellect",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250978]={["class"]=9,["name"]="Recipe: Spellblasting Potion",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250979]={["class"]=9,["name"]="Recipe: Greater Spellblasting Potion",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250981]={["class"]=9,["name"]="Recipe: Major Spellblasting Potion",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250984]={["class"]=9,["name"]="Recipe: Frenzy Potion",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250985]={["class"]=9,["name"]="Recipe: Greater Frenzy Potion",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250987]={["class"]=9,["name"]="Recipe: Major Frenzy Potion",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250990]={["class"]=9,["name"]="Recipe: Mender's Potion",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250993]={["class"]=9,["name"]="Recipe: Major Mender's Potion",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250994]={["class"]=9,["name"]="Recipe: Potion of Venomous Blood",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250995]={["class"]=9,["name"]="Recipe: Caustic Smog Potion",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250996]={["class"]=9,["name"]="Recipe: Disorienting Smog Potion",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250997]={["class"]=9,["name"]="Recipe: Dragonfire Potion",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[250998]={["class"]=9,["name"]="Recipe: Potion of Elemental Purging",["requiredLevel"]=1,["subClass"]=6}
-V.Data.items[251355]={["class"]=9,["name"]="Plans: Veteran's Boots",["subClass"]=4}
-V.Data.items[251356]={["class"]=9,["name"]="Plans: Guard's Boots",["subClass"]=4}
-V.Data.items[251357]={["class"]=9,["name"]="Plans: Protector's Boots",["subClass"]=4}
-V.Data.items[251358]={["class"]=9,["name"]="Plans: Acolyte's Boots",["subClass"]=4}
-V.Data.items[251359]={["class"]=9,["name"]="Plans: Crusader's Boots",["subClass"]=4}
-V.Data.items[251360]={["class"]=9,["name"]="Plans: Veteran's Gloves",["subClass"]=4}
-V.Data.items[251361]={["class"]=9,["name"]="Plans: Guard's Gloves",["subClass"]=4}
-V.Data.items[251362]={["class"]=9,["name"]="Plans: Protector's Gloves",["subClass"]=4}
-V.Data.items[251363]={["class"]=9,["name"]="Plans: Acolyte's Gloves",["subClass"]=4}
-V.Data.items[251364]={["class"]=9,["name"]="Plans: Crusader's Gloves",["subClass"]=4}
-V.Data.items[251365]={["class"]=9,["name"]="Plans: Veteran's Chain Belt",["subClass"]=4}
-V.Data.items[251366]={["class"]=9,["name"]="Plans: Guard's Chain Belt",["subClass"]=4}
-V.Data.items[251367]={["class"]=9,["name"]="Plans: Protector's Chain Belt",["subClass"]=4}
-V.Data.items[251368]={["class"]=9,["name"]="Plans: Acolyte's Chain Belt",["subClass"]=4}
-V.Data.items[251369]={["class"]=9,["name"]="Plans: Crusader's Chain Belt",["subClass"]=4}
-V.Data.items[251370]={["class"]=9,["name"]="Plans: Veteran's Silvered Chain Shirt",["subClass"]=4}
-V.Data.items[251371]={["class"]=9,["name"]="Plans: Guard's Silvered Chain Shirt",["subClass"]=4}
-V.Data.items[251372]={["class"]=9,["name"]="Plans: Protector's Silvered Chain Shirt",["subClass"]=4}
-V.Data.items[251373]={["class"]=9,["name"]="Plans: Acolyte's Silvered Chain Shirt",["subClass"]=4}
-V.Data.items[251374]={["class"]=9,["name"]="Plans: Crusader's Silvered Chain Shirt",["subClass"]=4}
-V.Data.items[251375]={["class"]=9,["name"]="Plans: Veteran's Silvered Chain Leggings",["subClass"]=4}
-V.Data.items[251376]={["class"]=9,["name"]="Plans: Guard's Silvered Chain Leggings",["subClass"]=4}
-V.Data.items[251377]={["class"]=9,["name"]="Plans: Protector's Silvered Chain Leggings",["subClass"]=4}
-V.Data.items[251378]={["class"]=9,["name"]="Plans: Acolyte's Silvered Chain Leggings",["subClass"]=4}
-V.Data.items[251379]={["class"]=9,["name"]="Plans: Crusader's Silvered Chain Leggings",["subClass"]=4}
-V.Data.items[251380]={["class"]=9,["name"]="Plans: Veteran's Silvered Chain Helm",["subClass"]=4}
-V.Data.items[251381]={["class"]=9,["name"]="Plans: Guard's Silvered Chain Helm",["subClass"]=4}
-V.Data.items[251382]={["class"]=9,["name"]="Plans: Protector's Silvered Chain Helm",["subClass"]=4}
-V.Data.items[251383]={["class"]=9,["name"]="Plans: Acolyte's Silvered Chain Helm",["subClass"]=4}
-V.Data.items[251384]={["class"]=9,["name"]="Plans: Crusader's Silvered Chain Helm",["subClass"]=4}
-V.Data.items[251390]={["class"]=9,["name"]="Plans: Hard Gold Gauntlet",["subClass"]=4}
-V.Data.items[251413]={["class"]=9,["name"]="Plans: Officer's Sabatons",["subClass"]=4}
-V.Data.items[251414]={["class"]=9,["name"]="Plans: Sentinel's Sabatons",["subClass"]=4}
-V.Data.items[251415]={["class"]=9,["name"]="Plans: Warder's Sabatons",["subClass"]=4}
-V.Data.items[251416]={["class"]=9,["name"]="Plans: Prefect's Sabatons",["subClass"]=4}
-V.Data.items[251417]={["class"]=9,["name"]="Plans: Justicar's Sabatons",["subClass"]=4}
-V.Data.items[251418]={["class"]=9,["name"]="Plans: Officer's Gauntlet",["subClass"]=4}
-V.Data.items[251419]={["class"]=9,["name"]="Plans: Sentinel's Gauntlet",["subClass"]=4}
-V.Data.items[251420]={["class"]=9,["name"]="Plans: Warder's Gauntlet",["subClass"]=4}
-V.Data.items[251421]={["class"]=9,["name"]="Plans: Prefect's Gauntlet",["subClass"]=4}
-V.Data.items[251422]={["class"]=9,["name"]="Plans: Justicar's Gauntlet",["subClass"]=4}
-V.Data.items[251423]={["class"]=9,["name"]="Plans: Officer's Waistguard",["subClass"]=4}
-V.Data.items[251424]={["class"]=9,["name"]="Plans: Sentinel's Waistguard",["subClass"]=4}
-V.Data.items[251425]={["class"]=9,["name"]="Plans: Warder's Waistguard",["subClass"]=4}
-V.Data.items[251426]={["class"]=9,["name"]="Plans: Prefect's Waistguard",["subClass"]=4}
-V.Data.items[251427]={["class"]=9,["name"]="Plans: Justicar's Waistguard",["subClass"]=4}
-V.Data.items[251428]={["class"]=9,["name"]="Plans: Officer's Pauldrons",["subClass"]=4}
-V.Data.items[251429]={["class"]=9,["name"]="Plans: Sentinel's Pauldrons",["subClass"]=4}
-V.Data.items[251430]={["class"]=9,["name"]="Plans: Warder's Pauldrons",["subClass"]=4}
-V.Data.items[251431]={["class"]=9,["name"]="Plans: Prefect's Pauldrons",["subClass"]=4}
-V.Data.items[251432]={["class"]=9,["name"]="Plans: Justicar's Pauldrons",["subClass"]=4}
-V.Data.items[251433]={["class"]=9,["name"]="Plans: Officer's Wristguard",["subClass"]=4}
-V.Data.items[251434]={["class"]=9,["name"]="Plans: Sentinel's Wristguard",["subClass"]=4}
-V.Data.items[251435]={["class"]=9,["name"]="Plans: Warder's Wristguard",["subClass"]=4}
-V.Data.items[251436]={["class"]=9,["name"]="Plans: Prefect's Wristguard",["subClass"]=4}
-V.Data.items[251437]={["class"]=9,["name"]="Plans: Justicar's Wristguards",["subClass"]=4}
-V.Data.items[251447]={["class"]=9,["name"]="Plans: Enriched Thorium Breastplate",["subClass"]=4}
-V.Data.items[251448]={["class"]=9,["name"]="Plans: Enriched Thorium Leggings",["subClass"]=4}
-V.Data.items[251449]={["class"]=9,["name"]="Plans: Enriched Thorium Helm",["subClass"]=4}
-V.Data.items[251458]={["class"]=9,["name"]="Plans: Iron Morningstar",["subClass"]=4}
-V.Data.items[251460]={["class"]=9,["name"]="Plans: Mithril Warhammer",["subClass"]=4}
-V.Data.items[251465]={["class"]=9,["name"]="Plans: Thorium Greatmace",["subClass"]=4}
-V.Data.items[251466]={["class"]=9,["name"]="Plans: Thorium Cestus",["subClass"]=4}
-V.Data.items[251468]={["class"]=9,["name"]="Plans: Bold Dirk",["subClass"]=4}
-V.Data.items[251471]={["class"]=9,["name"]="Plans: Legionite Glaive",["subClass"]=4}
+V.Data.items[248819]={["class"]=7,["craftMaterial"]=true,["name"]="Fel Crystal",["professions"]={171,333},["subClass"]=11}
+V.Data.items[248820]={["class"]=7,["craftMaterial"]=true,["name"]="Torbernite",["professions"]={164,202,333},["subClass"]=11}
+V.Data.items[248822]={["class"]=7,["craftMaterial"]=true,["name"]="Death Lotus",["professions"]={164,171,182,202,333},["subClass"]=9}
+V.Data.items[249274]={["class"]=7,["craftMaterial"]=true,["name"]="Stranglevine",["professions"]={171,182,333},["subClass"]=9}
+V.Data.items[249391]={["class"]=7,["craftMaterial"]=true,["name"]="Pyrite",["professions"]={171,186,197,202,333},["subClass"]=7}
+V.Data.items[249399]={["class"]=7,["craftMaterial"]=true,["name"]="Frilled Lichen",["professions"]={171,182,333},["subClass"]=9}
+V.Data.items[249424]={["class"]=7,["craftMaterial"]=true,["name"]="Rosecap",["professions"]={171,182,333},["subClass"]=9}
+V.Data.items[249425]={["class"]=7,["craftMaterial"]=true,["name"]="Bauxite",["professions"]={186,202,333},["subClass"]=7}
+V.Data.items[249426]={["class"]=7,["craftMaterial"]=true,["name"]="Pitchblende",["professions"]={186,202},["subClass"]=7}
+V.Data.items[249427]={["class"]=7,["craftMaterial"]=true,["name"]="Pristine Leather",["professions"]={164,165,197,393},["subClass"]=6}
+V.Data.items[249428]={["class"]=7,["craftMaterial"]=true,["name"]="Pristine Hide",["professions"]={165,197,202,393},["subClass"]=6}
+V.Data.items[249429]={["class"]=7,["craftMaterial"]=true,["name"]="Pristine Scale",["professions"]={165,197,202,393},["subClass"]=6}
+V.Data.items[249476]={["class"]=9,["name"]="Formula: Mystic Mushroom",["professions"]={333},["subClass"]=8}
+V.Data.items[249477]={["class"]=9,["name"]="Formula: Tenets of the Silver Hand",["professions"]={333},["subClass"]=8}
+V.Data.items[249478]={["class"]=9,["name"]="Formula: Polished Driftwood Icon",["professions"]={333},["subClass"]=8}
+V.Data.items[249479]={["class"]=9,["name"]="Formula: Enchant Weapon - Insight",["professions"]={333},["subClass"]=8}
+V.Data.items[249480]={["class"]=9,["name"]="Formula: Enchant Weapon - Recovery",["professions"]={333},["subClass"]=8}
+V.Data.items[249481]={["class"]=9,["name"]="Formula: Enchant Weapon - Revelation",["professions"]={333},["subClass"]=8}
+V.Data.items[249482]={["class"]=9,["name"]="Formula: Glimmering Staff",["professions"]={333},["subClass"]=8}
+V.Data.items[249483]={["class"]=9,["name"]="Formula: Soulstaff",["professions"]={333},["subClass"]=8}
+V.Data.items[249484]={["class"]=9,["name"]="Formula: Orb of Mystic Insight",["professions"]={333},["subClass"]=8}
+V.Data.items[249485]={["class"]=9,["name"]="Formula: Orb of Souls",["professions"]={333},["subClass"]=8}
+V.Data.items[249486]={["class"]=9,["name"]="Formula: Enchant Bracer - Lesser Agility",["professions"]={333},["subClass"]=8}
+V.Data.items[249489]={["class"]=9,["name"]="Formula: Enchant Bracer - Lesser Healing Power",["professions"]={333},["subClass"]=8}
+V.Data.items[249493]={["class"]=9,["name"]="Formula: Talons of Wrath",["professions"]={333},["subClass"]=8}
+V.Data.items[249494]={["class"]=9,["name"]="Formula: Libram of Invocation",["professions"]={333},["subClass"]=8}
+V.Data.items[249495]={["class"]=9,["name"]="Formula: Totem of Ancestral Protection",["professions"]={333},["subClass"]=8}
+V.Data.items[249496]={["class"]=9,["name"]="Formula: Enchant Necklace - Strength",["professions"]={333},["subClass"]=8}
+V.Data.items[249502]={["class"]=9,["name"]="Formula: Enchant Necklace - Spell Power",["professions"]={333},["subClass"]=8}
+V.Data.items[249503]={["class"]=9,["name"]="Formula: Enchant Necklace - Healing Power",["professions"]={333},["subClass"]=8}
+V.Data.items[249504]={["class"]=9,["name"]="Formula: Enchant Necklace - Agility",["professions"]={333},["subClass"]=8}
+V.Data.items[249505]={["class"]=9,["name"]="Formula: Enchant Necklace - Deflection",["professions"]={333},["subClass"]=8}
+V.Data.items[249506]={["class"]=9,["name"]="Formula: Radiant Staff",["professions"]={333},["subClass"]=8}
+V.Data.items[249507]={["class"]=9,["name"]="Formula: Dreamstaff",["professions"]={333},["subClass"]=8}
+V.Data.items[249508]={["class"]=9,["name"]="Formula: Truesilver Conduit",["professions"]={333},["subClass"]=8}
+V.Data.items[249509]={["class"]=9,["name"]="Formula: Twisting Essence Jar",["professions"]={333},["subClass"]=8}
+V.Data.items[249510]={["class"]=9,["name"]="Formula: Enchant Chest - Absorption",["professions"]={333},["subClass"]=8}
+V.Data.items[249525]={["class"]=9,["name"]="Formula: Enchant 2H Weapon - Mighty Spell Power",["professions"]={333},["subClass"]=8}
+V.Data.items[249526]={["class"]=9,["name"]="Formula: Enchant 2H Weapon - Mighty Healing Power",["professions"]={333},["subClass"]=8}
+V.Data.items[249529]={["class"]=9,["name"]="Formula: Idol of the Dream",["professions"]={333},["subClass"]=8}
+V.Data.items[249530]={["class"]=9,["name"]="Formula: Libram of Holy Alacrity",["professions"]={333},["subClass"]=8}
+V.Data.items[249532]={["class"]=9,["name"]="Formula: Totem of Thunder",["professions"]={333},["subClass"]=8}
+V.Data.items[249534]={["class"]=9,["name"]="Formula: Enchant Gloves - Arcane Power",["professions"]={333},["subClass"]=8}
+V.Data.items[249535]={["class"]=9,["name"]="Formula: Enchant Gloves - Natural Power",["professions"]={333},["subClass"]=8}
+V.Data.items[249536]={["class"]=9,["name"]="Formula: Enchant Gloves - Holy Power",["professions"]={333},["subClass"]=8}
+V.Data.items[249537]={["class"]=9,["name"]="Formula: Brilliant Wand",["professions"]={333},["subClass"]=8}
+V.Data.items[249538]={["class"]=9,["name"]="Formula: Enchant Bracer - Superior Intellect",["professions"]={333},["subClass"]=8}
+V.Data.items[249539]={["class"]=9,["name"]="Formula: Enchant Bracer - Superior Deflection",["professions"]={333},["subClass"]=8}
+V.Data.items[249885]={["class"]=9,["name"]="Recipe: Venomous Smoothie",["professions"]={185},["requiredLevel"]=1,["subClass"]=5}
+V.Data.items[249886]={["class"]=9,["name"]="Recipe: Slimy Smoothie",["professions"]={185},["requiredLevel"]=1,["subClass"]=5}
+V.Data.items[249887]={["class"]=9,["name"]="Recipe: Mrrggl Smrrthle",["professions"]={185},["requiredLevel"]=1,["subClass"]=5}
+V.Data.items[249888]={["class"]=9,["name"]="Recipe: Calcified Smoothie",["professions"]={185},["requiredLevel"]=1,["subClass"]=5}
+V.Data.items[249889]={["class"]=9,["name"]="Recipe: Spicy Smoothie",["professions"]={185},["requiredLevel"]=1,["subClass"]=5}
+V.Data.items[249890]={["class"]=9,["name"]="Recipe: Wicked Smoothie",["professions"]={185},["requiredLevel"]=1,["subClass"]=5}
+V.Data.items[250364]={["class"]=9,["name"]="Recipe: Elixir of Cunning",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250365]={["class"]=9,["name"]="Recipe: Elixir of the Phalanx",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250367]={["class"]=9,["name"]="Recipe: Lesser Cleric's Elixir",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250369]={["class"]=9,["name"]="Recipe: Greater Cleric's Elixir",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250371]={["class"]=9,["name"]="Recipe: Elixir of Greater Fortitude",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250372]={["class"]=9,["name"]="Recipe: Elixir of Wicked Regeneration",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250373]={["class"]=9,["name"]="Recipe: Elixir of the Owl",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250374]={["class"]=9,["name"]="Recipe: Elixir of Sages",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250376]={["class"]=9,["name"]="Recipe: Lesser Mageblood Elixir",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250377]={["class"]=9,["name"]="Recipe: Greater Mageblood Elixir",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250378]={["class"]=9,["name"]="Recipe: Lesser Arcane Elixir",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250379]={["class"]=9,["name"]="Recipe: Elixir of Nature Power",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250381]={["class"]=9,["name"]="Recipe: Elixir of Lesser Spirit",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250383]={["class"]=9,["name"]="Recipe: Elixir of Greater Spirit",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250384]={["class"]=9,["name"]="Recipe: Elixir of the Whale",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250386]={["class"]=9,["name"]="Recipe: Elixir of Ferocity",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250387]={["class"]=9,["name"]="Recipe: Elixir of the Grizzly",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250388]={["class"]=9,["name"]="Recipe: Elixir of Lesser Intellect",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250978]={["class"]=9,["name"]="Recipe: Spellblasting Potion",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250979]={["class"]=9,["name"]="Recipe: Greater Spellblasting Potion",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250981]={["class"]=9,["name"]="Recipe: Major Spellblasting Potion",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250984]={["class"]=9,["name"]="Recipe: Frenzy Potion",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250985]={["class"]=9,["name"]="Recipe: Greater Frenzy Potion",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250987]={["class"]=9,["name"]="Recipe: Major Frenzy Potion",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250990]={["class"]=9,["name"]="Recipe: Mender's Potion",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250993]={["class"]=9,["name"]="Recipe: Major Mender's Potion",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250994]={["class"]=9,["name"]="Recipe: Potion of Venomous Blood",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250995]={["class"]=9,["name"]="Recipe: Caustic Smog Potion",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250996]={["class"]=9,["name"]="Recipe: Disorienting Smog Potion",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250997]={["class"]=9,["name"]="Recipe: Dragonfire Potion",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[250998]={["class"]=9,["name"]="Recipe: Potion of Elemental Purging",["professions"]={171},["requiredLevel"]=1,["subClass"]=6}
+V.Data.items[251355]={["class"]=9,["name"]="Plans: Veteran's Boots",["professions"]={164},["subClass"]=4}
+V.Data.items[251356]={["class"]=9,["name"]="Plans: Guard's Boots",["professions"]={164},["subClass"]=4}
+V.Data.items[251357]={["class"]=9,["name"]="Plans: Protector's Boots",["professions"]={164},["subClass"]=4}
+V.Data.items[251358]={["class"]=9,["name"]="Plans: Acolyte's Boots",["professions"]={164},["subClass"]=4}
+V.Data.items[251359]={["class"]=9,["name"]="Plans: Crusader's Boots",["professions"]={164},["subClass"]=4}
+V.Data.items[251360]={["class"]=9,["name"]="Plans: Veteran's Gloves",["professions"]={164},["subClass"]=4}
+V.Data.items[251361]={["class"]=9,["name"]="Plans: Guard's Gloves",["professions"]={164},["subClass"]=4}
+V.Data.items[251362]={["class"]=9,["name"]="Plans: Protector's Gloves",["professions"]={164},["subClass"]=4}
+V.Data.items[251363]={["class"]=9,["name"]="Plans: Acolyte's Gloves",["professions"]={164},["subClass"]=4}
+V.Data.items[251364]={["class"]=9,["name"]="Plans: Crusader's Gloves",["professions"]={164},["subClass"]=4}
+V.Data.items[251365]={["class"]=9,["name"]="Plans: Veteran's Chain Belt",["professions"]={164},["subClass"]=4}
+V.Data.items[251366]={["class"]=9,["name"]="Plans: Guard's Chain Belt",["professions"]={164},["subClass"]=4}
+V.Data.items[251367]={["class"]=9,["name"]="Plans: Protector's Chain Belt",["professions"]={164},["subClass"]=4}
+V.Data.items[251368]={["class"]=9,["name"]="Plans: Acolyte's Chain Belt",["professions"]={164},["subClass"]=4}
+V.Data.items[251369]={["class"]=9,["name"]="Plans: Crusader's Chain Belt",["professions"]={164},["subClass"]=4}
+V.Data.items[251370]={["class"]=9,["name"]="Plans: Veteran's Silvered Chain Shirt",["professions"]={164},["subClass"]=4}
+V.Data.items[251371]={["class"]=9,["name"]="Plans: Guard's Silvered Chain Shirt",["professions"]={164},["subClass"]=4}
+V.Data.items[251372]={["class"]=9,["name"]="Plans: Protector's Silvered Chain Shirt",["professions"]={164},["subClass"]=4}
+V.Data.items[251373]={["class"]=9,["name"]="Plans: Acolyte's Silvered Chain Shirt",["professions"]={164},["subClass"]=4}
+V.Data.items[251374]={["class"]=9,["name"]="Plans: Crusader's Silvered Chain Shirt",["professions"]={164},["subClass"]=4}
+V.Data.items[251375]={["class"]=9,["name"]="Plans: Veteran's Silvered Chain Leggings",["professions"]={164},["subClass"]=4}
+V.Data.items[251376]={["class"]=9,["name"]="Plans: Guard's Silvered Chain Leggings",["professions"]={164},["subClass"]=4}
+V.Data.items[251377]={["class"]=9,["name"]="Plans: Protector's Silvered Chain Leggings",["professions"]={164},["subClass"]=4}
+V.Data.items[251378]={["class"]=9,["name"]="Plans: Acolyte's Silvered Chain Leggings",["professions"]={164},["subClass"]=4}
+V.Data.items[251379]={["class"]=9,["name"]="Plans: Crusader's Silvered Chain Leggings",["professions"]={164},["subClass"]=4}
+V.Data.items[251380]={["class"]=9,["name"]="Plans: Veteran's Silvered Chain Helm",["professions"]={164},["subClass"]=4}
+V.Data.items[251381]={["class"]=9,["name"]="Plans: Guard's Silvered Chain Helm",["professions"]={164},["subClass"]=4}
+V.Data.items[251382]={["class"]=9,["name"]="Plans: Protector's Silvered Chain Helm",["professions"]={164},["subClass"]=4}
+V.Data.items[251383]={["class"]=9,["name"]="Plans: Acolyte's Silvered Chain Helm",["professions"]={164},["subClass"]=4}
+V.Data.items[251384]={["class"]=9,["name"]="Plans: Crusader's Silvered Chain Helm",["professions"]={164},["subClass"]=4}
+V.Data.items[251390]={["class"]=9,["name"]="Plans: Hard Gold Gauntlet",["professions"]={164},["subClass"]=4}
+V.Data.items[251413]={["class"]=9,["name"]="Plans: Officer's Sabatons",["professions"]={164},["subClass"]=4}
+V.Data.items[251414]={["class"]=9,["name"]="Plans: Sentinel's Sabatons",["professions"]={164},["subClass"]=4}
+V.Data.items[251415]={["class"]=9,["name"]="Plans: Warder's Sabatons",["professions"]={164},["subClass"]=4}
+V.Data.items[251416]={["class"]=9,["name"]="Plans: Prefect's Sabatons",["professions"]={164},["subClass"]=4}
+V.Data.items[251417]={["class"]=9,["name"]="Plans: Justicar's Sabatons",["professions"]={164},["subClass"]=4}
+V.Data.items[251418]={["class"]=9,["name"]="Plans: Officer's Gauntlet",["professions"]={164},["subClass"]=4}
+V.Data.items[251419]={["class"]=9,["name"]="Plans: Sentinel's Gauntlet",["professions"]={164},["subClass"]=4}
+V.Data.items[251420]={["class"]=9,["name"]="Plans: Warder's Gauntlet",["professions"]={164},["subClass"]=4}
+V.Data.items[251421]={["class"]=9,["name"]="Plans: Prefect's Gauntlet",["professions"]={164},["subClass"]=4}
+V.Data.items[251422]={["class"]=9,["name"]="Plans: Justicar's Gauntlet",["professions"]={164},["subClass"]=4}
+V.Data.items[251423]={["class"]=9,["name"]="Plans: Officer's Waistguard",["professions"]={164},["subClass"]=4}
+V.Data.items[251424]={["class"]=9,["name"]="Plans: Sentinel's Waistguard",["professions"]={164},["subClass"]=4}
+V.Data.items[251425]={["class"]=9,["name"]="Plans: Warder's Waistguard",["professions"]={164},["subClass"]=4}
+V.Data.items[251426]={["class"]=9,["name"]="Plans: Prefect's Waistguard",["professions"]={164},["subClass"]=4}
+V.Data.items[251427]={["class"]=9,["name"]="Plans: Justicar's Waistguard",["professions"]={164},["subClass"]=4}
+V.Data.items[251428]={["class"]=9,["name"]="Plans: Officer's Pauldrons",["professions"]={164},["subClass"]=4}
+V.Data.items[251429]={["class"]=9,["name"]="Plans: Sentinel's Pauldrons",["professions"]={164},["subClass"]=4}
+V.Data.items[251430]={["class"]=9,["name"]="Plans: Warder's Pauldrons",["professions"]={164},["subClass"]=4}
+V.Data.items[251431]={["class"]=9,["name"]="Plans: Prefect's Pauldrons",["professions"]={164},["subClass"]=4}
+V.Data.items[251432]={["class"]=9,["name"]="Plans: Justicar's Pauldrons",["professions"]={164},["subClass"]=4}
+V.Data.items[251433]={["class"]=9,["name"]="Plans: Officer's Wristguard",["professions"]={164},["subClass"]=4}
+V.Data.items[251434]={["class"]=9,["name"]="Plans: Sentinel's Wristguard",["professions"]={164},["subClass"]=4}
+V.Data.items[251435]={["class"]=9,["name"]="Plans: Warder's Wristguard",["professions"]={164},["subClass"]=4}
+V.Data.items[251436]={["class"]=9,["name"]="Plans: Prefect's Wristguard",["professions"]={164},["subClass"]=4}
+V.Data.items[251437]={["class"]=9,["name"]="Plans: Justicar's Wristguards",["professions"]={164},["subClass"]=4}
+V.Data.items[251447]={["class"]=9,["name"]="Plans: Enriched Thorium Breastplate",["professions"]={164},["subClass"]=4}
+V.Data.items[251448]={["class"]=9,["name"]="Plans: Enriched Thorium Leggings",["professions"]={164},["subClass"]=4}
+V.Data.items[251449]={["class"]=9,["name"]="Plans: Enriched Thorium Helm",["professions"]={164},["subClass"]=4}
+V.Data.items[251458]={["class"]=9,["name"]="Plans: Iron Morningstar",["professions"]={164},["subClass"]=4}
+V.Data.items[251460]={["class"]=9,["name"]="Plans: Mithril Warhammer",["professions"]={164},["subClass"]=4}
+V.Data.items[251465]={["class"]=9,["name"]="Plans: Thorium Greatmace",["professions"]={164},["subClass"]=4}
+V.Data.items[251466]={["class"]=9,["name"]="Plans: Thorium Cestus",["professions"]={164},["subClass"]=4}
+V.Data.items[251468]={["class"]=9,["name"]="Plans: Bold Dirk",["professions"]={164},["subClass"]=4}
+V.Data.items[251471]={["class"]=9,["name"]="Plans: Legionite Glaive",["professions"]={164},["subClass"]=4}
 V.Data.items[252026]={["name"]="Gustberry Pie",["requiredLevel"]=5,["subClass"]=5}
 V.Data.items[252027]={["name"]="Gustberry Juice",["requiredLevel"]=5,["subClass"]=5}
 V.Data.items[252029]={["name"]="Hippogryph Flank",["requiredLevel"]=5,["subClass"]=5}
 V.Data.items[252030]={["name"]="Pungent Skycheddar",["requiredLevel"]=5,["subClass"]=5}
 V.Data.items[252032]={["name"]="Red Delicious Stormapple",["requiredLevel"]=5,["subClass"]=5}
-V.Data.items[252761]={["class"]=9,["name"]="Pattern: Black Whelp Slippers",["subClass"]=1}
-V.Data.items[252762]={["class"]=9,["name"]="Pattern: Dark Leather Boots",["subClass"]=1}
-V.Data.items[252763]={["class"]=9,["name"]="Pattern: Murloc Scale Shoes",["subClass"]=1}
-V.Data.items[252764]={["class"]=9,["name"]="Pattern: Moonglow Boots",["subClass"]=1}
-V.Data.items[252765]={["class"]=9,["name"]="Pattern: Brawler's Leather Belt",["subClass"]=1}
-V.Data.items[252766]={["class"]=9,["name"]="Pattern: Trapper's Leather Belt",["subClass"]=1}
-V.Data.items[252767]={["class"]=9,["name"]="Pattern: Defender's Leather Belt",["subClass"]=1}
-V.Data.items[252768]={["class"]=9,["name"]="Pattern: Totemic Leather Belt",["subClass"]=1}
-V.Data.items[252769]={["class"]=9,["name"]="Pattern: Stormrider's Leather Belt",["subClass"]=1}
-V.Data.items[252770]={["class"]=9,["name"]="Pattern: Wisdom's Leather Belt",["subClass"]=1}
-V.Data.items[252777]={["class"]=9,["name"]="Pattern: Brawler's Leather Gloves",["subClass"]=1}
-V.Data.items[252778]={["class"]=9,["name"]="Pattern: Trapper's Leather Gloves",["subClass"]=1}
-V.Data.items[252779]={["class"]=9,["name"]="Pattern: Defender's Leather Gloves",["subClass"]=1}
-V.Data.items[252780]={["class"]=9,["name"]="Pattern: Totemic Leather Gloves",["subClass"]=1}
-V.Data.items[252781]={["class"]=9,["name"]="Pattern: Stormrider's Leather Gloves",["subClass"]=1}
-V.Data.items[252782]={["class"]=9,["name"]="Pattern: Wisdom's Leather Gloves",["subClass"]=1}
-V.Data.items[252783]={["class"]=9,["name"]="Pattern: Mystic Medium Armor Kit",["subClass"]=1}
-V.Data.items[252784]={["class"]=9,["name"]="Pattern: Forceful Medium Armor Kit",["subClass"]=1}
-V.Data.items[252786]={["class"]=9,["name"]="Pattern: Brawler's Leather Boots",["subClass"]=1}
-V.Data.items[252787]={["class"]=9,["name"]="Pattern: Trapper's Leather Boots",["subClass"]=1}
-V.Data.items[252788]={["class"]=9,["name"]="Pattern: Defender's Leather Boots",["subClass"]=1}
-V.Data.items[252789]={["class"]=9,["name"]="Pattern: Totemic Leather Boots",["subClass"]=1}
-V.Data.items[252790]={["class"]=9,["name"]="Pattern: Stormrider's Leather Boots",["subClass"]=1}
-V.Data.items[252791]={["class"]=9,["name"]="Pattern: Wisdom's Leather Boots",["subClass"]=1}
-V.Data.items[252798]={["class"]=9,["name"]="Pattern: Brawler's Leather Hood",["subClass"]=1}
-V.Data.items[252799]={["class"]=9,["name"]="Pattern: Trapper's Leather Hood",["subClass"]=1}
-V.Data.items[252800]={["class"]=9,["name"]="Pattern: Defender's Leather Hood",["subClass"]=1}
-V.Data.items[252801]={["class"]=9,["name"]="Pattern: Totemic Leather Hood",["subClass"]=1}
-V.Data.items[252802]={["class"]=9,["name"]="Pattern: Stormrider's Leather Hood",["subClass"]=1}
-V.Data.items[252803]={["class"]=9,["name"]="Pattern: Wisdom's Leather Hood",["subClass"]=1}
-V.Data.items[252805]={["class"]=9,["name"]="Pattern: Brawler's Leather Tunic",["subClass"]=1}
-V.Data.items[252806]={["class"]=9,["name"]="Pattern: Trapper's Leather Tunic",["subClass"]=1}
-V.Data.items[252807]={["class"]=9,["name"]="Pattern: Defender's Leather Tunic",["subClass"]=1}
-V.Data.items[252808]={["class"]=9,["name"]="Pattern: Totemic Leather Tunic",["subClass"]=1}
-V.Data.items[252809]={["class"]=9,["name"]="Pattern: Stormrider's Leather Tunic",["subClass"]=1}
-V.Data.items[252810]={["class"]=9,["name"]="Pattern: Wisdom's Leather Tunic",["subClass"]=1}
-V.Data.items[252811]={["class"]=9,["name"]="Pattern: Mystic Heavy Armor Kit",["subClass"]=1}
-V.Data.items[252812]={["class"]=9,["name"]="Pattern: Forceful Heavy Armor Kit",["subClass"]=1}
-V.Data.items[252820]={["class"]=9,["name"]="Pattern: Brawler's Leather Legguards",["subClass"]=1}
-V.Data.items[252821]={["class"]=9,["name"]="Pattern: Trapper's Leather Legguards",["subClass"]=1}
-V.Data.items[252822]={["class"]=9,["name"]="Pattern: Defender's Leather Kilt",["subClass"]=1}
-V.Data.items[252823]={["class"]=9,["name"]="Pattern: Totemic Leather Leggings",["subClass"]=1}
-V.Data.items[252824]={["class"]=9,["name"]="Pattern: Stormrider's Leather Kilt",["subClass"]=1}
-V.Data.items[252825]={["class"]=9,["name"]="Pattern: Wisdom's Leather Leggings",["subClass"]=1}
-V.Data.items[252826]={["class"]=9,["name"]="Pattern: Prowler's Leather Belt",["subClass"]=1}
-V.Data.items[252827]={["class"]=9,["name"]="Pattern: Skulker's Leather Belt",["subClass"]=1}
-V.Data.items[252828]={["class"]=9,["name"]="Pattern: Stalker's Leather Belt",["subClass"]=1}
-V.Data.items[252829]={["class"]=9,["name"]="Pattern: Warden's Leather Belt",["subClass"]=1}
-V.Data.items[252830]={["class"]=9,["name"]="Pattern: Skirmisher's Leather Belt",["subClass"]=1}
-V.Data.items[252831]={["class"]=9,["name"]="Pattern: Skycaller's Leather Belt",["subClass"]=1}
-V.Data.items[252832]={["class"]=9,["name"]="Pattern: Mender's Leather Belt",["subClass"]=1}
-V.Data.items[252833]={["class"]=9,["name"]="Pattern: Mystic Thick Armor Kit",["subClass"]=1}
-V.Data.items[252834]={["class"]=9,["name"]="Pattern: Forceful Thick Armor Kit",["subClass"]=1}
-V.Data.items[252836]={["class"]=9,["name"]="Pattern: Prowler's Leather Gloves",["subClass"]=1}
-V.Data.items[252837]={["class"]=9,["name"]="Pattern: Skulker's Leather Gloves",["subClass"]=1}
-V.Data.items[252838]={["class"]=9,["name"]="Pattern: Stalker's Leather Gloves",["subClass"]=1}
-V.Data.items[252839]={["class"]=9,["name"]="Pattern: Warden's Leather Gloves",["subClass"]=1}
-V.Data.items[252840]={["class"]=9,["name"]="Pattern: Skirmisher's Leather Gloves",["subClass"]=1}
-V.Data.items[252841]={["class"]=9,["name"]="Pattern: Skycaller's Leather Gloves",["subClass"]=1}
-V.Data.items[252842]={["class"]=9,["name"]="Pattern: Mender's Leather Gloves",["subClass"]=1}
-V.Data.items[252848]={["class"]=9,["name"]="Pattern: Prowler's Leather Shoulders",["subClass"]=1}
-V.Data.items[252849]={["class"]=9,["name"]="Pattern: Skulker's Leather Shoulder",["subClass"]=1}
-V.Data.items[252850]={["class"]=9,["name"]="Pattern: Warden's Leather Shoulders",["subClass"]=1}
-V.Data.items[252851]={["class"]=9,["name"]="Pattern: Skycaller's Leather Shoulders",["subClass"]=1}
-V.Data.items[252852]={["class"]=9,["name"]="Pattern: Mender's Leather Shoulders",["subClass"]=1}
-V.Data.items[252853]={["class"]=9,["name"]="Pattern: Prowler's Leather Bracers",["subClass"]=1}
-V.Data.items[252854]={["class"]=9,["name"]="Pattern: Skulker's Leather Bracers",["subClass"]=1}
-V.Data.items[252855]={["class"]=9,["name"]="Pattern: Warden's Leather Bracers",["subClass"]=1}
-V.Data.items[252856]={["class"]=9,["name"]="Pattern: Skycaller's Leather Bracers",["subClass"]=1}
-V.Data.items[252857]={["class"]=9,["name"]="Pattern: Mender's Leather Bracers",["subClass"]=1}
-V.Data.items[252860]={["class"]=9,["name"]="Pattern: Prowler's Leather Boots",["subClass"]=1}
-V.Data.items[252861]={["class"]=9,["name"]="Pattern: Skulker's Leather Boots",["subClass"]=1}
-V.Data.items[252862]={["class"]=9,["name"]="Pattern: Warden's Leather Boots",["subClass"]=1}
-V.Data.items[252863]={["class"]=9,["name"]="Pattern: Skycaller's Leather Boots",["subClass"]=1}
-V.Data.items[252864]={["class"]=9,["name"]="Pattern: Mender's Leather Boots",["subClass"]=1}
-V.Data.items[252872]={["class"]=9,["name"]="Pattern: Prowler's Leather Waistguard",["subClass"]=1}
-V.Data.items[252873]={["class"]=9,["name"]="Pattern: Skulker's Leather Waistguard",["subClass"]=1}
-V.Data.items[252874]={["class"]=9,["name"]="Pattern: Warden's Leather Waistguard",["subClass"]=1}
-V.Data.items[252875]={["class"]=9,["name"]="Pattern: Skycaller's Leather Waistguard",["subClass"]=1}
-V.Data.items[252876]={["class"]=9,["name"]="Pattern: Mender's Leather Waistguard",["subClass"]=1}
-V.Data.items[252877]={["class"]=9,["name"]="Pattern: Tooled Leather Armor",["subClass"]=1}
-V.Data.items[252900]={["class"]=9,["name"]="Pattern: Stalker's Mail Shoulders",["subClass"]=1}
-V.Data.items[252901]={["class"]=9,["name"]="Pattern: Skycaller's Mail Shoulders",["subClass"]=1}
-V.Data.items[252902]={["class"]=9,["name"]="Pattern: Skirmisher's Mail Shoulders",["subClass"]=1}
-V.Data.items[252903]={["class"]=9,["name"]="Pattern: Mender's Mail Shoulders",["subClass"]=1}
-V.Data.items[252904]={["class"]=9,["name"]="Pattern: Stalker's Mail Bracers",["subClass"]=1}
-V.Data.items[252905]={["class"]=9,["name"]="Pattern: Skycaller's Mail Bracers",["subClass"]=1}
-V.Data.items[252906]={["class"]=9,["name"]="Pattern: Skirmisher's Mail Bracers",["subClass"]=1}
-V.Data.items[252907]={["class"]=9,["name"]="Pattern: Mender's Mail Bracers",["subClass"]=1}
-V.Data.items[252910]={["class"]=9,["name"]="Pattern: Stalker's Mail Sabatons",["subClass"]=1}
-V.Data.items[252911]={["class"]=9,["name"]="Pattern: Skycaller's Mail Sabatons",["subClass"]=1}
-V.Data.items[252912]={["class"]=9,["name"]="Pattern: Skirmisher's Mail Sabatons",["subClass"]=1}
-V.Data.items[252913]={["class"]=9,["name"]="Pattern: Mender's Mail Sabatons",["subClass"]=1}
-V.Data.items[252922]={["class"]=9,["name"]="Pattern: Stalker's Mail Belt",["subClass"]=1}
-V.Data.items[252923]={["class"]=9,["name"]="Pattern: Skycaller's Mail Belt",["subClass"]=1}
-V.Data.items[252924]={["class"]=9,["name"]="Pattern: Skirmisher's Mail Belt",["subClass"]=1}
-V.Data.items[252925]={["class"]=9,["name"]="Pattern: Mender's Mail Belt",["subClass"]=1}
-V.Data.items[252933]={["class"]=9,["name"]="Pattern: Supple Scorpid Vest",["subClass"]=1}
-V.Data.items[252941]={["class"]=9,["name"]="Pattern: Mystic Rugged Armor Kit",["subClass"]=1}
-V.Data.items[252942]={["class"]=9,["name"]="Pattern: Forceful Rugged Armor Kit",["subClass"]=1}
-V.Data.items[253665]={["class"]=9,["name"]="Pattern: Linen Reagent Bag",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253668]={["class"]=9,["name"]="Pattern: Woolen Reagent Bag",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253890]={["class"]=9,["name"]="Pattern: Pristine Boots",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253892]={["class"]=9,["name"]="Pattern: Silky Boots",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253894]={["class"]=9,["name"]="Pattern: Flame Boots",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253896]={["class"]=9,["name"]="Pattern: Shadow Boots",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253898]={["class"]=9,["name"]="Pattern: Pearly Boots",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253900]={["class"]=9,["name"]="Pattern: Shining Boots",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253914]={["class"]=9,["name"]="Pattern: Pristine Gloves",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253916]={["class"]=9,["name"]="Pattern: Silky Gloves",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253918]={["class"]=9,["name"]="Pattern: Flame Gloves",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253920]={["class"]=9,["name"]="Pattern: Shadow Gloves",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253922]={["class"]=9,["name"]="Pattern: Pearly Gloves",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253924]={["class"]=9,["name"]="Pattern: Shining Gloves",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253926]={["class"]=9,["name"]="Pattern: Pristine Sash",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253928]={["class"]=9,["name"]="Pattern: Silky Sash",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253930]={["class"]=9,["name"]="Pattern: Flame Sash",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253932]={["class"]=9,["name"]="Pattern: Shadow Sash",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253934]={["class"]=9,["name"]="Pattern: Pearly Sash",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253936]={["class"]=9,["name"]="Pattern: Shining Sash",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253950]={["class"]=9,["name"]="Pattern: Pristine Circlet",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253952]={["class"]=9,["name"]="Pattern: Silky Circlet",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253954]={["class"]=9,["name"]="Pattern: Flame Circlet",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253956]={["class"]=9,["name"]="Pattern: Shadow Circlet",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253958]={["class"]=9,["name"]="Pattern: Pearly Circlet",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253960]={["class"]=9,["name"]="Pattern: Shining Circlet",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253962]={["class"]=9,["name"]="Pattern: Pristine Gown",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253964]={["class"]=9,["name"]="Pattern: Silky Gown",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253966]={["class"]=9,["name"]="Pattern: Flame Gown",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253968]={["class"]=9,["name"]="Pattern: Shadow Gown",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253970]={["class"]=9,["name"]="Pattern: Pearly Gown",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253972]={["class"]=9,["name"]="Pattern: Shining Gown",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253974]={["class"]=9,["name"]="Pattern: Silk Reagent Bag",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253988]={["class"]=9,["name"]="Pattern: Pristine Leggings",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253990]={["class"]=9,["name"]="Pattern: Silky Leggings",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253992]={["class"]=9,["name"]="Pattern: Flame Leggings",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253994]={["class"]=9,["name"]="Pattern: Shadow Leggings",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253996]={["class"]=9,["name"]="Pattern: Pearly Leggings",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[253998]={["class"]=9,["name"]="Pattern: Shining Leggings",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254024]={["class"]=9,["name"]="Pattern: Frothing Handwraps",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254026]={["class"]=9,["name"]="Pattern: Fiery Handwraps",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254028]={["class"]=9,["name"]="Pattern: Black Handwraps",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254030]={["class"]=9,["name"]="Pattern: Golden Handwraps",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254032]={["class"]=9,["name"]="Pattern: Radiant Handwraps",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254036]={["class"]=9,["name"]="Pattern: Mageweave Reagent Bag",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254050]={["class"]=9,["name"]="Pattern: Nethergeld Shoulders",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254052]={["class"]=9,["name"]="Pattern: Netherfroth Shoulders",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254054]={["class"]=9,["name"]="Pattern: Netherflame Shoulders",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254056]={["class"]=9,["name"]="Pattern: Netherpearl Shoulders",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254058]={["class"]=9,["name"]="Pattern: Nethershine Shoulders",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254060]={["class"]=9,["name"]="Pattern: Netherlight Shoulders",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254062]={["class"]=9,["name"]="Pattern: Nethergeld Cuffs",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254064]={["class"]=9,["name"]="Pattern: Netherfroth Cuffs",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254066]={["class"]=9,["name"]="Pattern: Netherflame Cuffs",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254068]={["class"]=9,["name"]="Pattern: Netherpearl Cuffs",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254070]={["class"]=9,["name"]="Pattern: Nethershine Cuffs",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254072]={["class"]=9,["name"]="Pattern: Netherlight Cuffs",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254080]={["class"]=9,["name"]="Pattern: Runecloth Reagent Bag",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254082]={["class"]=9,["name"]="Pattern: Gilded Waistcord",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254084]={["class"]=9,["name"]="Pattern: Frothing Waistcord",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254086]={["class"]=9,["name"]="Pattern: Fiery Waistcord",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254088]={["class"]=9,["name"]="Pattern: Black Waistcord",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254090]={["class"]=9,["name"]="Pattern: Golden Waistcord",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254092]={["class"]=9,["name"]="Pattern: Radiant Waistcord",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254108]={["class"]=9,["name"]="Pattern: Gilded Sandals",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254110]={["class"]=9,["name"]="Pattern: Frothing Sandals",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254112]={["class"]=9,["name"]="Pattern: Fiery Sandals",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254114]={["class"]=9,["name"]="Pattern: Black Sandals",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254116]={["class"]=9,["name"]="Pattern: Golden Sandals",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254118]={["class"]=9,["name"]="Pattern: Radiant Sandals",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254124]={["class"]=9,["name"]="Pattern: Runecloth Cuffs",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[254682]={["class"]=9,["name"]="Pattern: Stormcloth Gloves",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[255729]={["class"]=9,["name"]="Manual: Major Healing Potion",["subClass"]=7}
+V.Data.items[252761]={["class"]=9,["name"]="Pattern: Black Whelp Slippers",["professions"]={165},["subClass"]=1}
+V.Data.items[252762]={["class"]=9,["name"]="Pattern: Dark Leather Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[252763]={["class"]=9,["name"]="Pattern: Murloc Scale Shoes",["professions"]={165},["subClass"]=1}
+V.Data.items[252764]={["class"]=9,["name"]="Pattern: Moonglow Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[252765]={["class"]=9,["name"]="Pattern: Brawler's Leather Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252766]={["class"]=9,["name"]="Pattern: Trapper's Leather Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252767]={["class"]=9,["name"]="Pattern: Defender's Leather Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252768]={["class"]=9,["name"]="Pattern: Totemic Leather Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252769]={["class"]=9,["name"]="Pattern: Stormrider's Leather Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252770]={["class"]=9,["name"]="Pattern: Wisdom's Leather Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252777]={["class"]=9,["name"]="Pattern: Brawler's Leather Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[252778]={["class"]=9,["name"]="Pattern: Trapper's Leather Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[252779]={["class"]=9,["name"]="Pattern: Defender's Leather Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[252780]={["class"]=9,["name"]="Pattern: Totemic Leather Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[252781]={["class"]=9,["name"]="Pattern: Stormrider's Leather Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[252782]={["class"]=9,["name"]="Pattern: Wisdom's Leather Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[252783]={["class"]=9,["name"]="Pattern: Mystic Medium Armor Kit",["professions"]={165},["subClass"]=1}
+V.Data.items[252784]={["class"]=9,["name"]="Pattern: Forceful Medium Armor Kit",["professions"]={165},["subClass"]=1}
+V.Data.items[252786]={["class"]=9,["name"]="Pattern: Brawler's Leather Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[252787]={["class"]=9,["name"]="Pattern: Trapper's Leather Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[252788]={["class"]=9,["name"]="Pattern: Defender's Leather Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[252789]={["class"]=9,["name"]="Pattern: Totemic Leather Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[252790]={["class"]=9,["name"]="Pattern: Stormrider's Leather Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[252791]={["class"]=9,["name"]="Pattern: Wisdom's Leather Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[252798]={["class"]=9,["name"]="Pattern: Brawler's Leather Hood",["professions"]={165},["subClass"]=1}
+V.Data.items[252799]={["class"]=9,["name"]="Pattern: Trapper's Leather Hood",["professions"]={165},["subClass"]=1}
+V.Data.items[252800]={["class"]=9,["name"]="Pattern: Defender's Leather Hood",["professions"]={165},["subClass"]=1}
+V.Data.items[252801]={["class"]=9,["name"]="Pattern: Totemic Leather Hood",["professions"]={165},["subClass"]=1}
+V.Data.items[252802]={["class"]=9,["name"]="Pattern: Stormrider's Leather Hood",["professions"]={165},["subClass"]=1}
+V.Data.items[252803]={["class"]=9,["name"]="Pattern: Wisdom's Leather Hood",["professions"]={165},["subClass"]=1}
+V.Data.items[252805]={["class"]=9,["name"]="Pattern: Brawler's Leather Tunic",["professions"]={165},["subClass"]=1}
+V.Data.items[252806]={["class"]=9,["name"]="Pattern: Trapper's Leather Tunic",["professions"]={165},["subClass"]=1}
+V.Data.items[252807]={["class"]=9,["name"]="Pattern: Defender's Leather Tunic",["professions"]={165},["subClass"]=1}
+V.Data.items[252808]={["class"]=9,["name"]="Pattern: Totemic Leather Tunic",["professions"]={165},["subClass"]=1}
+V.Data.items[252809]={["class"]=9,["name"]="Pattern: Stormrider's Leather Tunic",["professions"]={165},["subClass"]=1}
+V.Data.items[252810]={["class"]=9,["name"]="Pattern: Wisdom's Leather Tunic",["professions"]={165},["subClass"]=1}
+V.Data.items[252811]={["class"]=9,["name"]="Pattern: Mystic Heavy Armor Kit",["professions"]={165},["subClass"]=1}
+V.Data.items[252812]={["class"]=9,["name"]="Pattern: Forceful Heavy Armor Kit",["professions"]={165},["subClass"]=1}
+V.Data.items[252820]={["class"]=9,["name"]="Pattern: Brawler's Leather Legguards",["professions"]={165},["subClass"]=1}
+V.Data.items[252821]={["class"]=9,["name"]="Pattern: Trapper's Leather Legguards",["professions"]={165},["subClass"]=1}
+V.Data.items[252822]={["class"]=9,["name"]="Pattern: Defender's Leather Kilt",["professions"]={165},["subClass"]=1}
+V.Data.items[252823]={["class"]=9,["name"]="Pattern: Totemic Leather Leggings",["professions"]={165},["subClass"]=1}
+V.Data.items[252824]={["class"]=9,["name"]="Pattern: Stormrider's Leather Kilt",["professions"]={165},["subClass"]=1}
+V.Data.items[252825]={["class"]=9,["name"]="Pattern: Wisdom's Leather Leggings",["professions"]={165},["subClass"]=1}
+V.Data.items[252826]={["class"]=9,["name"]="Pattern: Prowler's Leather Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252827]={["class"]=9,["name"]="Pattern: Skulker's Leather Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252828]={["class"]=9,["name"]="Pattern: Stalker's Leather Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252829]={["class"]=9,["name"]="Pattern: Warden's Leather Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252830]={["class"]=9,["name"]="Pattern: Skirmisher's Leather Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252831]={["class"]=9,["name"]="Pattern: Skycaller's Leather Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252832]={["class"]=9,["name"]="Pattern: Mender's Leather Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252833]={["class"]=9,["name"]="Pattern: Mystic Thick Armor Kit",["professions"]={165},["subClass"]=1}
+V.Data.items[252834]={["class"]=9,["name"]="Pattern: Forceful Thick Armor Kit",["professions"]={165},["subClass"]=1}
+V.Data.items[252836]={["class"]=9,["name"]="Pattern: Prowler's Leather Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[252837]={["class"]=9,["name"]="Pattern: Skulker's Leather Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[252838]={["class"]=9,["name"]="Pattern: Stalker's Leather Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[252839]={["class"]=9,["name"]="Pattern: Warden's Leather Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[252840]={["class"]=9,["name"]="Pattern: Skirmisher's Leather Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[252841]={["class"]=9,["name"]="Pattern: Skycaller's Leather Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[252842]={["class"]=9,["name"]="Pattern: Mender's Leather Gloves",["professions"]={165},["subClass"]=1}
+V.Data.items[252848]={["class"]=9,["name"]="Pattern: Prowler's Leather Shoulders",["professions"]={165},["subClass"]=1}
+V.Data.items[252849]={["class"]=9,["name"]="Pattern: Skulker's Leather Shoulder",["professions"]={165},["subClass"]=1}
+V.Data.items[252850]={["class"]=9,["name"]="Pattern: Warden's Leather Shoulders",["professions"]={165},["subClass"]=1}
+V.Data.items[252851]={["class"]=9,["name"]="Pattern: Skycaller's Leather Shoulders",["professions"]={165},["subClass"]=1}
+V.Data.items[252852]={["class"]=9,["name"]="Pattern: Mender's Leather Shoulders",["professions"]={165},["subClass"]=1}
+V.Data.items[252853]={["class"]=9,["name"]="Pattern: Prowler's Leather Bracers",["professions"]={165},["subClass"]=1}
+V.Data.items[252854]={["class"]=9,["name"]="Pattern: Skulker's Leather Bracers",["professions"]={165},["subClass"]=1}
+V.Data.items[252855]={["class"]=9,["name"]="Pattern: Warden's Leather Bracers",["professions"]={165},["subClass"]=1}
+V.Data.items[252856]={["class"]=9,["name"]="Pattern: Skycaller's Leather Bracers",["professions"]={165},["subClass"]=1}
+V.Data.items[252857]={["class"]=9,["name"]="Pattern: Mender's Leather Bracers",["professions"]={165},["subClass"]=1}
+V.Data.items[252860]={["class"]=9,["name"]="Pattern: Prowler's Leather Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[252861]={["class"]=9,["name"]="Pattern: Skulker's Leather Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[252862]={["class"]=9,["name"]="Pattern: Warden's Leather Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[252863]={["class"]=9,["name"]="Pattern: Skycaller's Leather Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[252864]={["class"]=9,["name"]="Pattern: Mender's Leather Boots",["professions"]={165},["subClass"]=1}
+V.Data.items[252872]={["class"]=9,["name"]="Pattern: Prowler's Leather Waistguard",["professions"]={165},["subClass"]=1}
+V.Data.items[252873]={["class"]=9,["name"]="Pattern: Skulker's Leather Waistguard",["professions"]={165},["subClass"]=1}
+V.Data.items[252874]={["class"]=9,["name"]="Pattern: Warden's Leather Waistguard",["professions"]={165},["subClass"]=1}
+V.Data.items[252875]={["class"]=9,["name"]="Pattern: Skycaller's Leather Waistguard",["professions"]={165},["subClass"]=1}
+V.Data.items[252876]={["class"]=9,["name"]="Pattern: Mender's Leather Waistguard",["professions"]={165},["subClass"]=1}
+V.Data.items[252877]={["class"]=9,["name"]="Pattern: Tooled Leather Armor",["professions"]={165},["subClass"]=1}
+V.Data.items[252900]={["class"]=9,["name"]="Pattern: Stalker's Mail Shoulders",["professions"]={165},["subClass"]=1}
+V.Data.items[252901]={["class"]=9,["name"]="Pattern: Skycaller's Mail Shoulders",["professions"]={165},["subClass"]=1}
+V.Data.items[252902]={["class"]=9,["name"]="Pattern: Skirmisher's Mail Shoulders",["professions"]={165},["subClass"]=1}
+V.Data.items[252903]={["class"]=9,["name"]="Pattern: Mender's Mail Shoulders",["professions"]={165},["subClass"]=1}
+V.Data.items[252904]={["class"]=9,["name"]="Pattern: Stalker's Mail Bracers",["professions"]={165},["subClass"]=1}
+V.Data.items[252905]={["class"]=9,["name"]="Pattern: Skycaller's Mail Bracers",["professions"]={165},["subClass"]=1}
+V.Data.items[252906]={["class"]=9,["name"]="Pattern: Skirmisher's Mail Bracers",["professions"]={165},["subClass"]=1}
+V.Data.items[252907]={["class"]=9,["name"]="Pattern: Mender's Mail Bracers",["professions"]={165},["subClass"]=1}
+V.Data.items[252910]={["class"]=9,["name"]="Pattern: Stalker's Mail Sabatons",["professions"]={165},["subClass"]=1}
+V.Data.items[252911]={["class"]=9,["name"]="Pattern: Skycaller's Mail Sabatons",["professions"]={165},["subClass"]=1}
+V.Data.items[252912]={["class"]=9,["name"]="Pattern: Skirmisher's Mail Sabatons",["professions"]={165},["subClass"]=1}
+V.Data.items[252913]={["class"]=9,["name"]="Pattern: Mender's Mail Sabatons",["professions"]={165},["subClass"]=1}
+V.Data.items[252922]={["class"]=9,["name"]="Pattern: Stalker's Mail Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252923]={["class"]=9,["name"]="Pattern: Skycaller's Mail Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252924]={["class"]=9,["name"]="Pattern: Skirmisher's Mail Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252925]={["class"]=9,["name"]="Pattern: Mender's Mail Belt",["professions"]={165},["subClass"]=1}
+V.Data.items[252933]={["class"]=9,["name"]="Pattern: Supple Scorpid Vest",["professions"]={165},["subClass"]=1}
+V.Data.items[252941]={["class"]=9,["name"]="Pattern: Mystic Rugged Armor Kit",["professions"]={165},["subClass"]=1}
+V.Data.items[252942]={["class"]=9,["name"]="Pattern: Forceful Rugged Armor Kit",["professions"]={165},["subClass"]=1}
+V.Data.items[253665]={["class"]=9,["name"]="Pattern: Linen Reagent Bag",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253668]={["class"]=9,["name"]="Pattern: Woolen Reagent Bag",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253890]={["class"]=9,["name"]="Pattern: Pristine Boots",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253892]={["class"]=9,["name"]="Pattern: Silky Boots",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253894]={["class"]=9,["name"]="Pattern: Flame Boots",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253896]={["class"]=9,["name"]="Pattern: Shadow Boots",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253898]={["class"]=9,["name"]="Pattern: Pearly Boots",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253900]={["class"]=9,["name"]="Pattern: Shining Boots",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253914]={["class"]=9,["name"]="Pattern: Pristine Gloves",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253916]={["class"]=9,["name"]="Pattern: Silky Gloves",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253918]={["class"]=9,["name"]="Pattern: Flame Gloves",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253920]={["class"]=9,["name"]="Pattern: Shadow Gloves",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253922]={["class"]=9,["name"]="Pattern: Pearly Gloves",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253924]={["class"]=9,["name"]="Pattern: Shining Gloves",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253926]={["class"]=9,["name"]="Pattern: Pristine Sash",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253928]={["class"]=9,["name"]="Pattern: Silky Sash",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253930]={["class"]=9,["name"]="Pattern: Flame Sash",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253932]={["class"]=9,["name"]="Pattern: Shadow Sash",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253934]={["class"]=9,["name"]="Pattern: Pearly Sash",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253936]={["class"]=9,["name"]="Pattern: Shining Sash",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253950]={["class"]=9,["name"]="Pattern: Pristine Circlet",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253952]={["class"]=9,["name"]="Pattern: Silky Circlet",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253954]={["class"]=9,["name"]="Pattern: Flame Circlet",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253956]={["class"]=9,["name"]="Pattern: Shadow Circlet",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253958]={["class"]=9,["name"]="Pattern: Pearly Circlet",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253960]={["class"]=9,["name"]="Pattern: Shining Circlet",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253962]={["class"]=9,["name"]="Pattern: Pristine Gown",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253964]={["class"]=9,["name"]="Pattern: Silky Gown",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253966]={["class"]=9,["name"]="Pattern: Flame Gown",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253968]={["class"]=9,["name"]="Pattern: Shadow Gown",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253970]={["class"]=9,["name"]="Pattern: Pearly Gown",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253972]={["class"]=9,["name"]="Pattern: Shining Gown",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253974]={["class"]=9,["name"]="Pattern: Silk Reagent Bag",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253988]={["class"]=9,["name"]="Pattern: Pristine Leggings",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253990]={["class"]=9,["name"]="Pattern: Silky Leggings",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253992]={["class"]=9,["name"]="Pattern: Flame Leggings",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253994]={["class"]=9,["name"]="Pattern: Shadow Leggings",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253996]={["class"]=9,["name"]="Pattern: Pearly Leggings",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[253998]={["class"]=9,["name"]="Pattern: Shining Leggings",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254024]={["class"]=9,["name"]="Pattern: Frothing Handwraps",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254026]={["class"]=9,["name"]="Pattern: Fiery Handwraps",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254028]={["class"]=9,["name"]="Pattern: Black Handwraps",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254030]={["class"]=9,["name"]="Pattern: Golden Handwraps",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254032]={["class"]=9,["name"]="Pattern: Radiant Handwraps",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254036]={["class"]=9,["name"]="Pattern: Mageweave Reagent Bag",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254050]={["class"]=9,["name"]="Pattern: Nethergeld Shoulders",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254052]={["class"]=9,["name"]="Pattern: Netherfroth Shoulders",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254054]={["class"]=9,["name"]="Pattern: Netherflame Shoulders",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254056]={["class"]=9,["name"]="Pattern: Netherpearl Shoulders",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254058]={["class"]=9,["name"]="Pattern: Nethershine Shoulders",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254060]={["class"]=9,["name"]="Pattern: Netherlight Shoulders",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254062]={["class"]=9,["name"]="Pattern: Nethergeld Cuffs",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254064]={["class"]=9,["name"]="Pattern: Netherfroth Cuffs",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254066]={["class"]=9,["name"]="Pattern: Netherflame Cuffs",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254068]={["class"]=9,["name"]="Pattern: Netherpearl Cuffs",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254070]={["class"]=9,["name"]="Pattern: Nethershine Cuffs",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254072]={["class"]=9,["name"]="Pattern: Netherlight Cuffs",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254080]={["class"]=9,["name"]="Pattern: Runecloth Reagent Bag",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254082]={["class"]=9,["name"]="Pattern: Gilded Waistcord",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254084]={["class"]=9,["name"]="Pattern: Frothing Waistcord",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254086]={["class"]=9,["name"]="Pattern: Fiery Waistcord",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254088]={["class"]=9,["name"]="Pattern: Black Waistcord",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254090]={["class"]=9,["name"]="Pattern: Golden Waistcord",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254092]={["class"]=9,["name"]="Pattern: Radiant Waistcord",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254108]={["class"]=9,["name"]="Pattern: Gilded Sandals",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254110]={["class"]=9,["name"]="Pattern: Frothing Sandals",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254112]={["class"]=9,["name"]="Pattern: Fiery Sandals",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254114]={["class"]=9,["name"]="Pattern: Black Sandals",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254116]={["class"]=9,["name"]="Pattern: Golden Sandals",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254118]={["class"]=9,["name"]="Pattern: Radiant Sandals",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254124]={["class"]=9,["name"]="Pattern: Runecloth Cuffs",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[254682]={["class"]=9,["name"]="Pattern: Stormcloth Gloves",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[255729]={["class"]=9,["name"]="Manual: Major Healing Potion",["professions"]={129},["subClass"]=7}
 V.Data.items[260631]={["name"]="Arcane Wine",["subClass"]=5}
 V.Data.items[262764]={["class"]=4,["name"]="Durotar Supply and Logistics Tabard",["repFaction"]=2587,["repStanding"]=7}
 V.Data.items[262765]={["class"]=4,["name"]="Azeroth Commerce Authority Tabard",["repFaction"]=2586,["repStanding"]=7}
 V.Data.items[262766]={["class"]=15,["name"]="Reins of the Pack Kodo",["requiredLevel"]=60,["subClass"]=5}
-V.Data.items[264201]={["class"]=9,["name"]="Schematic: SAF-T Tabs",["subClass"]=3}
-V.Data.items[264202]={["class"]=9,["name"]="Schematic: SAF-T Dynamite",["subClass"]=3}
-V.Data.items[264203]={["class"]=9,["name"]="Schematic: SAF-T Copper Bomb",["subClass"]=3}
-V.Data.items[264204]={["class"]=9,["name"]="Schematic: EZ-Thro Wrap",["subClass"]=3}
-V.Data.items[264205]={["class"]=9,["name"]="Schematic: EZ-Thro Copper Bomb XL",["subClass"]=3}
-V.Data.items[264206]={["class"]=9,["name"]="Schematic: No Slip SAF-T Padding",["subClass"]=3}
-V.Data.items[264209]={["class"]=9,["name"]="Schematic: SAF-T Bell",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[264211]={["class"]=9,["name"]="Schematic: EZ-Thro Fireproof Fuse",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[264216]={["class"]=9,["name"]="Schematic: Emergency Field Cloak",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[264217]={["class"]=9,["name"]="Schematic: Compact Critter Carrier",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[264220]={["class"]=9,["name"]="Schematic: SAF-T Disposable Parachute",["requiredLevel"]=10,["subClass"]=3}
-V.Data.items[264221]={["class"]=9,["name"]="Schematic: Gnomish Army Knife",["requiredLevel"]=10,["subClass"]=3}
-V.Data.items[264222]={["class"]=9,["name"]="Schematic: Loot-A-Rang",["requiredLevel"]=10,["subClass"]=3}
-V.Data.items[264232]={["class"]=9,["name"]="Schematic: Ultrasafe Rechargeable Battery",["requiredLevel"]=10,["subClass"]=3}
-V.Data.items[264233]={["class"]=9,["name"]="Schematic: Dimensional Transporter: Mt. Hyjal",["requiredLevel"]=10,["subClass"]=3}
-V.Data.items[264234]={["class"]=9,["name"]="Schematic: Gnomish Poultryizer",["requiredLevel"]=10,["subClass"]=3}
-V.Data.items[264235]={["class"]=9,["name"]="Schematic: Ultralight Goblin Glider",["requiredLevel"]=10,["subClass"]=3}
-V.Data.items[264237]={["class"]=9,["name"]="Schematic: Stealthman 52",["requiredLevel"]=10,["subClass"]=3}
+V.Data.items[264201]={["class"]=9,["name"]="Schematic: SAF-T Tabs",["professions"]={202},["subClass"]=3}
+V.Data.items[264202]={["class"]=9,["name"]="Schematic: SAF-T Dynamite",["professions"]={202},["subClass"]=3}
+V.Data.items[264203]={["class"]=9,["name"]="Schematic: SAF-T Copper Bomb",["professions"]={202},["subClass"]=3}
+V.Data.items[264204]={["class"]=9,["name"]="Schematic: EZ-Thro Wrap",["professions"]={202},["subClass"]=3}
+V.Data.items[264205]={["class"]=9,["name"]="Schematic: EZ-Thro Copper Bomb XL",["professions"]={202},["subClass"]=3}
+V.Data.items[264206]={["class"]=9,["name"]="Schematic: No Slip SAF-T Padding",["professions"]={202},["subClass"]=3}
+V.Data.items[264209]={["class"]=9,["name"]="Schematic: SAF-T Bell",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[264211]={["class"]=9,["name"]="Schematic: EZ-Thro Fireproof Fuse",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[264216]={["class"]=9,["name"]="Schematic: Emergency Field Cloak",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[264217]={["class"]=9,["name"]="Schematic: Compact Critter Carrier",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[264220]={["class"]=9,["name"]="Schematic: SAF-T Disposable Parachute",["professions"]={202},["requiredLevel"]=10,["subClass"]=3}
+V.Data.items[264221]={["class"]=9,["name"]="Schematic: Gnomish Army Knife",["professions"]={202},["requiredLevel"]=10,["subClass"]=3}
+V.Data.items[264222]={["class"]=9,["name"]="Schematic: Loot-A-Rang",["professions"]={202},["requiredLevel"]=10,["subClass"]=3}
+V.Data.items[264232]={["class"]=9,["name"]="Schematic: Ultrasafe Rechargeable Battery",["professions"]={202},["requiredLevel"]=10,["subClass"]=3}
+V.Data.items[264233]={["class"]=9,["name"]="Schematic: Dimensional Transporter: Mt. Hyjal",["professions"]={202},["requiredLevel"]=10,["subClass"]=3}
+V.Data.items[264234]={["class"]=9,["name"]="Schematic: Gnomish Poultryizer",["professions"]={202},["requiredLevel"]=10,["subClass"]=3}
+V.Data.items[264235]={["class"]=9,["name"]="Schematic: Ultralight Goblin Glider",["professions"]={202},["requiredLevel"]=10,["subClass"]=3}
+V.Data.items[264237]={["class"]=9,["name"]="Schematic: Stealthman 52",["professions"]={202},["requiredLevel"]=10,["subClass"]=3}
 V.Data.items[269671]={["class"]=15,["name"]="Swift Empyrean Galestrider",["requiredLevel"]=60,["subClass"]=5}
 V.Data.items[269678]={["class"]=15,["name"]="Swift Stormy Galestrider",["requiredLevel"]=60,["subClass"]=5}
 V.Data.items[269681]={["class"]=15,["name"]="Empyrean Galestrider",["requiredLevel"]=40,["subClass"]=5}
 V.Data.items[269683]={["class"]=15,["name"]="Stormy Galestrider",["requiredLevel"]=40,["subClass"]=5}
-V.Data.items[269901]={["class"]=9,["name"]="Schematic: Centaur Banner Deployment Device",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[269903]={["class"]=9,["name"]="Schematic: Hoof-Shaped Foot Pedal",["subClass"]=3}
+V.Data.items[269901]={["class"]=9,["name"]="Schematic: Centaur Banner Deployment Device",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[269903]={["class"]=9,["name"]="Schematic: Hoof-Shaped Foot Pedal",["professions"]={202},["subClass"]=3}
 V.Data.items[270887]={["class"]=15,["name"]="Advertising License Application",["repFaction"]=2587,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=4}
 V.Data.items[270888]={["class"]=15,["name"]="Advertising License Application",["repFaction"]=2586,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=4}
 V.Data.items[271621]={["class"]=15,["name"]="Alchemy Certification",["requiredLevel"]=1,["subClass"]=4}
@@ -3681,93 +3681,93 @@ V.Data.items[272439]={["class"]=4,["name"]="Serenity Field",["requiredLevel"]=60
 V.Data.items[272440]={["class"]=4,["name"]="Defender's Grip Stabilizer",["requiredLevel"]=60}
 V.Data.items[272449]={["class"]=4,["name"]="Scout's Tabard"}
 V.Data.items[272450]={["class"]=4,["name"]="Stone Guard's Herald"}
-V.Data.items[272941]={["class"]=7,["name"]="Thick Logs",["subClass"]=11}
+V.Data.items[272941]={["class"]=7,["craftMaterial"]=true,["name"]="Thick Logs",["professions"]={185},["subClass"]=11}
 V.Data.items[272958]={["class"]=4,["name"]="Darkspear Shoulderguards",["requiredLevel"]=60,["subClass"]=3}
 V.Data.items[273636]={["class"]=7,["name"]="Chef's Knife",["requiredLevel"]=35,["subClass"]=11}
 V.Data.items[273812]={["class"]=4,["name"]="Airy Magister's Shirt"}
 V.Data.items[273813]={["class"]=4,["name"]="Airy Peacekeeper's Shirt"}
 V.Data.items[273814]={["class"]=4,["name"]="Airy Skyseer's Shirt"}
-V.Data.items[273952]={["class"]=9,["name"]="Pattern: Grovekeeper Trousers",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273953]={["class"]=9,["name"]="Pattern: Grovekeeper Grips",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273954]={["class"]=9,["name"]="Pattern: Grovekeeper Shoulderpads",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273955]={["class"]=9,["name"]="Pattern: Grovekeeper Stompers",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273956]={["class"]=9,["name"]="Pattern: Grovekeeper Kilt",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273957]={["class"]=9,["name"]="Pattern: Grovekeeper Mitts",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273958]={["class"]=9,["name"]="Pattern: Grovekeeper Mantle",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273959]={["class"]=9,["name"]="Pattern: Grovekeeper Sandals",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273960]={["class"]=9,["name"]="Pattern: Grovekeeper Legguards",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273961]={["class"]=9,["name"]="Pattern: Grovekeeper Handguards",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273962]={["class"]=9,["name"]="Pattern: Grovekeeper Pauldrons",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273963]={["class"]=9,["name"]="Pattern: Grovekeeper Boots",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273964]={["class"]=9,["name"]="Pattern: Grovekeeper Leggings",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273965]={["class"]=9,["name"]="Pattern: Grovekeeper Gauntlets",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273966]={["class"]=9,["name"]="Pattern: Grovekeeper Spaulders",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273967]={["class"]=9,["name"]="Pattern: Grovekeeper Treads",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273968]={["class"]=9,["name"]="Pattern: Wildstalker's Legguards",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273969]={["class"]=9,["name"]="Pattern: Wildstalker's Gauntlets",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273970]={["class"]=9,["name"]="Pattern: Wildstalker's Spaulders",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273971]={["class"]=9,["name"]="Pattern: Wildstalker's Greaves",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273972]={["class"]=9,["name"]="Pattern: Manaflare Pants",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[273973]={["class"]=9,["name"]="Pattern: Manaflare Gloves",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[273974]={["class"]=9,["name"]="Pattern: Manaflare Mantle",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[273975]={["class"]=9,["name"]="Pattern: Manaflare Boots",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[273976]={["class"]=9,["name"]="Plans: Justice Leggings",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[273977]={["class"]=9,["name"]="Plans: Justice Gauntlets",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[273978]={["class"]=9,["name"]="Plans: Justice Spaulders",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[273979]={["class"]=9,["name"]="Plans: Justice Greaves",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[273980]={["class"]=9,["name"]="Plans: Justice Legplates",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[273981]={["class"]=9,["name"]="Plans: Justice Gloves",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[273982]={["class"]=9,["name"]="Plans: Justice Epaulets",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[273983]={["class"]=9,["name"]="Plans: Justice Treads",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[273984]={["class"]=9,["name"]="Plans: Justice Legguards",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[273985]={["class"]=9,["name"]="Plans: Justice Handguards",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[273986]={["class"]=9,["name"]="Plans: Justice Pauldrons",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[273987]={["class"]=9,["name"]="Plans: Justice Sabatons",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[273988]={["class"]=9,["name"]="Pattern: Pants of Conviction",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[273989]={["class"]=9,["name"]="Pattern: Gloves of Conviction",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[273990]={["class"]=9,["name"]="Pattern: Mantle of Conviction",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[273991]={["class"]=9,["name"]="Pattern: Treads of Conviction",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[273992]={["class"]=9,["name"]="Pattern: Leggings of Conviction",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[273993]={["class"]=9,["name"]="Pattern: Handguards of Conviction",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[273994]={["class"]=9,["name"]="Pattern: Pauldrons of Conviction",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[273995]={["class"]=9,["name"]="Pattern: Boots of Conviction",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[273996]={["class"]=9,["name"]="Pattern: Grimstitch Pants",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273997]={["class"]=9,["name"]="Pattern: Grimstitch Gloves",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273998]={["class"]=9,["name"]="Pattern: Grimstitch Spaulders",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[273999]={["class"]=9,["name"]="Pattern: Grimstitch Boots",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[274000]={["class"]=9,["name"]="Pattern: Spiritcaller Leggings",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[274001]={["class"]=9,["name"]="Pattern: Spiritcaller Grips",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[274002]={["class"]=9,["name"]="Pattern: Spiritcaller Spaulders",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[274003]={["class"]=9,["name"]="Pattern: Spiritcaller Treads",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[274004]={["class"]=9,["name"]="Pattern: Spiritcaller Pants",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[274005]={["class"]=9,["name"]="Pattern: Spiritcaller Gauntlets",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[274006]={["class"]=9,["name"]="Pattern: Spiritcaller Epaulets",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[274007]={["class"]=9,["name"]="Pattern: Spiritcaller Greaves",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[274008]={["class"]=9,["name"]="Pattern: Demonheart Leggings",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[274009]={["class"]=9,["name"]="Pattern: Demonheart Gloves",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[274010]={["class"]=9,["name"]="Pattern: Demonheart Spaulders",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[274011]={["class"]=9,["name"]="Pattern: Demonheart Boots",["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[274012]={["class"]=9,["name"]="Plans: Legplates of Glory",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[274013]={["class"]=9,["name"]="Plans: Gauntlets of Glory",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[274014]={["class"]=9,["name"]="Plans: Shoulders of Glory",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[274015]={["class"]=9,["name"]="Plans: Greaves of Glory",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[274016]={["class"]=9,["name"]="Plans: Legguards of Glory",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[274017]={["class"]=9,["name"]="Plans: Handguards of Glory",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[274018]={["class"]=9,["name"]="Plans: Pauldrons of Glory",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[274019]={["class"]=9,["name"]="Plans: Sabatons of Glory",["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[273952]={["class"]=9,["name"]="Pattern: Grovekeeper Trousers",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273953]={["class"]=9,["name"]="Pattern: Grovekeeper Grips",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273954]={["class"]=9,["name"]="Pattern: Grovekeeper Shoulderpads",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273955]={["class"]=9,["name"]="Pattern: Grovekeeper Stompers",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273956]={["class"]=9,["name"]="Pattern: Grovekeeper Kilt",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273957]={["class"]=9,["name"]="Pattern: Grovekeeper Mitts",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273958]={["class"]=9,["name"]="Pattern: Grovekeeper Mantle",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273959]={["class"]=9,["name"]="Pattern: Grovekeeper Sandals",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273960]={["class"]=9,["name"]="Pattern: Grovekeeper Legguards",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273961]={["class"]=9,["name"]="Pattern: Grovekeeper Handguards",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273962]={["class"]=9,["name"]="Pattern: Grovekeeper Pauldrons",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273963]={["class"]=9,["name"]="Pattern: Grovekeeper Boots",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273964]={["class"]=9,["name"]="Pattern: Grovekeeper Leggings",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273965]={["class"]=9,["name"]="Pattern: Grovekeeper Gauntlets",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273966]={["class"]=9,["name"]="Pattern: Grovekeeper Spaulders",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273967]={["class"]=9,["name"]="Pattern: Grovekeeper Treads",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273968]={["class"]=9,["name"]="Pattern: Wildstalker's Legguards",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273969]={["class"]=9,["name"]="Pattern: Wildstalker's Gauntlets",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273970]={["class"]=9,["name"]="Pattern: Wildstalker's Spaulders",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273971]={["class"]=9,["name"]="Pattern: Wildstalker's Greaves",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273972]={["class"]=9,["name"]="Pattern: Manaflare Pants",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[273973]={["class"]=9,["name"]="Pattern: Manaflare Gloves",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[273974]={["class"]=9,["name"]="Pattern: Manaflare Mantle",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[273975]={["class"]=9,["name"]="Pattern: Manaflare Boots",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[273976]={["class"]=9,["name"]="Plans: Justice Leggings",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[273977]={["class"]=9,["name"]="Plans: Justice Gauntlets",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[273978]={["class"]=9,["name"]="Plans: Justice Spaulders",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[273979]={["class"]=9,["name"]="Plans: Justice Greaves",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[273980]={["class"]=9,["name"]="Plans: Justice Legplates",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[273981]={["class"]=9,["name"]="Plans: Justice Gloves",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[273982]={["class"]=9,["name"]="Plans: Justice Epaulets",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[273983]={["class"]=9,["name"]="Plans: Justice Treads",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[273984]={["class"]=9,["name"]="Plans: Justice Legguards",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[273985]={["class"]=9,["name"]="Plans: Justice Handguards",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[273986]={["class"]=9,["name"]="Plans: Justice Pauldrons",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[273987]={["class"]=9,["name"]="Plans: Justice Sabatons",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[273988]={["class"]=9,["name"]="Pattern: Pants of Conviction",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[273989]={["class"]=9,["name"]="Pattern: Gloves of Conviction",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[273990]={["class"]=9,["name"]="Pattern: Mantle of Conviction",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[273991]={["class"]=9,["name"]="Pattern: Treads of Conviction",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[273992]={["class"]=9,["name"]="Pattern: Leggings of Conviction",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[273993]={["class"]=9,["name"]="Pattern: Handguards of Conviction",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[273994]={["class"]=9,["name"]="Pattern: Pauldrons of Conviction",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[273995]={["class"]=9,["name"]="Pattern: Boots of Conviction",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[273996]={["class"]=9,["name"]="Pattern: Grimstitch Pants",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273997]={["class"]=9,["name"]="Pattern: Grimstitch Gloves",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273998]={["class"]=9,["name"]="Pattern: Grimstitch Spaulders",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[273999]={["class"]=9,["name"]="Pattern: Grimstitch Boots",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[274000]={["class"]=9,["name"]="Pattern: Spiritcaller Leggings",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[274001]={["class"]=9,["name"]="Pattern: Spiritcaller Grips",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[274002]={["class"]=9,["name"]="Pattern: Spiritcaller Spaulders",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[274003]={["class"]=9,["name"]="Pattern: Spiritcaller Treads",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[274004]={["class"]=9,["name"]="Pattern: Spiritcaller Pants",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[274005]={["class"]=9,["name"]="Pattern: Spiritcaller Gauntlets",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[274006]={["class"]=9,["name"]="Pattern: Spiritcaller Epaulets",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[274007]={["class"]=9,["name"]="Pattern: Spiritcaller Greaves",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[274008]={["class"]=9,["name"]="Pattern: Demonheart Leggings",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[274009]={["class"]=9,["name"]="Pattern: Demonheart Gloves",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[274010]={["class"]=9,["name"]="Pattern: Demonheart Spaulders",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[274011]={["class"]=9,["name"]="Pattern: Demonheart Boots",["professions"]={197},["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[274012]={["class"]=9,["name"]="Plans: Legplates of Glory",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[274013]={["class"]=9,["name"]="Plans: Gauntlets of Glory",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[274014]={["class"]=9,["name"]="Plans: Shoulders of Glory",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[274015]={["class"]=9,["name"]="Plans: Greaves of Glory",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[274016]={["class"]=9,["name"]="Plans: Legguards of Glory",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[274017]={["class"]=9,["name"]="Plans: Handguards of Glory",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[274018]={["class"]=9,["name"]="Plans: Pauldrons of Glory",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[274019]={["class"]=9,["name"]="Plans: Sabatons of Glory",["professions"]={164},["requiredLevel"]=1,["subClass"]=4}
 V.Data.items[274021]={["class"]=4,["name"]="Barrens Headband",["repFaction"]=470,["repStanding"]=6,["requiredLevel"]=1,["subClass"]=5}
 V.Data.items[274022]={["class"]=4,["name"]="Tough Guy's Eyepatch",["repFaction"]=21,["repStanding"]=6,["requiredLevel"]=1,["subClass"]=5}
 V.Data.items[274023]={["class"]=4,["name"]="Stolen Wastewander Cowl",["repFaction"]=369,["repStanding"]=6,["requiredLevel"]=1,["subClass"]=5}
 V.Data.items[274024]={["class"]=4,["name"]="Fizzbolt's Fashionable Fedora",["repFaction"]=577,["repStanding"]=6,["requiredLevel"]=1,["subClass"]=5}
 V.Data.items[274025]={["class"]=4,["name"]="Guardians of Hyjal Tabard",["repFaction"]=2765,["repStanding"]=7,["requiredLevel"]=1}
 V.Data.items[274379]={["class"]=15,["name"]="Rousing Seed Pod",["repFaction"]=2765,["repStanding"]=6,["requiredLevel"]=60,["subClass"]=4}
-V.Data.items[274393]={["class"]=9,["name"]="Formula: Enchant Off-Hand - Wisdom",["requiredLevel"]=1,["subClass"]=8}
-V.Data.items[274394]={["class"]=9,["name"]="Formula: Enchant 2H Weapon - Spellblasting",["requiredLevel"]=1,["subClass"]=8}
-V.Data.items[274398]={["class"]=9,["name"]="Formula: Enchant Gloves - Superior Strength",["requiredLevel"]=1,["subClass"]=8}
-V.Data.items[274399]={["class"]=9,["name"]="Formula: Enchant Cloak - Agility",["requiredLevel"]=1,["subClass"]=8}
-V.Data.items[274401]={["class"]=9,["name"]="Formula: Enchant Bracer - Greater Spellpower",["requiredLevel"]=1,["subClass"]=8}
+V.Data.items[274393]={["class"]=9,["name"]="Formula: Enchant Off-Hand - Wisdom",["professions"]={333},["requiredLevel"]=1,["subClass"]=8}
+V.Data.items[274394]={["class"]=9,["name"]="Formula: Enchant 2H Weapon - Spellblasting",["professions"]={333},["requiredLevel"]=1,["subClass"]=8}
+V.Data.items[274398]={["class"]=9,["name"]="Formula: Enchant Gloves - Superior Strength",["professions"]={333},["requiredLevel"]=1,["subClass"]=8}
+V.Data.items[274399]={["class"]=9,["name"]="Formula: Enchant Cloak - Agility",["professions"]={333},["requiredLevel"]=1,["subClass"]=8}
+V.Data.items[274401]={["class"]=9,["name"]="Formula: Enchant Bracer - Greater Spellpower",["professions"]={333},["requiredLevel"]=1,["subClass"]=8}
 V.Data.items[274419]={["class"]=2,["name"]="Bear Poking Stick",["requiredLevel"]=53,["subClass"]=6}
-V.Data.items[274491]={["class"]=9,["name"]="Pattern: Centaur Hoofwarmers",["subClass"]=1}
+V.Data.items[274491]={["class"]=9,["name"]="Pattern: Centaur Hoofwarmers",["professions"]={165},["subClass"]=1}
 V.Data.items[274740]={["class"]=4,["name"]="Quilted Cloak",["repFaction"]=470,["repStanding"]=4,["requiredLevel"]=20}
 V.Data.items[274741]={["class"]=4,["name"]="Rumpled Kilt",["repFaction"]=470,["repStanding"]=4,["requiredLevel"]=20,["subClass"]=1}
 V.Data.items[274742]={["class"]=4,["name"]="Ratchet Wristwraps",["repFaction"]=470,["repStanding"]=4,["requiredLevel"]=20,["subClass"]=2}
@@ -3793,25 +3793,25 @@ V.Data.items[274761]={["class"]=4,["name"]="Parachute-Priest Pager",["repFaction
 V.Data.items[274930]={["class"]=15,["name"]="Umber Galestrider",["requiredLevel"]=40,["subClass"]=5}
 V.Data.items[274933]={["class"]=15,["name"]="Swift Umber Galestrider",["requiredLevel"]=60,["subClass"]=5}
 V.Data.items[274974]={["class"]=15,["name"]="Message in a Bottle",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[274977]={["class"]=9,["name"]="Recipe: Plain Ol' Paletusk",["subClass"]=5}
-V.Data.items[275580]={["class"]=9,["name"]="Pattern: Venomspew Gloves",["repFaction"]=609,["repStanding"]=4,["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[275581]={["class"]=9,["name"]="Pattern: Venomspew Cord",["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[275582]={["class"]=9,["name"]="Pattern: Venomspew Footpads",["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[275583]={["class"]=9,["name"]="Pattern: Swarmtender's Gloves",["repFaction"]=609,["repStanding"]=4,["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[275584]={["class"]=9,["name"]="Pattern: Swarmtender's Cord",["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[275585]={["class"]=9,["name"]="Pattern: Swarmtender's Footpads",["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=2}
-V.Data.items[275598]={["class"]=9,["name"]="Plans: Goregasher Grips",["repFaction"]=609,["repStanding"]=4,["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[275599]={["class"]=9,["name"]="Plans: Goregasher Support",["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[275600]={["class"]=9,["name"]="Plans: Goregasher Stompers",["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[275601]={["class"]=9,["name"]="Plans: Clutchlord's Grips",["repFaction"]=609,["repStanding"]=4,["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[275602]={["class"]=9,["name"]="Plans: Clutchlord's Support",["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[275603]={["class"]=9,["name"]="Plans: Clutchlord's Stompers",["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[274977]={["class"]=9,["name"]="Recipe: Plain Ol' Paletusk",["professions"]={185},["subClass"]=5}
+V.Data.items[275580]={["class"]=9,["name"]="Pattern: Venomspew Gloves",["professions"]={197},["repFaction"]=609,["repStanding"]=4,["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[275581]={["class"]=9,["name"]="Pattern: Venomspew Cord",["professions"]={197},["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[275582]={["class"]=9,["name"]="Pattern: Venomspew Footpads",["professions"]={197},["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[275583]={["class"]=9,["name"]="Pattern: Swarmtender's Gloves",["professions"]={197},["repFaction"]=609,["repStanding"]=4,["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[275584]={["class"]=9,["name"]="Pattern: Swarmtender's Cord",["professions"]={197},["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[275585]={["class"]=9,["name"]="Pattern: Swarmtender's Footpads",["professions"]={197},["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=2}
+V.Data.items[275598]={["class"]=9,["name"]="Plans: Goregasher Grips",["professions"]={164},["repFaction"]=609,["repStanding"]=4,["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[275599]={["class"]=9,["name"]="Plans: Goregasher Support",["professions"]={164},["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[275600]={["class"]=9,["name"]="Plans: Goregasher Stompers",["professions"]={164},["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[275601]={["class"]=9,["name"]="Plans: Clutchlord's Grips",["professions"]={164},["repFaction"]=609,["repStanding"]=4,["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[275602]={["class"]=9,["name"]="Plans: Clutchlord's Support",["professions"]={164},["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=4}
+V.Data.items[275603]={["class"]=9,["name"]="Plans: Clutchlord's Stompers",["professions"]={164},["repFaction"]=609,["repStanding"]=5,["requiredLevel"]=1,["subClass"]=4}
 V.Data.items[275892]={["class"]=15,["name"]="Short Stout"}
 V.Data.items[276199]={["class"]=4,["name"]="Haughty Fellow's Monocle",["repFaction"]=2827,["repStanding"]=6,["requiredLevel"]=1,["subClass"]=5}
 V.Data.items[276200]={["class"]=4,["name"]="Crawler's Clackers",["repFaction"]=2827,["repStanding"]=4,["requiredLevel"]=40,["subClass"]=4}
 V.Data.items[276201]={["class"]=4,["name"]="Misplaced Pantaloons",["repFaction"]=2827,["repStanding"]=4,["requiredLevel"]=40,["subClass"]=3}
 V.Data.items[276202]={["class"]=4,["name"]="Disengagement Ring",["repFaction"]=2827,["repStanding"]=4,["requiredLevel"]=40}
-V.Data.items[276203]={["class"]=2,["name"]="Primitive Fishing Pole",["repFaction"]=2827,["repStanding"]=5,["requiredLevel"]=40,["subClass"]=6}
+V.Data.items[276203]={["class"]=2,["name"]="Primitive Fishing Pole",["professions"]={356},["repFaction"]=2827,["repStanding"]=5,["requiredLevel"]=40,["subClass"]=6}
 V.Data.items[276204]={["class"]=4,["name"]="Thrash's Trash",["repFaction"]=2827,["repStanding"]=5,["requiredLevel"]=40}
 V.Data.items[276272]={["class"]=4,["name"]="Master Angler's Fishing Hat",["requiredLevel"]=1,["subClass"]=5}
 V.Data.items[276273]={["class"]=4,["name"]="Empty Fish Bucket",["requiredLevel"]=1}
@@ -3820,26 +3820,26 @@ V.Data.items[276275]={["class"]=15,["name"]="Bitter Baitling",["requiredLevel"]=
 V.Data.items[276278]={["class"]=15,["name"]="Handful of Coins",["requiredLevel"]=1,["subClass"]=4}
 V.Data.items[276279]={["class"]=15,["name"]="Small Bag of Coins",["requiredLevel"]=1,["subClass"]=4}
 V.Data.items[276280]={["class"]=15,["name"]="Hefty Sack of Coins",["requiredLevel"]=1,["subClass"]=4}
-V.Data.items[276542]={["class"]=9,["name"]="Pattern: Spiritcaller Kilt",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[276543]={["class"]=9,["name"]="Pattern: Spiritcaller Gloves",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[276544]={["class"]=9,["name"]="Pattern: Spiritcaller Mantle",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[276545]={["class"]=9,["name"]="Pattern: Spiritcaller Boots",["requiredLevel"]=1,["subClass"]=1}
-V.Data.items[276976]={["class"]=9,["name"]="Plans: Cloudy Skyforged Helm",["repFaction"]=2787,["repStanding"]=4,["subClass"]=4}
-V.Data.items[276977]={["class"]=9,["name"]="Plans: Cloudy Skyforged Pauldrons",["repFaction"]=2787,["repStanding"]=4,["subClass"]=4}
-V.Data.items[276978]={["class"]=9,["name"]="Pattern: Cloudy Gustwoven Hood",["repFaction"]=2787,["repStanding"]=4,["subClass"]=1}
-V.Data.items[276979]={["class"]=9,["name"]="Pattern: Cloudy Gustwoven Spaulders",["repFaction"]=2787,["repStanding"]=4,["subClass"]=1}
-V.Data.items[276980]={["class"]=9,["name"]="Pattern: Cloudy Windraveled Cover",["repFaction"]=2787,["repStanding"]=4,["subClass"]=1}
-V.Data.items[276981]={["class"]=9,["name"]="Pattern: Cloudy Windraveled Drapes",["repFaction"]=2787,["repStanding"]=4,["subClass"]=1}
-V.Data.items[276982]={["class"]=9,["name"]="Pattern: Cloudy Stormsewn Cowl",["repFaction"]=2787,["repStanding"]=4,["subClass"]=2}
-V.Data.items[276983]={["class"]=9,["name"]="Pattern: Cloudy Stormsewn Epaulets",["repFaction"]=2787,["repStanding"]=4,["subClass"]=2}
-V.Data.items[276984]={["class"]=9,["name"]="Plans: Azure Skyforged Helm",["repFaction"]=2740,["repStanding"]=4,["subClass"]=4}
-V.Data.items[276985]={["class"]=9,["name"]="Plans: Azure Skyforged Pauldrons",["repFaction"]=2740,["repStanding"]=4,["subClass"]=4}
-V.Data.items[276986]={["class"]=9,["name"]="Pattern: Azure Gustwoven Hood",["repFaction"]=2740,["repStanding"]=4,["subClass"]=1}
-V.Data.items[276987]={["class"]=9,["name"]="Pattern: Azure Gustwoven Spaulders",["repFaction"]=2740,["repStanding"]=4,["subClass"]=1}
-V.Data.items[276988]={["class"]=9,["name"]="Pattern: Azure Windraveled Cover",["repFaction"]=2740,["repStanding"]=4,["subClass"]=1}
-V.Data.items[276989]={["class"]=9,["name"]="Pattern: Azure Windraveled Drapes",["repFaction"]=2740,["repStanding"]=4,["subClass"]=1}
-V.Data.items[276990]={["class"]=9,["name"]="Pattern: Azure Stormsewn Cowl",["repFaction"]=2740,["repStanding"]=4,["subClass"]=2}
-V.Data.items[276991]={["class"]=9,["name"]="Pattern: Azure Stormsewn Epaulets",["repFaction"]=2740,["repStanding"]=4,["subClass"]=2}
+V.Data.items[276542]={["class"]=9,["name"]="Pattern: Spiritcaller Kilt",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[276543]={["class"]=9,["name"]="Pattern: Spiritcaller Gloves",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[276544]={["class"]=9,["name"]="Pattern: Spiritcaller Mantle",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[276545]={["class"]=9,["name"]="Pattern: Spiritcaller Boots",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[276976]={["class"]=9,["name"]="Plans: Cloudy Skyforged Helm",["professions"]={164},["repFaction"]=2787,["repStanding"]=4,["subClass"]=4}
+V.Data.items[276977]={["class"]=9,["name"]="Plans: Cloudy Skyforged Pauldrons",["professions"]={164},["repFaction"]=2787,["repStanding"]=4,["subClass"]=4}
+V.Data.items[276978]={["class"]=9,["name"]="Pattern: Cloudy Gustwoven Hood",["professions"]={165},["repFaction"]=2787,["repStanding"]=4,["subClass"]=1}
+V.Data.items[276979]={["class"]=9,["name"]="Pattern: Cloudy Gustwoven Spaulders",["professions"]={165},["repFaction"]=2787,["repStanding"]=4,["subClass"]=1}
+V.Data.items[276980]={["class"]=9,["name"]="Pattern: Cloudy Windraveled Cover",["professions"]={165},["repFaction"]=2787,["repStanding"]=4,["subClass"]=1}
+V.Data.items[276981]={["class"]=9,["name"]="Pattern: Cloudy Windraveled Drapes",["professions"]={165},["repFaction"]=2787,["repStanding"]=4,["subClass"]=1}
+V.Data.items[276982]={["class"]=9,["name"]="Pattern: Cloudy Stormsewn Cowl",["professions"]={197},["repFaction"]=2787,["repStanding"]=4,["subClass"]=2}
+V.Data.items[276983]={["class"]=9,["name"]="Pattern: Cloudy Stormsewn Epaulets",["professions"]={197},["repFaction"]=2787,["repStanding"]=4,["subClass"]=2}
+V.Data.items[276984]={["class"]=9,["name"]="Plans: Azure Skyforged Helm",["professions"]={164},["repFaction"]=2740,["repStanding"]=4,["subClass"]=4}
+V.Data.items[276985]={["class"]=9,["name"]="Plans: Azure Skyforged Pauldrons",["professions"]={164},["repFaction"]=2740,["repStanding"]=4,["subClass"]=4}
+V.Data.items[276986]={["class"]=9,["name"]="Pattern: Azure Gustwoven Hood",["professions"]={165},["repFaction"]=2740,["repStanding"]=4,["subClass"]=1}
+V.Data.items[276987]={["class"]=9,["name"]="Pattern: Azure Gustwoven Spaulders",["professions"]={165},["repFaction"]=2740,["repStanding"]=4,["subClass"]=1}
+V.Data.items[276988]={["class"]=9,["name"]="Pattern: Azure Windraveled Cover",["professions"]={165},["repFaction"]=2740,["repStanding"]=4,["subClass"]=1}
+V.Data.items[276989]={["class"]=9,["name"]="Pattern: Azure Windraveled Drapes",["professions"]={165},["repFaction"]=2740,["repStanding"]=4,["subClass"]=1}
+V.Data.items[276990]={["class"]=9,["name"]="Pattern: Azure Stormsewn Cowl",["professions"]={197},["repFaction"]=2740,["repStanding"]=4,["subClass"]=2}
+V.Data.items[276991]={["class"]=9,["name"]="Pattern: Azure Stormsewn Epaulets",["professions"]={197},["repFaction"]=2740,["repStanding"]=4,["subClass"]=2}
 V.Data.items[277056]={["class"]=4,["name"]="Al'Aketh Chainmail",["requiredLevel"]=6,["subClass"]=3}
 V.Data.items[277057]={["class"]=4,["name"]="Al'Aketh Wristguards",["requiredLevel"]=4,["subClass"]=3}
 V.Data.items[277058]={["class"]=4,["name"]="Al'Aketh Gauntlets",["requiredLevel"]=5,["subClass"]=3}
@@ -3896,11 +3896,11 @@ V.Data.items[277108]={["class"]=2,["name"]="Zephrali Knife",["requiredLevel"]=9,
 V.Data.items[277109]={["class"]=2,["name"]="Zephrali Greatstaff",["requiredLevel"]=9,["subClass"]=10}
 V.Data.items[277110]={["class"]=2,["name"]="Zephrali Bow",["requiredLevel"]=9,["subClass"]=2}
 V.Data.items[277111]={["class"]=2,["name"]="Zephrali Crossbow",["requiredLevel"]=9,["subClass"]=18}
-V.Data.items[277113]={["class"]=1,["name"]="Apprentice's Herb Pouch",["subClass"]=2}
-V.Data.items[277114]={["class"]=1,["name"]="Apprentice's Skinning Satchel",["subClass"]=7}
-V.Data.items[277115]={["class"]=1,["name"]="Apprentice's Mining Pack",["subClass"]=6}
+V.Data.items[277113]={["class"]=1,["name"]="Apprentice's Herb Pouch",["professions"]={182},["subClass"]=2}
+V.Data.items[277114]={["class"]=1,["name"]="Apprentice's Skinning Satchel",["professions"]={393},["subClass"]=7}
+V.Data.items[277115]={["class"]=1,["name"]="Apprentice's Mining Pack",["professions"]={186},["subClass"]=6}
 V.Data.items[277508]={["class"]=15,["name"]="Prairie Wolf Pup Carrier",["subClass"]=2}
-V.Data.items[277716]={["class"]=9,["name"]="Pattern: Light Leather Reagent Bag",["requiredLevel"]=1,["subClass"]=1}
+V.Data.items[277716]={["class"]=9,["name"]="Pattern: Light Leather Reagent Bag",["professions"]={165},["requiredLevel"]=1,["subClass"]=1}
 V.Data.items[278079]={["class"]=12,["name"]="Bundle of Herbs"}
 V.Data.items[278080]={["class"]=12,["name"]="Bundle of Dried Cedar Twigs"}
 V.Data.items[278081]={["class"]=12,["name"]="Sinew Thread"}
@@ -3909,13 +3909,13 @@ V.Data.items[278117]={["name"]="Hard Boiled Eggs",["requiredLevel"]=5,["subClass
 V.Data.items[278119]={["name"]="Bread with Butter",["requiredLevel"]=1,["subClass"]=5}
 V.Data.items[278121]={["name"]="Smoked Sausage",["requiredLevel"]=15,["subClass"]=5}
 V.Data.items[278265]={["name"]="Nutritious Slime Sludge",["requiredLevel"]=1,["subClass"]=5}
-V.Data.items[280321]={["class"]=9,["name"]="Schematic: Whimsical Waistwrap",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[280322]={["class"]=9,["name"]="Schematic: Gizmo Girdle",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[280323]={["class"]=9,["name"]="Schematic: Clanking Cord",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[280325]={["class"]=9,["name"]="Schematic: Floppy Goggles",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[280326]={["class"]=9,["name"]="Schematic: Bent Goggles",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[280327]={["class"]=9,["name"]="Schematic: Stuckbutton Goggles",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[280328]={["class"]=9,["name"]="Schematic: Dented Goggles",["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[280321]={["class"]=9,["name"]="Schematic: Whimsical Waistwrap",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[280322]={["class"]=9,["name"]="Schematic: Gizmo Girdle",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[280323]={["class"]=9,["name"]="Schematic: Clanking Cord",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[280325]={["class"]=9,["name"]="Schematic: Floppy Goggles",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[280326]={["class"]=9,["name"]="Schematic: Bent Goggles",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[280327]={["class"]=9,["name"]="Schematic: Stuckbutton Goggles",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[280328]={["class"]=9,["name"]="Schematic: Dented Goggles",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
 V.Data.items[280347]={["class"]=15,["name"]="Shadowgale Squirrel",["repFaction"]=2758,["repStanding"]=6,["subClass"]=2}
 V.Data.items[280363]={["class"]=4,["name"]="Nightclaw Mantle",["requiredLevel"]=15,["subClass"]=5}
 V.Data.items[280697]={["class"]=15,["name"]="Plagued Cockroach",["subClass"]=2}
@@ -3933,14 +3933,14 @@ V.Data.items[281044]={["class"]=15,["name"]="Ceremonial Flint and Tinder",["subC
 V.Data.items[281246]={["class"]=12,["name"]="Toxic Skullcap",["requiredLevel"]=1}
 V.Data.items[284664]={["class"]=15,["name"]="Packmule Treat",["subClass"]=2}
 V.Data.items[285104]={["name"]="Windle's Lighter",["subClass"]=8}
-V.Data.items[285285]={["class"]=9,["name"]="Schematic: Satchel of Copper Bombs",["requiredLevel"]=1,["subClass"]=3}
-V.Data.items[285286]={["class"]=9,["name"]="Schematic: Satchel of Bronze Bombs",["requiredLevel"]=5,["subClass"]=3}
-V.Data.items[285287]={["class"]=9,["name"]="Schematic: Satchel of Iron Bombs",["requiredLevel"]=10,["subClass"]=3}
-V.Data.items[285288]={["class"]=9,["name"]="Schematic: Satchel of Dark Iron Bombs",["requiredLevel"]=10,["subClass"]=3}
+V.Data.items[285285]={["class"]=9,["name"]="Schematic: Satchel of Copper Bombs",["professions"]={202},["requiredLevel"]=1,["subClass"]=3}
+V.Data.items[285286]={["class"]=9,["name"]="Schematic: Satchel of Bronze Bombs",["professions"]={202},["requiredLevel"]=5,["subClass"]=3}
+V.Data.items[285287]={["class"]=9,["name"]="Schematic: Satchel of Iron Bombs",["professions"]={202},["requiredLevel"]=10,["subClass"]=3}
+V.Data.items[285288]={["class"]=9,["name"]="Schematic: Satchel of Dark Iron Bombs",["professions"]={202},["requiredLevel"]=10,["subClass"]=3}
 V.Data.items[285327]={["class"]=4,["name"]="Kirin Tor Tabard",["repFaction"]=2740,["repStanding"]=7,["requiredLevel"]=1}
 V.Data.items[285359]={["name"]="Warm Apple Juice",["requiredLevel"]=45,["subClass"]=5}
 V.Data.items[285362]={["class"]=4,["name"]="Red Wine Glass"}
-V.Data.items[289560]={["class"]=9,["name"]="Formula: Enchant Boots - Speed",["subClass"]=8}
+V.Data.items[289560]={["class"]=9,["name"]="Formula: Enchant Boots - Speed",["professions"]={333},["subClass"]=8}
 V.Data.vendors[54]={["locations"]={{["area"]=12,["map"]=1429,["x"]=0.4153,["y"]=0.659}},["name"]="Corina Steele",["offers"]={[2488]=0,[2489]=0,[2490]=0,[2491]=0,[2492]=0,[2493]=0,[2494]=0,[2495]=0},["reaction"]="A",["subName"]="Weaponsmith",["wanders"]=true,["zone"]=12}
 V.Data.vendors[66]={["locations"]={{["area"]=12,["map"]=1429,["x"]=0.4182,["y"]=0.6716}},["name"]="Tharynn Bouden",["offers"]={[2320]=0,[2324]=0,[2604]=0,[2678]=0,[2880]=0,[2901]=0,[3371]=0,[4289]=0,[4536]=0,[5956]=0,[6217]=0,[6256]=0,[6260]=0,[6270]=1,[6325]=0,[6328]=0,[6529]=0,[7005]=0,[277113]=0,[277114]=0,[277115]=0},["reaction"]="A",["subName"]="Trade Supplies",["zone"]=12}
 V.Data.vendors[74]={["locations"]={{["area"]=12,["map"]=1429,["x"]=0.4137,["y"]=0.6559}},["name"]="Kurran Steele",["offers"]={[792]=0,[793]=0,[794]=0,[795]=0,[796]=0,[797]=0,[798]=0,[799]=0,[1839]=0,[1840]=0,[3602]=0,[3603]=0},["reaction"]="A",["subName"]="Cloth & Leather Armor Merchant",["zone"]=12}

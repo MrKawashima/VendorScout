@@ -1,7 +1,8 @@
 local _, V = ...
-V.version = "1.0.0"
+V.version = "1.1.0"
 V.query, V.category, V.page, V.mapPage = "", "all", 1, 1
 V.results, V.worldCache = {}, {}
+V.profession = "all"
 
 local function readable(value)
     return not (issecretvalue and issecretvalue(value))
@@ -11,7 +12,7 @@ function V:Number(value)
 end
 function V:Normalize(value)
     value = tostring(value or ""):gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
-    return (string.lower(value):gsub("%s+", " "):gsub("^%s+", ""):gsub("%s+$", ""))
+    return (self:FoldWords(value):gsub("%s+", " "):gsub("^%s+", ""):gsub("%s+$", ""))
 end
 function V:ItemName(id)
     return self.Locale.items[id] or (self.items[id] and self.items[id].name) or ("Item #"..id)
@@ -59,8 +60,8 @@ function V:InitData(saved)
     self:Reindex()
 end
 function V:Reindex()
-    self.itemIndex, self.vendorIndex = {}, {}
-    for id,it in pairs(self.items) do self.itemIndex[id]=self:Normalize(it.name).." "..self:Normalize(self:ItemName(id)) end
+    self.itemIndex, self.vendorIndex, self.keywordIndex, self.categoryIndex = {}, {}, {}, {}
+    for id,it in pairs(self.items) do self.itemIndex[id]=self:Normalize(it.name).." "..self:Normalize(self:ItemName(id)); self.keywordIndex[id]=" "..self:ItemKeywords(it).." "; self.categoryIndex[id]=self:ItemCategories(it) end
     for id,v in pairs(self.vendors) do self.vendorIndex[id]=self:Normalize(v.name).." "..self:Normalize(self:VendorName(id)).." "..self:Normalize(v.subName) end
 end
 function V:World(loc,noCache)
@@ -118,16 +119,17 @@ function V:BestLocation(vendor,player,scopeMap,playerWorld)
     return best,dist,rank,hasScope
 end
 function V:CategoryMatches(it)
-    if self.category=="all" then return true end
-    -- The snapshot omits zero-valued class IDs (Consumable = 0).
-    if self.category=="food" then return (it.class or 0)==0 end
-    if self.category=="recipes" then return it.class==9 end
-    if self.category=="supplies" then return it.class==7 or it.class==5 or it.class==6 end
-    if self.category=="gear" then return it.class==2 or it.class==4 end
-    return false
+    return self:ItemCategories(it)[self.category] or false
 end
-local function matches(text,tokens)
-    for _,token in ipairs(tokens) do if not string.find(text,token,1,true) then return false end end
+
+local function matches(text,tokens,keywords)
+    for _,token in ipairs(tokens) do
+        local literal
+        if V.searchVocabulary[token] then
+            literal=string.find(" "..text:gsub("%p"," ").." "," "..token.." ",1,true)
+        else literal=string.find(text,token,1,true) end
+        if not literal and not (keywords and string.find(keywords," "..token.." ",1,true)) then return false end
+    end
     return true
 end
 function V:Search(scopeMap)
@@ -140,8 +142,8 @@ function V:Search(scopeMap)
     local playerWorld={self:World(player,true)}
     local itemMatches={}
     for id,it in pairs(self.items) do
-        if self:CategoryMatches(it) and (not self.db.friendlyOnly or not side or not it.side or it.side==side) then
-            if (exact and id==exact) or (not exact and matches(self.itemIndex[id],tokens)) then itemMatches[id]=true end
+        if (self.categoryIndex[id] and self.categoryIndex[id][self.category]) and self:ProfessionMatches(it) and (not self.db.friendlyOnly or not side or not it.side or it.side==side) then
+            if (exact and id==exact) or (not exact and matches(self.itemIndex[id],tokens,self.keywordIndex[id])) then itemMatches[id]=true end
         end
     end
     local results={}
@@ -152,7 +154,7 @@ function V:Search(scopeMap)
             local offers={}
             for iid in pairs(vendor.offers) do
                 local it=self.items[iid]
-                if itemMatches[iid] or (vendorMatch and it and self:CategoryMatches(it) and (not self.db.friendlyOnly or not side or not it.side or it.side==side)) then offers[#offers+1]=iid end
+                if itemMatches[iid] or (vendorMatch and it and self.categoryIndex[iid] and self.categoryIndex[iid][self.category] and self:ProfessionMatches(it) and (not self.db.friendlyOnly or not side or not it.side or it.side==side)) then offers[#offers+1]=iid end
             end
             if #offers>0 then
                 local loc,distance,rank,hasScope=self:BestLocation(vendor,player,scopeMap,playerWorld)
@@ -215,7 +217,7 @@ function V:GetMapSearch()
     -- Each surface owns its controls and pagination. Commands operate on one
     -- shared query/filter/selection model, so Clear has the same effect anywhere.
     local shared={Data=true,Locale=true,items=true,vendors=true,itemIndex=true,vendorIndex=true,worldCache=true,
-        query=true,category=true,selected=true,targetLocation=true,selectionMode=true,db=true}
+        query=true,category=true,profession=true,selected=true,targetLocation=true,selectionMode=true,db=true}
     local state=setmetatable({isMapSearch=true,page=1,mapPage=1,results={},mapOnly=false},
         {__index=function(_,key) if shared[key] then return root[key] end end})
     state.SetQuery=function(_,query) root:SetQuery(query) end

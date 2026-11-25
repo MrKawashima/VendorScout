@@ -1,13 +1,25 @@
 local _, V = ...
 local BG={bgFile="Interface\\Buttons\\WHITE8X8",edgeFile="Interface\\Tooltips\\UI-Tooltip-Border",edgeSize=12,insets={left=3,right=3,top=3,bottom=3}}
 local NO={
+    ["Items"]="Varer",["Loading item details…"]="Laster vareinformasjon…",
+    ["Food & drink"]="Mat og drikke",["Potions & elixirs"]="Potions og eliksirer",
+    ["Bandages"]="Bandasjer",["Bags"]="Vesker",["Materials & tools"]="Materialer og verktøy",
+    ["Spell reagents"]="Spellreagenser",["Ammunition"]="Ammunisjon",["Weapons"]="Våpen",["Armor"]="Rustning",
+    ["Profession"]="Profesjon",["All professions"]="Alle profesjoner",["Reset filters"]="Nullstill filtre",
+    ["Alchemy"]="Alkymi",["Blacksmithing"]="Smiing",["Enchanting"]="Fortrylling",
+    ["Engineering"]="Ingeniørfag",["Leatherworking"]="Lærarbeid",["Tailoring"]="Skreddersøm",
+    ["Cooking"]="Matlaging",["First Aid"]="Førstehjelp",["Fishing"]="Fiske",
+    ["Mining"]="Gruvedrift",["Herbalism"]="Urtesanking",["Skinning"]="Flåing",
+    ["Recipes, materials and tools with known profession links."]="Oppskrifter, materialer og verktøy med kjent profesjonstilknytning.",
+    ["Search names or keywords, e.g. water / vann, tailoring thread / skredder tråd"]="Søk navn eller søkeord, f.eks. vann / water, skredder tråd / tailoring thread",
+    ["Try another keyword, reset filters or show all factions."]="Prøv et annet søkeord, nullstill filtrene eller vis alle fraksjoner.",
     ["Find what you need. See who sells it."]="Finn det du trenger. Se hvem som selger det.",
     ["Search item, vendor, item ID or paste an item link"]="Søk vare, vendor, item-ID eller lim inn en item-lenke",
     ["All"]="Alle",["Consumables"]="Forbruksvarer",["Supplies"]="Forsyninger",["Recipes"]="Oppskrifter",["Gear"]="Utstyr",
     ["My faction"]="Min fraksjon",["All factions"]="Alle fraksjoner",["Show on map"]="Vis i kartet",["Vendors"]="Vendors",
     ["This map"]="Dette kartet",["Everywhere"]="Overalt",["Open window"]="Åpne vindu",["Clear pin"]="Fjern markør",
     ["Choose a vendor"]="Velg en vendor",["Select a result to see matching items and its map location."]="Velg et treff for å se varer og plasseringen i kartet.",
-    ["No vendors found"]="Ingen vendors funnet",["Try a shorter name, another category or all factions."]="Prøv et kortere navn, en annen kategori eller alle fraksjoner.",
+    ["No vendors found"]="Ingen vendors funnet",["Try another keyword, reset filters or show all factions."]="Prøv et kortere navn, en annen kategori eller alle fraksjoner.",
     ["Location unknown"]="Ukjent plassering",["Distance unknown"]="Ukjent avstand",["Other world / distance unknown"]="Annet område / ukjent avstand",
     ["Straight-line distance; travel routes and access may differ."]="Luftlinje; reisevei og tilgang kan avvike.",
     ["Database stock; availability may change."]="Databaseutvalg; tilgjengelighet kan endres.",
@@ -68,6 +80,53 @@ function V:Button(parent,text,x,y,w,action)
     b:SetScript("OnClick",action); b:Paint(false)
     return b
 end
+function V:CloseFilterMenus()
+    for _,b in ipairs(self.filterButtons or {}) do if b.menu then b.menu:Hide() end end
+    if self.mapItems then self.mapItems:Hide() end
+end
+function V:RefreshFilterButton(b)
+    local options=b.filterKind=="category" and self.Categories or self.Professions
+    local value=self[b.filterKind]
+    b:SetText(self:L(b.filterKind=="category" and "Category" or "Profession")..": "..self:L(self:FilterName(options,value)).."  v")
+    b:SetSelected(value~="all")
+    if b.menu then
+        for i,entry in ipairs(options) do
+            b.menu.options[i]:SetText(self:L(entry[2]));b.menu.options[i]:SetSelected(value==entry[1])
+        end
+    end
+end
+function V:FilterButton(parent,kind,x,y,width)
+    local options=kind=="category" and self.Categories or self.Professions
+    local b=self:Button(parent,"",x,y,width,function(button)
+        local opening=not button.menu or not button.menu:IsShown()
+        self:CloseFilterMenus()
+        if not opening then return end
+        if not button.menu then
+            -- Menus are lazy; use a unique serial, not the total control count.
+            self.filterMenuSerial=(self.filterMenuSerial or 0)+1
+            local name="VendorScoutFilterMenu"..self.filterMenuSerial
+            local menu=self:Panel(button,width,#options*24+8,name);button.menu=menu
+            menu:SetFrameLevel(parent:GetFrameLevel()+20);menu:EnableMouse(true);menu:SetClampedToScreen(true)
+            menu:SetPoint("TOPLEFT",button,"BOTTOMLEFT",0,-2);menu.options={}
+            table.insert(UISpecialFrames,name)
+            for i,entry in ipairs(options) do
+                local id=entry[1]
+                local choice=self:Button(menu,self:L(entry[2]),4,-4-(i-1)*24,width-8,function()
+                    menu:Hide();self:SetFilter(kind,id)
+                end)
+                choice:SetHeight(24);menu.options[i]=choice
+            end
+        end
+        self:RefreshFilterButton(button);button.menu:Show()
+    end)
+    b.filterKind=kind;self.filterButtons=self.filterButtons or {};table.insert(self.filterButtons,b)
+    b:HookScript("OnEnter",function(s)
+        if kind=="profession" then GameTooltip:SetOwner(s,"ANCHOR_TOP");GameTooltip:SetText(self:L("Recipes, materials and tools with known profession links."));GameTooltip:Show() end
+    end)
+    b:HookScript("OnLeave",function() GameTooltip:Hide() end)
+    self:RefreshFilterButton(b)
+    return b
+end
 function V:SearchBox(parent,x,y,w,owner)
     owner=owner or self
     local box=CreateFrame("EditBox",nil,parent,"BackdropTemplate")
@@ -86,7 +145,7 @@ function V:SearchBox(parent,x,y,w,owner)
     box:SetScript("OnEnterPressed",function(s) owner.pendingText=nil; owner:SetQuery(s:GetText()); s:ClearFocus() end)
     box:SetScript("OnEscapePressed",function(s) s:ClearFocus() end)
     box:SetScript("OnEnter",function(s)
-        GameTooltip:SetOwner(s,"ANCHOR_TOP"); GameTooltip:SetText(V:L("Search item, vendor, item ID or paste an item link")); GameTooltip:Show()
+        GameTooltip:SetOwner(s,"ANCHOR_TOP"); GameTooltip:SetText(V:L("Search names or keywords, e.g. water / vann, tailoring thread / skredder tråd")); GameTooltip:Show()
     end)
     box:SetScript("OnLeave",function() GameTooltip:Hide() end)
     return box
@@ -162,7 +221,7 @@ function V:BuildUI()
         w:ClearAllPoints(); w:SetPoint(pos[1],UIParent,pos[2],pos[3],pos[4])
     end
     self:FitWindow(); w:Hide(); table.insert(UISpecialFrames,"VendorScoutWindow")
-    w:SetScript("OnHide",function() w.search:ClearFocus() end)
+    w:SetScript("OnHide",function() w.search:ClearFocus();self:CloseFilterMenus();if self.hoveredItem then self:HideItemTooltip(self.hoveredItem) end end)
     w.title=self:Label(w,"VendorScout",18,-18,500,26,"GameFontNormalLarge"); w.title:SetTextColor(.38,.85,.69)
     w.subtitle=self:Label(w,"",18,-48,770,20)
     self:Button(w,"−",662,-16,28,function() self.db.ui.scale=math.max(.65,(self.db.ui.scale or .9)-.05); self:FitWindow() end)
@@ -174,15 +233,11 @@ function V:BuildUI()
     w.map=self:Button(w,"M",752,-80,48,function() self:OpenMapSearch() end)
     w.map:SetScript("OnEnter",function(s) GameTooltip:SetOwner(s,"ANCHOR_RIGHT"); GameTooltip:SetText(self:L("Open world map")); GameTooltip:Show() end)
     w.map:SetScript("OnLeave",function() GameTooltip:Hide() end)
-    w.categories={}
-    local cats={{"all","All"},{"food","Consumables"},{"supplies","Supplies"},{"recipes","Recipes"},{"gear","Gear"}}
-    for i,c in ipairs(cats) do
-        local id,caption=c[1],c[2]
-        local b=self:Button(w,caption,18+(i-1)*116,-118,110,function() self.category=id; self.page=1; self.mapPage=1; self:RefreshSearch() end)
-        b.category,b.key=id,caption; w.categories[i]=b
-    end
+    w.category=self:FilterButton(w,"category",18,-118,278)
+    w.profession=self:FilterButton(w,"profession",302,-118,302)
+    w.resetFilters=self:Button(w,"",664,-150,136,function() self:ResetFilters() end)
     w.faction=self:Button(w,"",610,-118,190,function() self.db.friendlyOnly=not self.db.friendlyOnly; self.page=1; self.mapPage=1; self:RefreshSearch() end)
-    w.status=self:Label(w,"",18,-157,760,20)
+    w.status=self:Label(w,"",18,-157,630,20)
     w.rows={}; for i=1,7 do w.rows[i]=self:ResultRow(w,18,-184-(i-1)*52,428) end
     w.empty=self:Label(w,"",32,-220,400,80,"GameFontHighlight")
     w.prev=self:Button(w,"<",18,-554,38,function() self.page=math.max(1,self.page-1); self:RefreshUI() end)
@@ -196,23 +251,7 @@ function V:BuildUI()
     d.header=self:Label(d,"",14,-169,310,18)
     d.offers={}
     for i=1,5 do
-        local b=CreateFrame("Button",nil,d); b:SetSize(308,30); b:SetPoint("TOPLEFT",14,-192-(i-1)*31)
-        b.text=self:Label(b,"",0,0,308,30)
-        b.text:SetWordWrap(false)
-        b:SetScript("OnEnter",function(s)
-            if s.itemID then
-                GameTooltip:SetOwner(s,"ANCHOR_RIGHT"); GameTooltip:SetHyperlink("item:"..s.itemID)
-                GameTooltip:AddLine(self:ItemName(s.itemID),.38,.85,.69,true)
-                if s.notes then GameTooltip:AddLine(s.notes,.65,.75,.8,true) end
-                GameTooltip:Show()
-            end
-        end)
-        b:SetScript("OnLeave",function() GameTooltip:Hide() end)
-        b:SetScript("OnClick",function(s)
-            if s.itemID and IsShiftKeyDown and IsShiftKeyDown() and ChatEdit_InsertLink then
-                local _,link=C_Item.GetItemInfo(s.itemID); if link then ChatEdit_InsertLink(link) end
-            end
-        end)
+        local b=self:ItemRow(d,14,-192-(i-1)*31,308)
         d.offers[i]=b
     end
     d.prev=self:Button(d,"<",14,-358,30,function() self.offerPage=math.max(1,(self.offerPage or 1)-1); self:RefreshDetail() end)
@@ -222,6 +261,87 @@ function V:BuildUI()
     end)
     w.footer=self:Label(w,"",18,-594,780,18)
 end
+function V:ItemNotes(r,id)
+    local it=self.items[id]; local stock=r.vendor.offers[id]; local extra={}
+    if stock and stock>0 then extra[#extra+1]=self:L("Limited stock")..": "..stock end
+    if it.requiredLevel and it.requiredLevel>1 then extra[#extra+1]=self:L("Requires level").." "..it.requiredLevel end
+    if it.repFaction then extra[#extra+1]=self:L("Requires reputation").." #"..it.repFaction.." / "..(it.repStanding or "?") end
+    if it.pvpRank then extra[#extra+1]=self:L("Requires PvP rank").." "..it.pvpRank end
+    local obs=self.db.observed[r.id]; obs=obs and obs.offers and obs.offers[id]
+    if type(obs)=="table" and self:Number(obs.time) then
+        extra[#extra+1]=self:L("Last seen").." "..date("%d.%m %H:%M",obs.time).." ("..(obs.stock==-1 and "∞" or tostring(obs.stock or "?"))..")"
+    end
+    if #extra==0 then extra[1]=self:L("Stock unknown") end
+    return table.concat(extra," · ")
+end
+function V:HideItemTooltip(owner)
+    if self.hoveredItem==owner then self.hoveredItem=nil;GameTooltip:Hide() end
+end
+function V:ShowItemTooltip(owner)
+    if not owner.itemID then return end
+    self.hoveredItem=owner
+    local id=owner.itemID
+    GameTooltip:SetOwner(owner,"ANCHOR_RIGHT")
+    local cached=C_Item and C_Item.GetItemInfo and C_Item.GetItemInfo(id)
+    local shown=cached and pcall(GameTooltip.SetHyperlink,GameTooltip,"item:"..id)
+    if not shown then
+        GameTooltip:SetText(self:ItemName(id),.38,.85,.69)
+        GameTooltip:AddLine(self:L("Loading item details…"),.6,.7,.72,true)
+        self.itemRequests=self.itemRequests or {}
+        if not self.itemRequests[id] and C_Item and C_Item.RequestLoadItemDataByID then
+            self.itemRequests[id]=true;pcall(C_Item.RequestLoadItemDataByID,id)
+        end
+    end
+    GameTooltip:AddLine("Item ID: "..id,.6,.7,.72,true)
+    if owner.notes then GameTooltip:AddLine(owner.notes,.65,.75,.8,true) end
+    GameTooltip:AddLine(self:L("Database stock; availability may change."),.6,.7,.72,true)
+    GameTooltip:Show()
+end
+function V:ItemRow(parent,x,y,width)
+    local b=CreateFrame("Button",nil,parent);b:SetSize(width,30);b:SetPoint("TOPLEFT",x,y)
+    b:EnableMouse(true);b:SetFrameLevel(parent:GetFrameLevel()+2)
+    b.text=self:Label(b,"",0,0,width,30);b.text:SetWordWrap(false)
+    b:SetScript("OnEnter",function(s) self:ShowItemTooltip(s) end)
+    b:SetScript("OnLeave",function(s) self:HideItemTooltip(s) end)
+    b:SetScript("OnHide",function(s) self:HideItemTooltip(s) end)
+    b:SetScript("OnClick",function(s)
+        if s.itemID and IsShiftKeyDown and IsShiftKeyDown() and ChatEdit_InsertLink and C_Item and C_Item.GetItemInfo then
+            local _,link=C_Item.GetItemInfo(s.itemID);if link then ChatEdit_InsertLink(link) end
+        end
+    end)
+    return b
+end
+function V:RefreshMapItems()
+    local p=self.mapItems;if not p or not p:IsShown() then return end
+    local r=self.selected;if not r then p:Hide();return end
+    local count=#r.offers;local pages=math.max(1,math.ceil(count/5))
+    p.page=math.min(p.page or 1,pages)
+    if p.vendorID~=r.id then p.vendorID=r.id;p.page=1 end
+    p.title:SetText(self:L("Matching items").." ("..count..")")
+    for i,b in ipairs(p.offers)do
+        b.itemID=r.offers[(p.page-1)*5+i];b:SetShown(b.itemID~=nil)
+        if b.itemID then b.notes=self:ItemNotes(r,b.itemID);b.text:SetText(self:ItemName(b.itemID).."\n|cff94adb8"..b.notes.."|r") end
+    end
+    p.prev:SetEnabled(p.page>1);p.next:SetEnabled(p.page<pages);p.pageLabel:SetText(p.page.." / "..pages)
+    if self.hoveredItem and self.hoveredItem:IsShown() then self:ShowItemTooltip(self.hoveredItem) end
+end
+function V:ToggleMapItems()
+    local opening=not self.mapItems or not self.mapItems:IsShown()
+    self:CloseFilterMenus();if not opening or not self.selected then return end
+    if not self.mapItems then
+        local p=self:Panel(self.mapPanel,284,238,"VendorScoutMapItems");self.mapItems=p
+        p:SetPoint("TOPLEFT",self.mapPanel,"TOPLEFT",4,-224);p:SetFrameLevel(self.mapPanel:GetFrameLevel()+20);p:EnableMouse(true)
+        p.title=self:Label(p,"",10,-12,232,20)
+        self:Button(p,"×",250,-6,24,function()p:Hide()end)
+        p.offers={};for i=1,5 do p.offers[i]=self:ItemRow(p,10,-38-(i-1)*32,264) end
+        p.prev=self:Button(p,"<",10,-206,30,function()p.page=math.max(1,p.page-1);self:RefreshMapItems()end)
+        p.pageLabel=self:Label(p,"",52,-212,174,18)
+        p.next=self:Button(p,">",244,-206,30,function()p.page=p.page+1;self:RefreshMapItems()end)
+        p:SetScript("OnHide",function()for _,b in ipairs(p.offers)do self:HideItemTooltip(b) end end)
+        table.insert(UISpecialFrames,"VendorScoutMapItems")
+    end
+    self.mapItems.page=1;self.mapItems:Show();self:RefreshMapItems()
+end
 function V:RefreshDetail()
     if not self.window then return end
     local d=self.window.detail; local r=self.selected
@@ -229,9 +349,9 @@ function V:RefreshDetail()
     local target=self.targetLocation or (r and r.location)
     d.map:SetEnabled(r and target and target.map~=nil and target.x~=nil or false)
     d.clear:SetEnabled(r~=nil)
-    for _,b in ipairs(d.offers) do b:Hide() end
     d.prev:Hide(); d.next:Hide(); d.pageLabel:SetText("")
     if not r then
+        for _,b in ipairs(d.offers)do b.itemID=nil;b:Hide() end
         d.title:SetText(self:L("Choose a vendor")); d.meta:SetText(self:L("Select a result to see matching items and its map location."))
         d.header:SetText(""); return
     end
@@ -246,20 +366,11 @@ function V:RefreshDetail()
     for i,b in ipairs(d.offers) do
         local id=r.offers[(page-1)*5+i]; b.itemID=id; b:SetShown(id~=nil)
         if id then
-            local it=self.items[id]; local stock=r.vendor.offers[id]; local extra={}
-            if stock and stock>0 then extra[#extra+1]=self:L("Limited stock")..": "..stock end
-            if it.requiredLevel and it.requiredLevel>1 then extra[#extra+1]=self:L("Requires level").." "..it.requiredLevel end
-            if it.repFaction then extra[#extra+1]=self:L("Requires reputation").." #"..it.repFaction.." / "..(it.repStanding or "?") end
-            if it.pvpRank then extra[#extra+1]=self:L("Requires PvP rank").." "..it.pvpRank end
-            local obs=self.db.observed[r.id]; obs=obs and obs.offers and obs.offers[id]
-            if type(obs)=="table" and self:Number(obs.time) then
-                extra[#extra+1]=self:L("Last seen").." "..date("%d.%m %H:%M",obs.time).." ("..(obs.stock==-1 and "∞" or tostring(obs.stock or "?"))..")"
-            end
-            if #extra==0 then extra[1]=self:L("Stock unknown") end
-            b.notes=table.concat(extra," · ")
+            b.notes=self:ItemNotes(r,id)
             b.text:SetText(self:ItemName(id).."\n|cff94adb8"..b.notes.."|r")
         end
     end
+    if self.hoveredItem and self.hoveredItem:IsShown() then self:ShowItemTooltip(self.hoveredItem) end
     d.prev:Show(); d.next:Show(); d.prev:SetEnabled(page>1); d.next:SetEnabled(page<math.ceil(count/5))
     d.pageLabel:SetText(page.." / "..math.max(1,math.ceil(count/5)))
 end
@@ -268,12 +379,13 @@ function V:RefreshUI()
     if w then
         w.subtitle:SetText(self:L(self.selected and self.selectionMode=="auto" and "Nearest match selected. Choose another result or use Show on map." or "Find what you need. See who sells it."))
         if w.search:GetText()~=self.query and (not w.search:HasFocus() or not self.pendingText) then w.search:SetText(self.query) end
-        for _,b in ipairs(w.categories) do b:SetText(self:L(b.key)); b:SetSelected(b.category==self.category) end
+        self:RefreshFilterButton(w.category);self:RefreshFilterButton(w.profession)
+        w.resetFilters:SetText(self:L("Reset filters"));w.resetFilters:SetEnabled(self.category~="all" or self.profession~="all")
         w.faction:SetText(self:L(self.db.friendlyOnly and "My faction" or "All factions")); w.faction:SetSelected(self.db.friendlyOnly)
         local total=#self.results; self.page=math.min(self.page,math.max(1,math.ceil(total/7)))
         w.status:SetText((self.query=="" and self:L("Nearby vendors").."  ·  " or "")..total.." "..self:L("vendors").."  ·  "..self:L("Straight-line distance; travel routes and access may differ."))
         self:FillRows(w.rows,self.results,self.page); w.empty:SetShown(total==0)
-        w.empty:SetText(self:L("No vendors found").."\n\n"..self:L("Try a shorter name, another category or all factions."))
+        w.empty:SetText(self:L("No vendors found").."\n\n"..self:L("Try another keyword, reset filters or show all factions."))
         w.pageLabel:SetText(self.page.." / "..math.max(1,math.ceil(total/7)))
         w.prev:SetEnabled(self.page>1); w.next:SetEnabled(self.page<math.ceil(total/7))
         w.footer:SetText(self:L("Community snapshot").." "..self.Data.meta.generated.."  ·  "..self:L("New Forever content may be missing."))

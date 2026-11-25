@@ -16,7 +16,7 @@ def runtime(full=False,locale='enUS'):
     rt.execute('function GetLocale() return '+json.dumps(locale)+' end')
     rt.execute('V = {}')
     load=rt.eval('function(code) assert(loadstring(code))("VendorScout",V) end')
-    for name in ['Data.lua','Locales.lua','Search.lua']:
+    for name in ['Data.lua','Locales.lua','Filters.lua','Search.lua']:
         load((ADDON/name).read_text('utf-8'))
     if full:
         if API.exists(): rt.execute(API.read_text('utf-8'))
@@ -93,7 +93,7 @@ class DatabaseTests(unittest.TestCase):
     def test_horde_variant_spawns(self):
         rt=runtime();rt.execute('faction="Horde";V:InitData({});local v=V.vendors[15898];assert(v.locations[3].area==1497);faction="Alliance";V:InitData({});assert(V.vendors[15898].locations[3].area==1519)')
     def test_consumables_include_uncached_water(self):
-        rt=runtime();rt.execute('V.category="food";V.query="159";assert(#V:Search()>0)')
+        rt=runtime();rt.execute('V.category="consumables";V.query="159";assert(#V:Search()>0)')
     def test_lua51_compile_all_files(self):
         for path in ADDON.glob('*.lua'): self.rt.eval('function(s)assert(loadstring(s))end')(path.read_text('utf-8'))
 
@@ -121,9 +121,9 @@ class IntegrationTests(unittest.TestCase):
     def test_floating_search_is_outside_map_without_resizing(self):
         self.check('local c=WorldMapFrame.ScrollContainer;local width=c:GetWidth();V:SetQuery("159");V:ShowOnMap();assert(V.mapPanel.parent==UIParent and V.mapPanel.movable);assert(V.mapPanel:GetLeft()>WorldMapFrame:GetRight());assert(c:GetWidth()==width and not WorldMapFrame.resizeCalls)')
     def test_full_map_category_and_scope_controls(self):
-        self.check('V:OpenMapSearch();local m=V:GetMapSearch();V.mapPanel.category:Click();assert(m.category=="food" and V.category=="food");V.mapPanel.scope:Click();assert(m.mapOnly and not V.mapOnly);V.mapPanel.faction:Click();assert(not m.db.friendlyOnly and not V.db.friendlyOnly)')
+        self.check('V:OpenMapSearch();local m=V:GetMapSearch();V.mapPanel.category:Click();V.mapPanel.category.menu.options[2]:Click();assert(m.category=="consumables" and V.category=="consumables");V.mapPanel.scope:Click();assert(m.mapOnly and not V.mapOnly);V.mapPanel.faction:Click();assert(not m.db.friendlyOnly and not V.db.friendlyOnly)')
     def test_actual_pointer_hits_map_controls_over_high_border(self):
-        self.check('V:OpenMapSearch();local m=V:GetMapSearch();pointerClick(V.mapPanel.search);assert(V.mapPanel.search:HasFocus());V.mapPanel.search:Type("Water");currentTime=1;for _,f in ipairs(frames)do if f.scripts.OnUpdate then f.scripts.OnUpdate(f,1)end end;assert(m.query=="Water" and #m.results>0 and V.query=="Water");pointerClick(V.mapPanel.faction);assert(not m.db.friendlyOnly);pointerClick(V.mapPanel.category);assert(m.category=="food");pointerClick(V.mapButton);assert(not V.mapPanel:IsShown())')
+        self.check('V:OpenMapSearch();local m=V:GetMapSearch();pointerClick(V.mapPanel.search);assert(V.mapPanel.search:HasFocus());V.mapPanel.search:Type("Water");currentTime=1;for _,f in ipairs(frames)do if f.scripts.OnUpdate then f.scripts.OnUpdate(f,1)end end;assert(m.query=="Water" and #m.results>0 and V.query=="Water");pointerClick(V.mapPanel.faction);assert(not m.db.friendlyOnly);pointerClick(V.mapPanel.category);pointerClick(V.mapPanel.category.menu.options[2]);assert(m.category=="consumables");pointerClick(V.mapButton);assert(not V.mapPanel:IsShown())')
     def test_previous_medium_stratum_would_intercept_pointer(self):
         self.check('V:OpenMapSearch();V.mapPanel:ClearAllPoints();V.mapPanel:SetPoint("TOPLEFT",WorldMapFrame,"TOPLEFT",50,-100);V.mapPanel:SetFrameStrata("MEDIUM");V.mapPanel:SetFrameLevel(10000);local b=V.mapPanel.search;local x,y,w,h=b:GetBounds();assert(pointerTarget(x+w/2,y+h/2)==WorldMapFrame.BorderFrame)')
     def test_client_fullscreen_map_layer_keeps_controls_clickable(self):

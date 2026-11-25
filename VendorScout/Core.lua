@@ -17,6 +17,7 @@ end
 events:RegisterEvent("ADDON_LOADED"); events:RegisterEvent("PLAYER_LOGIN")
 events:RegisterEvent("MERCHANT_SHOW"); events:RegisterEvent("MERCHANT_UPDATE")
 events:RegisterEvent("ZONE_CHANGED_NEW_AREA"); events:RegisterEvent("PLAYER_ENTERING_WORLD")
+events:RegisterEvent("GET_ITEM_INFO_RECEIVED")
 events:RegisterEvent("UI_SCALE_CHANGED"); events:RegisterEvent("DISPLAY_SIZE_CHANGED")
 events:SetScript("OnEvent",function(_,event,name)
     if event=="ADDON_LOADED" then
@@ -24,7 +25,9 @@ events:SetScript("OnEvent",function(_,event,name)
         elseif active and name=="Blizzard_WorldMap" then V:AttachMap() end
     elseif event=="PLAYER_LOGIN" then initialize()
     elseif active then
-        if event=="MERCHANT_SHOW" or event=="MERCHANT_UPDATE" then V:ObserveMerchant()
+        if event=="GET_ITEM_INFO_RECEIVED" then
+            if V.hoveredItem and V.hoveredItem.itemID==name and V.hoveredItem:IsShown() then V:ShowItemTooltip(V.hoveredItem) end
+        elseif event=="MERCHANT_SHOW" or event=="MERCHANT_UPDATE" then V:ObserveMerchant()
         elseif event=="UI_SCALE_CHANGED" or event=="DISPLAY_SIZE_CHANGED" then V:FitWindow()
         else V.searchDirty=true end
     end
